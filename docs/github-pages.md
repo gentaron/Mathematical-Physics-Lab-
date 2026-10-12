@@ -4,23 +4,45 @@ HTMLと小さなCSSだけで表示します。JavaScript、フレームワーク
 外部フォント、常駐サーバーは不要です。スマホでは目次が1列になり、本文の幅と文字が
 自動調整されます。検証の詳細は標準のHTMLで開閉します。
 
-## 最初の一回だけ設定
+## 公開先
+
+**https://cosmolab.qd.je/**
+
+DigitalPlatの無料ドメイン枠とGitHub Pagesを組み合わせます。
+常駐サーバー、有料プラン、APIキーは不要です。ドメインと公開サービスの
+将来の継続・無料条件まで保証するものではありません。
+
+## 公開設定
 
 GitHubでこのリポジトリの [Settings → Pages](https://github.com/gentaron/Mathematical-Physics-Lab-/settings/pages)
-を開き、次のように設定してください。
+を開き、次の設定を使います。
 
 | 設定 | 値 |
 | --- | --- |
 | Source | Deploy from a branch |
 | Branch | main |
 | Folder | /docs |
+| Custom domain | cosmolab.qd.je |
 
-**Save** を押すと、GitHub側の公開処理が始まります。設定後の公開先は
-https://gentaron.github.io/Mathematical-Physics-Lab-/ です。
-この文書は公開設定の完了を示すものではありません。
+`docs/CNAME` にも `cosmolab.qd.je` を保存します。
+DNS設定と証明書の発行が完了したら、**Enforce HTTPS** を有効にします。
 
-今回のGitHub接続にはPagesの管理設定を変更する操作がないため、この一回の設定は
-GitHubの画面で行う必要があります。サイト本体と掲載データはリポジトリにあります。
+DigitalPlat DNSの `cosmolab.qd.je` ゾーンには以下を設定します。
+名前 `@` はゾーンのルートを表します。ワイルドカードは設定しません。
+
+| 種類 | 名前 | 値 |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+
+GitHubにカスタムドメインを設定してからDNSを向けます。
+ドメイン所有権確認が求められた場合は、GitHubが表示するTXTレコードも追加します。
+DNSの反映やHTTPS証明書の発行には最大24時間かかる場合があります。
+この文書だけでは、実際の登録・配信・証明書発行の完了を示しません。
+
+[GitHubのカスタムドメイン設定](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
 公開リポジトリのGitHub PagesはGitHub Freeで利用できます。
 [公式説明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
