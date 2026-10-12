@@ -18,7 +18,7 @@ GitHubの二段階認証が完了していないため、ドメイン登録・DN
 HTTPS配信は完了していません。名前はまだ予約されていません。
 
 Siteへのカスタムドメイン追加は2026年10月12日に完了し、状態は `pending` です。
-SSL状態は `initializing` で、まだ指定URLでの配信成功を意味しません。
+SSL状態は `pending_validation` で、まだ指定URLでの配信成功を意味しません。
 発行された接続先は [domain-setup.md](domain-setup.md) に記録しています。
 DigitalPlatで登録が完了したら、発行されたDNS・所有権確認レコードを設定します。
 DNS値は配信先の応答から取得し、GitHub PagesのIPを流用しません。

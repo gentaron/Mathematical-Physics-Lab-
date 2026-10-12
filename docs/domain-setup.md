@@ -10,7 +10,7 @@ DNSゾーンやDNSレコードはまだ作成していません。
 | DigitalPlatのドメイン取得 | GitHub本人確認待ち |
 | DNS設定 | 未設定 |
 | DNS所有権確認 | pending |
-| HTTPS証明書 | initializing |
+| HTTPS証明書 | pending_validation |
 | 指定URLの公開確認 | 未完了 |
 
 ## 発行済みのDNS設定

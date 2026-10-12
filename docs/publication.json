@@ -17,7 +17,7 @@
     "custom_domain_id": "appgdom_6accf33f59ec8191b54ab071ebc1e624",
     "status": "pending",
     "provider_status": "pending",
-    "ssl_status": "initializing",
+    "ssl_status": "pending_validation",
     "site_configured": true,
     "registered": false,
     "dns_configured": false,
@@ -36,6 +36,7 @@
         "name": "_cf-custom-hostname.cosmolab.qd.je"
       }
     ],
-    "configured_at": "2026-10-12T14:48:31.351778+00:00"
+    "configured_at": "2026-10-12T14:48:31.351778+00:00",
+    "last_checked_at": "2026-10-12T14:52:16.037519+00:00"
   }
 }
