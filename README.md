@@ -6,10 +6,11 @@ Genesis Vaultから独立した研究エンジンです。研究日誌をJSON/Ma
 出力します。記事公開や既存の12エージェントへの変更は行いません。
 
 結果を読むための、白地・明朝体・リンク中心のシンプルな
-[公開ホームページ](https://cosmolab.gvtechno.chatgpt.site) で研究結果を読めます。
+指定した公開URLは **`cosmolab.qd.je`** です。
 HTMLと小さなCSSだけで動き、スマホにも対応します。
-サイト本体はSitesで公開済みです。独自URL `cosmolab.qd.je` の取得は、
-DigitalPlatが要求するGitHub本人確認待ちです。ドメイン登録・DNS接続は未完了です。
+サイト側へのカスタムドメイン登録と接続先の発行は完了しています。
+DigitalPlatでのドメイン取得は、必須のGitHub本人確認待ちです。
+ドメイン取得・DNS設定・指定URLでのHTTPS公開はまだ完了していません。
 [ローカルで読むページ](docs/index.html) と [公開・更新の記録](docs/publication.md) もあります。
 
 最初の対象は **Cosmohedron Explorer**。AIの文章を正しさの根拠にせず、

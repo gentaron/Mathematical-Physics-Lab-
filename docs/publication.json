@@ -14,8 +14,28 @@
   ],
   "custom_domain": {
     "hostname": "cosmolab.qd.je",
-    "status": "pending_github_account_verification",
+    "custom_domain_id": "appgdom_6accf33f59ec8191b54ab071ebc1e624",
+    "status": "pending",
+    "provider_status": "pending",
+    "ssl_status": "initializing",
+    "site_configured": true,
     "registered": false,
-    "dns_configured": false
+    "dns_configured": false,
+    "cname_target": "custom-domains.chatgpt.site.",
+    "apex_proxy_ipv4_targets": [
+      "162.159.143.30",
+      "172.66.3.26"
+    ],
+    "validation_record_names": [
+      {
+        "record_type": "TXT",
+        "name": "_openai-site-verification.cosmolab.qd.je"
+      },
+      {
+        "record_type": "TXT",
+        "name": "_cf-custom-hostname.cosmolab.qd.je"
+      }
+    ],
+    "configured_at": "2026-10-12T14:48:31.351778+00:00"
   }
 }

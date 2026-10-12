@@ -17,8 +17,10 @@ URLを知っている人は誰でも閲覧できます。APIキー、有料API�
 GitHubの二段階認証が完了していないため、ドメイン登録・DNS設定・独自URLでの
 HTTPS配信は完了していません。名前はまだ予約されていません。
 
-登録が完了したら、現在公開しているSiteへカスタムドメインを追加し、
-その応答で指定されるDNS・所有権確認レコードをDigitalPlat DNSへ設定します。
+Siteへのカスタムドメイン追加は2026年10月12日に完了し、状態は `pending` です。
+SSL状態は `initializing` で、まだ指定URLでの配信成功を意味しません。
+発行された接続先は [domain-setup.md](domain-setup.md) に記録しています。
+DigitalPlatで登録が完了したら、発行されたDNS・所有権確認レコードを設定します。
 DNS値は配信先の応答から取得し、GitHub PagesのIPを流用しません。
 以前準備したGitHub Pages用の `CNAME` は、現在の配信方式と一致しないため削除しました。
 
