@@ -1,0 +1,21 @@
+{
+  "published_url": "https://cosmolab.gvtechno.chatgpt.site",
+  "access_mode": "public",
+  "deployment_status": "succeeded",
+  "published_at": "2026-10-12T14:24:46.482995+00:00",
+  "project_id": "appgprj_6acced1d1cc0819187355222379e08e8",
+  "version_id": "appgprj_6acced1d1cc0819187355222379e08e8~appgver_ee6f6e97a5848191859d712e0696b2a1",
+  "deployment_id": "appgdep_6acced95eeec8191bba5fdc25fec99ce",
+  "site_source_commit": "f43297c54d79dc98cb7232769c57ff6b7949a48a",
+  "github_content_commit": "c2d3be72fe9ed49a5fc3178c324a6fe677c0c02d",
+  "static_files": [
+    "docs/index.html",
+    "docs/latest.json"
+  ],
+  "custom_domain": {
+    "hostname": "cosmolab.qd.je",
+    "status": "pending_github_account_verification",
+    "registered": false,
+    "dns_configured": false
+  }
+}
