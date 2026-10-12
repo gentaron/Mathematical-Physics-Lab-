@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "record_id": "2de6d56652cc489197945df1fef356ac",
+  "created_at": "2026-10-12T11:00:33.220532+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "lab": "0.1.0"
+  },
+  "code_sha256": "067155475fc00097cc4888c6b95e15cc2107bf63cbb4e807bf36d46191c3d12b",
+  "payload_sha256": "9153f5f964278961238e5a9bafcbcc68577cbed1a13bfd7551dbe0ebbfcc0e96",
+  "payload": {
+    "status": "symbolic_verified",
+    "experiment": "planar_scalar_amplitude",
+    "scope": "formal independent channel variables, simple poles",
+    "evidence": {
+      "polygon_vertices": 3,
+      "triangulations": 1,
+      "expression": "1",
+      "residue_checks": [],
+      "passed": true
+    }
+  },
+  "status": "symbolic_verified"
+}

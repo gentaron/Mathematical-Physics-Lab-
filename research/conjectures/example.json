@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "vertex-quadratic-example",
+  "target": "vertices",
+  "coefficients": ["40", "-47/2", "7/2"],
+  "fit_vertices": [3, 4, 5],
+  "test_vertices": [6, 7],
+  "source": "manual",
+  "description": "Deliberately false extrapolation: interpolates 1,2,10; predicts 25 rather than 72 at six vertices"
+}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mathematical-physics-lab"
+version = "0.1.0"
+description = "Reproducible positive-geometry exploration with exact verification"
+requires-python = ">=3.12"
+dependencies = ["sympy==1.14.0"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[project.scripts]
+math-lab = "research.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["research*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--basetemp=.pytest-tmp"

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-tmp/
+pytest-of-root/
+pip-*/
+.venv/
+*.egg-info/
+build/
+dist/
+.lake/
+.superpowers/
+research/results/run-*/

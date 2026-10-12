@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "record_id": "fb1f770674f24b0fa43bb91f09a2aabc",
+  "created_at": "2026-10-12T11:00:45.935582+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "lab": "0.1.0"
+  },
+  "code_sha256": "067155475fc00097cc4888c6b95e15cc2107bf63cbb4e807bf36d46191c3d12b",
+  "payload_sha256": "662824a3ae1d085863d929d7c5e7f44c9e1ecf51cd72dbe2b14f2c504b4f011c",
+  "payload": {
+    "status": "counterexample",
+    "experiment": "polynomial_count_candidate",
+    "candidate": {
+      "schema_version": 1,
+      "id": "poly-vertices",
+      "target": "vertices",
+      "coefficients": [
+        "40",
+        "-47/2",
+        "7/2"
+      ],
+      "fit_vertices": [
+        3,
+        4,
+        5
+      ],
+      "test_vertices": [
+        6
+      ],
+      "source": "template",
+      "description": "Polynomial interpolation baseline; attempt to refute extrapolation"
+    },
+    "checks": [
+      {
+        "polygon_vertices": 3,
+        "phase": "fit",
+        "predicted": "1",
+        "actual": "1",
+        "passed": true
+      },
+      {
+        "polygon_vertices": 4,
+        "phase": "fit",
+        "predicted": "2",
+        "actual": "2",
+        "passed": true
+      },
+      {
+        "polygon_vertices": 5,
+        "phase": "fit",
+        "predicted": "10",
+        "actual": "10",
+        "passed": true
+      },
+      {
+        "polygon_vertices": 6,
+        "phase": "held_out",
+        "predicted": "25",
+        "actual": "72",
+        "passed": false
+      }
+    ],
+    "counterexample": {
+      "polygon_vertices": 6,
+      "predicted": "25",
+      "actual": "72",
+      "phase": "held_out"
+    },
+    "tested_vertices": [
+      6
+    ],
+    "proof_scope": "finite_cases_only",
+    "novelty": "not_assessed",
+    "oracle": "independent subdivision recurrence (arXiv:2603.03425v3 Eq.11)"
+  },
+  "status": "counterexample"
+}

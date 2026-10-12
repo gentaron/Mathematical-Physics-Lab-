@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-10-12",
+  "sources": [
+    {
+      "id": "cosmohedron-combinatorics",
+      "title": "Combinatorics of the Cosmohedron",
+      "authors": ["Federico Ardila-Mantilla", "Nima Arkani-Hamed", "Carolina Figueiredo", "Francisco Vazão"],
+      "url": "https://arxiv.org/abs/2603.03425v3",
+      "html": "https://arxiv.org/html/2603.03425v3",
+      "used_for": ["recursive polygon nesting", "face containment", "Table 1 reference counts", "Equation 11 count recurrence", "Section 1.5 flat-space tree energy recursion"],
+      "implementation_note": "Internal rooted polygon representation; see docs/mathematics.md"
+    },
+    {
+      "id": "cosmoflow-code",
+      "url": "https://github.com/deniswerth/CosmoFlow",
+      "paper": "https://arxiv.org/abs/2402.03693",
+      "used_for": ["optional extension guidance only"],
+      "executed": false
+    },
+    {
+      "id": "kinematic-flow",
+      "url": "https://github.com/haydenhylee/kinematic-flow",
+      "used_for": ["user-supplied future reference; no port or reproduction claimed"],
+      "executed": false
+    },
+    {
+      "id": "ollama-api",
+      "url": "https://docs.ollama.com/api",
+      "used_for": ["optional local JSON proposal adapter"]
+    },
+    {
+      "id": "github-billing",
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "used_for": ["public standard runners and no metered storage strategy"]
+    },
+    {
+      "id": "lean-action",
+      "url": "https://github.com/leanprover/lean-action",
+      "commit": "f061402b660e0c34644504b324e830f2991d4865",
+      "used_for": ["optional manual Lean build workflow"]
+    }
+  ]
+}

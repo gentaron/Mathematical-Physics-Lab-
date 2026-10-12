@@ -1,0 +1,32 @@
+{
+  "polygon_vertices": 3,
+  "polytope_dimension": 0,
+  "root_convention": "outer polygon included; singleton root is the full face",
+  "covers_direction": "lower face -> upper face",
+  "faces": [
+    {
+      "id": "0",
+      "dimension": 0,
+      "codimension": 0,
+      "polygons": [
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "empty",
+      "dimension": -1,
+      "codimension": 1,
+      "polygons": []
+    }
+  ],
+  "covers": [
+    [
+      "empty",
+      "0"
+    ]
+  ]
+}

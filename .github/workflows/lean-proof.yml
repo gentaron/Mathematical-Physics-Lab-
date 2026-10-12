@@ -1,0 +1,52 @@
+name: Lean Algebra Proof
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Build fixed Lean project
+        uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1
+        with:
+          lake-package-directory: research/proofs
+          auto-config: 'false'
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-github-cache: 'false'
+          use-mathlib-cache: 'true'
+      - name: Inspect declared axioms
+        working-directory: research/proofs
+        run: |
+          set -o pipefail
+          lake env lean MathPhysicsLab.lean 2>&1 | tee lean-proof.log
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          source = Path('MathPhysicsLab.lean').read_text()
+          if re.search(r'\b(sorry|admit|axiom|native_decide)\b', source):
+              raise SystemExit('Unverified placeholder or additional axiom in project')
+          output = Path('lean-proof.log').read_text()
+          allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+          for name in ('fivePointGrouping', 'poleCoefficient'):
+              pattern = rf"'MathPhysicsLab\.{name}' depends on axioms:\s*\[([^\]]*)\]"
+              match = re.search(pattern, output)
+              if not match:
+                  raise SystemExit(f'Missing axiom report for {name}')
+              found = {item.strip() for item in match.group(1).split(',') if item.strip()}
+              if not found <= allowed:
+                  raise SystemExit(f'Unexpected axioms: {found - allowed}')
+          PY
+      - name: Record scope in job summary
+        run: |
+          echo 'Lean kernel checked two rational algebraic identities. This does not prove the Cosmohedron theorem or a new physical result.' >> "$GITHUB_STEP_SUMMARY"

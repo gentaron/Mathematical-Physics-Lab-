@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "record_id": "ef6c0511312040898cfa6e24257e9c71",
+  "created_at": "2026-10-12T11:00:33.275016+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "lab": "0.1.0"
+  },
+  "code_sha256": "067155475fc00097cc4888c6b95e15cc2107bf63cbb4e807bf36d46191c3d12b",
+  "payload_sha256": "f7ecac36408181af2f08de890a061a9298562acf079aacf1a1f1a5d88c802d7f",
+  "payload": {
+    "status": "reproduced",
+    "experiment": "cosmohedral_face_counts",
+    "source": "https://arxiv.org/html/2603.03425v3#S5",
+    "evidence": {
+      "polygon_vertices": 6,
+      "polytope_dimension": 3,
+      "codimension_vector": [
+        1,
+        44,
+        114,
+        72
+      ],
+      "independent_recurrence": [
+        1,
+        44,
+        114,
+        72
+      ],
+      "reference_matches": true
+    }
+  },
+  "status": "reproduced"
+}
