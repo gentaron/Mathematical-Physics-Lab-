@@ -2,8 +2,10 @@
 
 ## 現在の公開先
 
-**https://cosmolab.gvtechno.chatgpt.site**
+**https://cosmolab.qd.je/**
 
+独自ドメイン `cosmolab.qd.je` は取得済みです。配信元のSiteは
+`https://cosmolab.gvtechno.chatgpt.site` でも同じ内容を表示します。
 2026年10月12日にSitesで配信成功を確認しました。公開設定は `public` で、
 URLを知っている人は誰でも閲覧できます。APIキー、有料API、データベース、
 外部フォント、JavaScript、常駐サーバーは使いません。
@@ -12,17 +14,10 @@ URLを知っている人は誰でも閲覧できます。APIキー、有料API�
 
 ## 独自URLの状態
 
-希望する独自URLは `cosmolab.qd.je` です。DigitalPlatで無料枠1つと
-候補名の空きを確認しましたが、登録前にGitHub OAuthによる本人確認を求められました。
-GitHubの二段階認証が完了していないため、ドメイン登録・DNS設定・独自URLでの
-HTTPS配信は完了していません。名前はまだ予約されていません。
-
-Siteへのカスタムドメイン追加は2026年10月12日に完了し、状態は `pending` です。
-SSL状態は `pending_validation` で、まだ指定URLでの配信成功を意味しません。
-発行された接続先は [domain-setup.md](domain-setup.md) に記録しています。
-DigitalPlatで登録が完了したら、発行されたDNS・所有権確認レコードを設定します。
+`cosmolab.qd.je` はDigitalPlatで取得済みです。Siteへのカスタムドメイン追加も
+2026年10月12日に完了しています。DNS・所有権確認・HTTPS証明書の設定値は
+[domain-setup.md](domain-setup.md) に記録しています。
 DNS値は配信先の応答から取得し、GitHub PagesのIPを流用しません。
-以前準備したGitHub Pages用の `CNAME` は、現在の配信方式と一致しないため削除しました。
 
 ## 結果を更新する
 

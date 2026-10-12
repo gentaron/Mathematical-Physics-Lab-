@@ -1,13 +1,12 @@
 # cosmolab.qd.je の接続設定
 
 2026年10月12日に、公開済みSiteへ `cosmolab.qd.je` を追加しました。
-これは配信サービス側の接続先設定です。DigitalPlatでの名前の取得は未完了で、
-DNSゾーンやDNSレコードはまだ作成していません。
+ドメインはDigitalPlatで取得済みです。
 
 | 設定 | 状態 |
 | --- | --- |
 | Siteのカスタムドメイン登録 | 完了 |
-| DigitalPlatのドメイン取得 | GitHub本人確認待ち |
+| DigitalPlatのドメイン取得 | 完了 |
 | DNS設定 | 未設定 |
 | DNS所有権確認 | pending |
 | HTTPS証明書 | pending_validation |
@@ -15,7 +14,7 @@ DNSゾーンやDNSレコードはまだ作成していません。
 
 ## 発行済みのDNS設定
 
-DigitalPlatでドメインを取得し、DigitalPlat DNSにゾーンが作成された後に適用します。
+DigitalPlat DNSのゾーンに設定します。
 以下のルートゾーン用AレコードはSitesの応答から取得した値です。
 `@` は `cosmolab.qd.je` を表します。
 
@@ -34,5 +33,3 @@ DigitalPlatでドメインを取得し、DigitalPlat DNSにゾーンが作成さ
 SOA・NSと併用せず、ここでは上記のAレコードを使用します。
 DNS反映後に同じカスタムドメインの状態を更新し、DNS確認・SSLが有効になったことと
 `https://cosmolab.qd.je/` に研究ページが表示されることを確認します。
-
-GitHubの案内を「指定URLで公開済み」に変更するのは、その確認が済んだ後です。

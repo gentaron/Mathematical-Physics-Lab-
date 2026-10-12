@@ -1,5 +1,6 @@
 {
-  "published_url": "https://cosmolab.gvtechno.chatgpt.site",
+  "published_url": "https://cosmolab.qd.je",
+  "fallback_url": "https://cosmolab.gvtechno.chatgpt.site",
   "access_mode": "public",
   "deployment_status": "succeeded",
   "published_at": "2026-10-12T14:24:46.482995+00:00",
@@ -19,7 +20,7 @@
     "provider_status": "pending",
     "ssl_status": "pending_validation",
     "site_configured": true,
-    "registered": false,
+    "registered": true,
     "dns_configured": false,
     "cname_target": "custom-domains.chatgpt.site.",
     "apex_proxy_ipv4_targets": [
