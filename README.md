@@ -5,6 +5,10 @@
 Genesis Vaultから独立した研究エンジンです。研究日誌をJSON/Markdownとして
 出力します。記事公開や既存の12エージェントへの変更は行いません。
 
+結果を読むための、白地・明朝体・リンク中心のシンプルな
+[ホームページ](docs/index.html) もあります。HTMLと小さなCSSだけで動き、
+スマホにも対応します。[GitHub Pagesの公開手順](docs/github-pages.md) は最初の設定だけです。
+
 最初の対象は **Cosmohedron Explorer**。AIの文章を正しさの根拠にせず、
 論文の既知結果の再現 → 候補生成 → 厳密な反例探索 → 証拠付き記録を実行します。
 
@@ -27,6 +31,12 @@ Windowsの仮想環境有効化は `.venv\Scripts\Activate.ps1`。
 実行ごとに `research/results/run-日時-ID/` が作られます。
 `journal.md` が研究日誌、`run.json` が機械可読の結果、`ledger/` が個別の実験記録、
 `faces-N.json` が空面を含む面のHasse図です。過去の実行を上書きしません。
+`index.html` を直接開くと、数字・その意味・次の問いをまとめたページとして読めます。
+
+```bash
+# 既存の参照結果をトップページへ出力（再計算やサーバー起動は不要）
+python -m research site
+```
 
 ```bash
 python -m research.positive_geometry.five_point

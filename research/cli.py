@@ -23,6 +23,7 @@ from .positive_geometry.associahedron import amplitude, triangulations, verify_r
 from .positive_geometry.cosmohedron import (
     REFERENCE_VECTORS, codimension_vector, face_lattice, recurrence_vector,
 )
+from .presentation import export_site, render_homepage
 
 
 def _write_json(path: Path, value: object) -> None:
@@ -119,6 +120,7 @@ def run_experiments(max_vertices: int, output: Path, model: str | None = None) -
               "novelty_assessed": False, "paid_services_used": False}
     _write_json(directory / "run.json", report)
     (directory / "journal.md").write_text(render_journal(report), encoding="utf-8")
+    (directory / "index.html").write_text(render_homepage(report), encoding="utf-8")
     return directory
 
 
@@ -134,6 +136,9 @@ def main(argv: list[str] | None = None) -> int:
     verify.add_argument("--ledger", type=Path, help="Optional append-only record output directory")
     faces = commands.add_parser("faces", help="Print the cosmohedral Hasse diagram as JSON")
     faces.add_argument("--vertices", type=int, choices=range(3, 7), default=5)
+    site = commands.add_parser("site", help="Export a selected result as a plain static research homepage")
+    site.add_argument("--run", type=Path, default=Path("research/results/reference/run.json"))
+    site.add_argument("--output", type=Path, default=Path("docs"))
     commands.add_parser("doctor", help="Read-only required/optional tool inventory")
     args = parser.parse_args(argv)
     try:
@@ -150,6 +155,9 @@ def main(argv: list[str] | None = None) -> int:
             return 1 if result["status"] == "counterexample" else 0
         if args.command == "faces":
             print(json.dumps(face_lattice(args.vertices), indent=2))
+            return 0
+        if args.command == "site":
+            print(f"Homepage: {export_site(args.run, args.output)}")
             return 0
         if args.command == "doctor":
             print(json.dumps({"required": {"sympy": sp.__version__},

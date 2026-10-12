@@ -19,8 +19,11 @@ def test_complete_cli_run_preserves_records(tmp_path):
     assert first.returncode == 0, first.stderr
     second = run_cli("run", "--max-vertices", "5", "--output", str(tmp_path))
     assert second.returncode == 0, second.stderr
-    runs = sorted(tmp_path.glob("run-*"))
-    assert len(runs) == 2
+    # Inspect the two returned run paths; prior runs may exist in the same root.
+    runs = [Path(next(line.removeprefix("Research run: ") for line in result.stdout.splitlines()
+                      if line.startswith("Research run: "))) for result in (first, second)]
+    assert runs[0] != runs[1]
+    assert all(r.parent == tmp_path and r.is_dir() for r in runs)
     six = next(json.loads((r / "run.json").read_text()) for r in runs
                if json.loads((r / "run.json").read_text())["max_vertices"] == 6)
     assert six["geometry"][-1]["codimension_vector"] == [1, 44, 114, 72]
@@ -28,6 +31,7 @@ def test_complete_cli_run_preserves_records(tmp_path):
     assert six["formal_proofs_checked"] is False
     assert all(r["status"] == "counterexample" for r in six["hypotheses"])
     assert all((r / "journal.md").exists() and list((r / "ledger").glob("*.json")) for r in runs)
+    assert all((r / "index.html").exists() for r in runs)
 
 
 def test_cli_rejects_oversized_request_before_creating_output(tmp_path):
