@@ -39,5 +39,16 @@ jobs:
         env:
           MAX_VERTICES: ${{ inputs.max_vertices || '6' }}
         run: python -m research run --max-vertices "$MAX_VERTICES" --output research/results
+      - name: Face counts beyond the paper (dimension 5-9, two independent methods)
+        run: python -m research higher --max-vertices 12 --output "$RUNNER_TEMP/higher.json" > /dev/null
+      - name: Network feed is in sync with the committed results
+        run: |
+          python -m research feed --higher "$RUNNER_TEMP/higher.json" --output "$RUNNER_TEMP/feed.json"
+          python - <<'PY'
+          import json, os
+          a = json.load(open("docs/feed.json")); b = json.load(open(os.environ["RUNNER_TEMP"] + "/feed.json"))
+          strip = lambda f: [{k: v for k, v in i.items() if k != "date"} for i in f["items"]]
+          assert strip(a) == strip(b), "docs/feed.json is stale: run python -m research higher --max-vertices 12 --output docs/higher.json && python -m research feed"
+          PY
       - name: Publish research journal to job summary
         run: cat research/results/run-*/journal.md >> "$GITHUB_STEP_SUMMARY"

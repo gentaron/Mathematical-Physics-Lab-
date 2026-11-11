@@ -1,0 +1,185 @@
+{
+  "schema": "gentaron.feed/1",
+  "repo": "Mathematical-Physics-Lab-",
+  "generatedAt": "2026-11-11T23:04:36Z",
+  "items": [
+    {
+      "id": "cosmohedron-n3",
+      "title": "コスモヘドロン（3頂点・0次元）の面の数 [1]",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全 Matryoshka の列挙と独立した漸化式が一致し、論文の表とも一致",
+      "tags": [
+        "cosmohedron",
+        "positive-geometry",
+        "polytopes"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-n4",
+      "title": "コスモヘドロン（4頂点・1次元）の面の数 [1, 2]",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全 Matryoshka の列挙と独立した漸化式が一致し、論文の表とも一致",
+      "tags": [
+        "cosmohedron",
+        "positive-geometry",
+        "polytopes"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-n5",
+      "title": "コスモヘドロン（5頂点・2次元）の面の数 [1, 10, 10]",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全 Matryoshka の列挙と独立した漸化式が一致し、論文の表とも一致",
+      "tags": [
+        "cosmohedron",
+        "positive-geometry",
+        "polytopes"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-n6",
+      "title": "コスモヘドロン（6頂点・3次元）の面の数 [1, 44, 114, 72]",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全 Matryoshka の列挙と独立した漸化式が一致し、論文の表とも一致",
+      "tags": [
+        "cosmohedron",
+        "positive-geometry",
+        "polytopes"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "amplitude-n3",
+      "title": "平面三次スカラー振幅（3点・三角形分割 1 個）の留数と因子化",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全チャネルの留数が因子化と一致",
+      "tags": [
+        "scattering-amplitudes",
+        "positive-geometry"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "amplitude-n4",
+      "title": "平面三次スカラー振幅（4点・三角形分割 2 個）の留数と因子化",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全チャネルの留数が因子化と一致",
+      "tags": [
+        "scattering-amplitudes",
+        "positive-geometry"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "amplitude-n5",
+      "title": "平面三次スカラー振幅（5点・三角形分割 5 個）の留数と因子化",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全チャネルの留数が因子化と一致",
+      "tags": [
+        "scattering-amplitudes",
+        "positive-geometry"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "amplitude-n6",
+      "title": "平面三次スカラー振幅（6点・三角形分割 14 個）の留数と因子化",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/latest.json",
+      "date": "2026-10-12",
+      "kind": "research",
+      "summary": "全チャネルの留数が因子化と一致",
+      "tags": [
+        "scattering-amplitudes",
+        "positive-geometry"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-higher-n8",
+      "title": "論文の表の先: 8頂点・5次元コスモヘドロンの面の数",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/higher.json",
+      "date": "2026-11-11",
+      "kind": "research",
+      "summary": "頂点 6704、余次元ごと [1, 902, 7116, 18040, 18528, 6704]。解き方を共有しない2つの数え方が一致し、オイラー＝ポアンカレ関係も成立。論文に参照値は無いので、独立計算による値",
+      "tags": [
+        "cosmohedron",
+        "polytopes",
+        "higher-dimension"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-higher-n9",
+      "title": "論文の表の先: 9頂点・6次元コスモヘドロンの面の数",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/higher.json",
+      "date": "2026-11-11",
+      "kind": "research",
+      "summary": "頂点 78408、余次元ごと [1, 4278, 50550, 194616, 332664, 262728, 78408]。解き方を共有しない2つの数え方が一致し、オイラー＝ポアンカレ関係も成立。論文に参照値は無いので、独立計算による値",
+      "tags": [
+        "cosmohedron",
+        "polytopes",
+        "higher-dimension"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-higher-n10",
+      "title": "論文の表の先: 10頂点・7次元コスモヘドロンの面の数",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/higher.json",
+      "date": "2026-11-11",
+      "kind": "research",
+      "summary": "頂点 1008480、余次元ごと [1, 20792, 349670, 1904800, 4795520, 6178920, 3967800, 1008480]。解き方を共有しない2つの数え方が一致し、オイラー＝ポアンカレ関係も成立。論文に参照値は無いので、独立計算による値",
+      "tags": [
+        "cosmohedron",
+        "polytopes",
+        "higher-dimension"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-higher-n11",
+      "title": "論文の表の先: 11頂点・8次元コスモヘドロンの面の数",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/higher.json",
+      "date": "2026-11-11",
+      "kind": "research",
+      "summary": "頂点 14065744、余次元ごと [1, 103048, 2383172, 17558464, 60841924, 113395656, 117265632, 63499304, 14065744]。解き方を共有しない2つの数え方が一致し、オイラー＝ポアンカレ関係も成立。論文に参照値は無いので、独立計算による値",
+      "tags": [
+        "cosmohedron",
+        "polytopes",
+        "higher-dimension"
+      ],
+      "evidence": "verified"
+    },
+    {
+      "id": "cosmohedron-higher-n12",
+      "title": "論文の表の先: 12頂点・9次元コスモヘドロンの面の数",
+      "url": "https://github.com/gentaron/Mathematical-Physics-Lab-/blob/HEAD/docs/higher.json",
+      "date": "2026-11-11",
+      "kind": "research",
+      "summary": "頂点 210682080、余次元ごと [1, 518858, 16106272, 155578056, 710633608, 1792650712, 2649477408, 2289330592, 1072543008, 210682080]。解き方を共有しない2つの数え方が一致し、オイラー＝ポアンカレ関係も成立。論文に参照値は無いので、独立計算による値",
+      "tags": [
+        "cosmohedron",
+        "polytopes",
+        "higher-dimension"
+      ],
+      "evidence": "verified"
+    }
+  ]
+}

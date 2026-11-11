@@ -11,3 +11,4 @@ dist/
 .lake/
 .superpowers/
 research/results/run-*/
+research/papers/leads.json

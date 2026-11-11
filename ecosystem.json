@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/gentaron/infocollect/HEAD/ecosystem/schema.json",
+  "schema": 1,
+  "name": "Mathematical-Physics-Lab-",
+  "group": "data",
+  "groupLabel": "データと研究",
+  "status": "active",
+  "role": "無料の OSS で数理物理の構造を探索し、計算で候補を検証する研究ラボ",
+  "stack": "Python",
+  "feed": "https://raw.githubusercontent.com/gentaron/Mathematical-Physics-Lab-/HEAD/docs/feed.json",
+  "produces": [
+    "research"
+  ],
+  "consumes": [
+    "kb"
+  ],
+  "upstream": [
+    {
+      "repo": "infocollect",
+      "flows": [
+        "kb"
+      ],
+      "url": "https://github.com/gentaron/infocollect"
+    }
+  ],
+  "downstream": [
+    {
+      "repo": "VAIZ",
+      "flows": [
+        "research"
+      ],
+      "url": "https://github.com/gentaron/VAIZ"
+    }
+  ],
+  "siblings": [
+    "QAIZ",
+    "hazerader"
+  ],
+  "hub": {
+    "repo": "https://github.com/gentaron/infocollect",
+    "map": "https://github.com/gentaron/infocollect/blob/HEAD/ecosystem/README.md",
+    "kb": "https://raw.githubusercontent.com/gentaron/infocollect/HEAD/docs/kb",
+    "mcp": [
+      "infocollect-kb",
+      "forge"
+    ]
+  }
+}
