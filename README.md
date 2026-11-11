@@ -123,3 +123,16 @@ python -m research run --max-vertices 6 --ollama-model YOUR_LOCAL_MODEL
 - [実装計画](docs/superpowers/plans/2026-10-12-math-lab.md)
 
 実装コードはMITライセンス。論文の本文や外部研究コードは同梱していません。
+
+<!-- ecosystem:begin (自動生成: gentaron/infocollect の ecosystem/registry.json から。手で直さない) -->
+
+## つながり
+
+gentaron のリポジトリ群のうち **データと研究** の一つ。無料の OSS で数理物理の構造を探索し、計算で候補を検証する研究ラボ。
+
+- **受け取る**: [infocollect](https://github.com/gentaron/infocollect)（ナレッジベース）
+- **同じ島**: [QAIZ](https://github.com/gentaron/QAIZ)、[hazerader](https://github.com/gentaron/hazerader)
+
+全体の地図 → [ecosystem](https://github.com/gentaron/infocollect/blob/HEAD/ecosystem/README.md)
+
+<!-- ecosystem:end -->
