@@ -7,6 +7,7 @@
   "status": "active",
   "role": "無料の OSS で数理物理の構造を探索し、計算で候補を検証する研究ラボ",
   "stack": "Python",
+  "feed": "https://raw.githubusercontent.com/gentaron/Mathematical-Physics-Lab-/HEAD/docs/feed.json",
   "produces": [
     "research"
   ],
@@ -22,7 +23,15 @@
       "url": "https://github.com/gentaron/infocollect"
     }
   ],
-  "downstream": [],
+  "downstream": [
+    {
+      "repo": "VAIZ",
+      "flows": [
+        "research"
+      ],
+      "url": "https://github.com/gentaron/VAIZ"
+    }
+  ],
   "siblings": [
     "QAIZ",
     "hazerader"

@@ -1,0 +1,261 @@
+{
+  "source": "research/positive_geometry/higher.py",
+  "methods": [
+    "walk",
+    "transfer"
+  ],
+  "check": "methods agree, Euler-Poincare = 1, paper table for n <= 7",
+  "all_passed": true,
+  "rows": [
+    {
+      "polygon_vertices": 3,
+      "polytope_dimension": 0,
+      "codimension_vector": [
+        1
+      ],
+      "f_vector": [
+        1
+      ],
+      "vertices_of_polytope": 1,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": true,
+      "beyond_reference": false
+    },
+    {
+      "polygon_vertices": 4,
+      "polytope_dimension": 1,
+      "codimension_vector": [
+        1,
+        2
+      ],
+      "f_vector": [
+        2,
+        1
+      ],
+      "vertices_of_polytope": 2,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": true,
+      "beyond_reference": false
+    },
+    {
+      "polygon_vertices": 5,
+      "polytope_dimension": 2,
+      "codimension_vector": [
+        1,
+        10,
+        10
+      ],
+      "f_vector": [
+        10,
+        10,
+        1
+      ],
+      "vertices_of_polytope": 10,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": true,
+      "beyond_reference": false
+    },
+    {
+      "polygon_vertices": 6,
+      "polytope_dimension": 3,
+      "codimension_vector": [
+        1,
+        44,
+        114,
+        72
+      ],
+      "f_vector": [
+        72,
+        114,
+        44,
+        1
+      ],
+      "vertices_of_polytope": 72,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": true,
+      "beyond_reference": false
+    },
+    {
+      "polygon_vertices": 7,
+      "polytope_dimension": 4,
+      "codimension_vector": [
+        1,
+        196,
+        952,
+        1400,
+        644
+      ],
+      "f_vector": [
+        644,
+        1400,
+        952,
+        196,
+        1
+      ],
+      "vertices_of_polytope": 644,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": true,
+      "beyond_reference": false
+    },
+    {
+      "polygon_vertices": 8,
+      "polytope_dimension": 5,
+      "codimension_vector": [
+        1,
+        902,
+        7116,
+        18040,
+        18528,
+        6704
+      ],
+      "f_vector": [
+        6704,
+        18528,
+        18040,
+        7116,
+        902,
+        1
+      ],
+      "vertices_of_polytope": 6704,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": null,
+      "beyond_reference": true
+    },
+    {
+      "polygon_vertices": 9,
+      "polytope_dimension": 6,
+      "codimension_vector": [
+        1,
+        4278,
+        50550,
+        194616,
+        332664,
+        262728,
+        78408
+      ],
+      "f_vector": [
+        78408,
+        262728,
+        332664,
+        194616,
+        50550,
+        4278,
+        1
+      ],
+      "vertices_of_polytope": 78408,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": null,
+      "beyond_reference": true
+    },
+    {
+      "polygon_vertices": 10,
+      "polytope_dimension": 7,
+      "codimension_vector": [
+        1,
+        20792,
+        349670,
+        1904800,
+        4795520,
+        6178920,
+        3967800,
+        1008480
+      ],
+      "f_vector": [
+        1008480,
+        3967800,
+        6178920,
+        4795520,
+        1904800,
+        349670,
+        20792,
+        1
+      ],
+      "vertices_of_polytope": 1008480,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": null,
+      "beyond_reference": true
+    },
+    {
+      "polygon_vertices": 11,
+      "polytope_dimension": 8,
+      "codimension_vector": [
+        1,
+        103048,
+        2383172,
+        17558464,
+        60841924,
+        113395656,
+        117265632,
+        63499304,
+        14065744
+      ],
+      "f_vector": [
+        14065744,
+        63499304,
+        117265632,
+        113395656,
+        60841924,
+        17558464,
+        2383172,
+        103048,
+        1
+      ],
+      "vertices_of_polytope": 14065744,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": null,
+      "beyond_reference": true
+    },
+    {
+      "polygon_vertices": 12,
+      "polytope_dimension": 9,
+      "codimension_vector": [
+        1,
+        518858,
+        16106272,
+        155578056,
+        710633608,
+        1792650712,
+        2649477408,
+        2289330592,
+        1072543008,
+        210682080
+      ],
+      "f_vector": [
+        210682080,
+        1072543008,
+        2289330592,
+        2649477408,
+        1792650712,
+        710633608,
+        155578056,
+        16106272,
+        518858,
+        1
+      ],
+      "vertices_of_polytope": 210682080,
+      "methods_agree": true,
+      "euler_characteristic": 1,
+      "euler_ok": true,
+      "reference_matches": null,
+      "beyond_reference": true
+    }
+  ]
+}

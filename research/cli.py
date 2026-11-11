@@ -24,6 +24,8 @@ from .positive_geometry.cosmohedron import (
     REFERENCE_VECTORS, codimension_vector, face_lattice, recurrence_vector,
 )
 from .presentation import export_site, render_homepage
+from .positive_geometry.higher import MAX_VERTICES, all_passed, higher_dimensions
+from .network import collect_leads, write_feed
 
 
 def _write_json(path: Path, value: object) -> None:
@@ -140,6 +142,16 @@ def main(argv: list[str] | None = None) -> int:
     site.add_argument("--run", type=Path, default=Path("research/results/reference/run.json"))
     site.add_argument("--output", type=Path, default=Path("docs"))
     commands.add_parser("doctor", help="Read-only required/optional tool inventory")
+    higher = commands.add_parser("higher", help="Face counts beyond the paper's table, two independent methods")
+    higher.add_argument("--max-vertices", type=int, choices=range(3, MAX_VERTICES + 1), default=11)
+    higher.add_argument("--output", type=Path, help="Also write the rows as JSON (e.g. docs/higher.json)")
+    feed = commands.add_parser("feed", help="Write docs/feed.json for the gentaron network (gentaron.feed/1)")
+    feed.add_argument("--latest", type=Path, default=Path("docs/latest.json"))
+    feed.add_argument("--higher", type=Path, default=Path("docs/higher.json"))
+    feed.add_argument("--output", type=Path, default=Path("docs/feed.json"))
+    leads = commands.add_parser("leads", help="Papers from the hub knowledge base that touch this lab's subjects")
+    leads.add_argument("--sources", type=Path, default=Path("research/papers/sources.json"))
+    leads.add_argument("--output", type=Path, default=Path("research/papers/leads.json"))
     args = parser.parse_args(argv)
     try:
         if args.command == "run":
@@ -158,6 +170,23 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "site":
             print(f"Homepage: {export_site(args.run, args.output)}")
+            return 0
+        if args.command == "higher":
+            rows = higher_dimensions(args.max_vertices)
+            report = {"source": "research/positive_geometry/higher.py", "methods": ["walk", "transfer"],
+                      "check": "methods agree, Euler-Poincare = 1, paper table for n <= 7",
+                      "all_passed": all_passed(rows), "rows": rows}
+            if args.output:
+                args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(json.dumps(report, ensure_ascii=False, indent=2))
+            return 0 if report["all_passed"] else 1
+        if args.command == "feed":
+            rows = json.loads(args.higher.read_text(encoding="utf-8"))["rows"] if args.higher.exists() else []
+            print(f"Feed: {write_feed(args.latest, rows, args.output)}")
+            return 0
+        if args.command == "leads":
+            result = collect_leads(args.sources, args.output)
+            print(f"Leads: {len(result['leads'])} ({result['status']}, scanned {result['scanned']}) -> {args.output}")
             return 0
         if args.command == "doctor":
             print(json.dumps({"required": {"sympy": sp.__version__},

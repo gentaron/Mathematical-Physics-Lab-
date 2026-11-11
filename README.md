@@ -52,6 +52,26 @@ python -m research verify --candidate research/conjectures/example.json --ledger
 `verify` の終了コードは一致=0、反例=1、入力エラー=2。
 反例を見つけること自体は研究成果であり、`run` は再現検証が通れば正常終了します。
 
+## 高次元へ: 論文の表の先（5〜9次元）
+
+論文の表は7頂点（4次元）で終わる。`python -m research higher` は 12 頂点（9次元）まで、
+**解き方を共有しない2つの数え方**（全分割を歩く／境界の合成で数える）で面の数を出し、
+両者の一致・オイラー＝ポアンカレ関係（Σ(−1)^k f_k = 1）・7頂点までの論文値をすべて確かめたときだけ合格にする。
+結果は `docs/higher.json`。
+
+| 頂点 | 次元 | 頂点の数 | 余次元1（ファセット） |
+| --- | --- | --- | --- |
+| 8 | 5 | 6,704 | 902 |
+| 9 | 6 | 78,408 | 4,278 |
+| 10 | 7 | 1,008,480 | 20,792 |
+| 11 | 8 | 14,065,744 | 103,048 |
+| 12 | 9 | 210,682,080 | 518,858 |
+
+## ネットワーク
+
+- **出す**: `python -m research feed` が `docs/feed.json`（gentaron.feed/1）を書く。ハブのナレッジベースが毎日取り込むので、ほかのリポジトリから `kb_search` で引ける。失敗した検査は `draft` として出し、`verified` と偽らない
+- **受け取る**: `python -m research leads` がハブのナレッジベース（arXiv math-ph / hep-th を含む）から、この研究の主題に触れた論文を拾って `research/papers/leads.json` に書く。**手がかりであって根拠ではない**。ここで再現してから `sources.json` に入れる
+
 ## 実装済みの研究
 
 | 実験 | 計算と検証 | 範囲 |
@@ -131,6 +151,7 @@ python -m research run --max-vertices 6 --ollama-model YOUR_LOCAL_MODEL
 gentaron のリポジトリ群のうち **データと研究** の一つ。無料の OSS で数理物理の構造を探索し、計算で候補を検証する研究ラボ。
 
 - **受け取る**: [infocollect](https://github.com/gentaron/infocollect)（ナレッジベース）
+- **渡す**: [VAIZ](https://github.com/gentaron/VAIZ)（研究ノート）
 - **同じ島**: [QAIZ](https://github.com/gentaron/QAIZ)、[hazerader](https://github.com/gentaron/hazerader)
 
 全体の地図 → [ecosystem](https://github.com/gentaron/infocollect/blob/HEAD/ecosystem/README.md)
