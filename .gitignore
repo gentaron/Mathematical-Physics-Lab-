@@ -12,3 +12,8 @@ dist/
 .superpowers/
 research/results/run-*/
 research/papers/leads.json
+
+# secrets
+.env
+.env.*
+!.env.example
