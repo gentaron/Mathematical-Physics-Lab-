@@ -141,6 +141,8 @@ def main(argv: list[str] | None = None) -> int:
     site = commands.add_parser("site", help="Export a selected result as a plain static research homepage")
     site.add_argument("--run", type=Path, default=Path("research/results/reference/run.json"))
     site.add_argument("--output", type=Path, default=Path("docs"))
+    coords = commands.add_parser("coordinates", help="Exact rational 5-point cosmohedron decagon and canonical 2-form")
+    coords.add_argument("--output", type=Path, default=Path("research/results/cosmohedron-5-coordinates.json"))
     commands.add_parser("doctor", help="Read-only required/optional tool inventory")
     higher = commands.add_parser("higher", help="Face counts beyond the paper's table, two independent methods")
     higher.add_argument("--max-vertices", type=int, choices=range(3, MAX_VERTICES + 1), default=11)
@@ -187,6 +189,10 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "leads":
             result = collect_leads(args.sources, args.output)
             print(f"Leads: {len(result['leads'])} ({result['status']}, scanned {result['scanned']}) -> {args.output}")
+            return 0
+        if args.command == "coordinates":
+            from .positive_geometry.coordinates import export_json
+            print(f"Exact coordinate output: {export_json(args.output)}")
             return 0
         if args.command == "doctor":
             print(json.dumps({"required": {"sympy": sp.__version__},
