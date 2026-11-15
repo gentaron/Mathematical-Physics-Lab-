@@ -52,6 +52,16 @@ python -m research verify --candidate research/conjectures/example.json --ledger
 `verify` の終了コードは一致=0、反例=1、入力エラー=2。
 反例を見つけること自体は研究成果であり、`run` は再現検証が通れば正常終了します。
 
+## 5点Cosmohedronの厳密な座標とcanonical 2-form
+
+5点のCosmohedronの**組合せ型**を、五角形の全頂点を切った有理数座標の凸十角形として実現する計算を追加しました。10本の辺には非交差対角線集合を対応させ、すべての支持半空間が厳密な有理数で成立することを確認します。さらに、この**選んだ凸十角形**のcanonical logarithmic 2-formを記号式として計算し、10辺での極の存在とスケーリング不変性を確認します。
+
+```bash
+python -m research coordinates --output research/results/cosmohedron-5-coordinates.json
+```
+
+この計算は実際の凸多面体と微分形式の厳密計算です。ただし、**論文固有の宇宙論的座標・運動学や、その波動関数のcanonical formを求めたわけではありません**。計算対象と主張の境界は [厳密座標実験の説明](docs/exact-coordinates.md) に記録しています。
+
 ## 高次元へ: 論文の表の先（5〜9次元）
 
 論文の表は7頂点（4次元）で終わる。`python -m research higher` は 12 頂点（9次元）まで、
