@@ -35,6 +35,16 @@ jobs:
         run: python -m pip install -e '.[dev]'
       - name: Run reproduction and regression tests
         run: python -m pytest -q
+      - name: Audit reference research evidence ledger (if records exist)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from research.ledger_audit import audit_directory
+          for folder in Path('research/results/reference').rglob('ledger'):
+              outcome = audit_directory(folder)
+              if not outcome['ok']:
+                  raise SystemExit(f'{folder}: {outcome["errors"]}')
+          PY
       - name: Run bounded research experiment
         env:
           MAX_VERTICES: ${{ inputs.max_vertices || '6' }}
