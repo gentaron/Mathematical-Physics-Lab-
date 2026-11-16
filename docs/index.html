@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="数理物理の研究記録。多角形の入れ子、散乱振幅、仮説と反例を、検証した結果から読み解く。">
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <meta name="theme-color" content="#101d35" />
   <title>Mathematical Physics Lab — 研究の記録</title>
   <style>
 * { box-sizing: border-box; }
@@ -140,5 +144,10 @@ footer { text-align: center; margin-top: 2rem; }
   </main>
   <hr>
   <footer>Mathematical Physics Lab · Gentaro<br>考えたことを、確かめられる形で。</footer>
-</body>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./install-worker.js').catch(console.error);
+    }
+  </script>
+  </body>
 </html>
