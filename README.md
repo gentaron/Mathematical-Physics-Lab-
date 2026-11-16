@@ -167,3 +167,14 @@ gentaron のリポジトリ群のうち **データと研究** の一つ。無�
 全体の地図 → [ecosystem](https://github.com/gentaron/infocollect/blob/HEAD/ecosystem/README.md)
 
 <!-- ecosystem:end -->
+
+
+### Hyperfleet無料研究監査（記録の改ざん検出）
+
+研究台帳のレコード単位ハッシュ、状態、記録時刻、コード指紋を**オフライン**で再照合します。
+
+```bash
+python -m research.ledger_audit_cli research/results/<run-id>/ledger
+```
+
+これは数学的証明、論文の新規性、外部データの真正性を保証するものではありません。実行時に有料APIやモデルを呼び出さず、研究ラボ自身のCIで検査します。OpenCodeの司令塔には研究コードを置きません。
