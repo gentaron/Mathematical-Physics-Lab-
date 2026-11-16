@@ -10,7 +10,7 @@ requires-python = ">=3.12"
 dependencies = ["sympy==1.14.0"]
 
 [project.optional-dependencies]
-dev = ["pytest==8.4.2"]
+dev = ["pytest==8.4.2", "hypothesis==6.170.15"]
 
 [project.scripts]
 math-lab = "research.cli:main"
