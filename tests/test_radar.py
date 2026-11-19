@@ -277,3 +277,15 @@ def test_shipped_config_is_valid_and_https_only():
     assert all(s["url"].startswith("https://") for s in config["sources"])
     assert {"prizes", "math-ai", "number-theory", "hep-gravity"} <= set(config["topics"])
     assert radar_main(["validate", "--config", str(CONFIG_PATH)]) == 0
+
+
+def test_radar_static_page_keeps_lab_pwa_icons(tmp_path):
+    """A radar refresh must not drop the existing favicon or PWA metadata."""
+    _, out = run_small(tmp_path)
+    page = (out / "index.html").read_text(encoding="utf-8")
+    assert '<link rel="icon" href="../icons/favicon.ico"' in page
+    assert '<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">' in page
+    assert '<link rel="manifest" href="../manifest.webmanifest">' in page
+    assert Path("docs/icons/favicon.ico").is_file()
+    assert Path("docs/icons/icon-192.png").is_file()
+    assert Path("docs/icons/icon-512.png").is_file()
