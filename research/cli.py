@@ -127,8 +127,13 @@ def run_experiments(max_vertices: int, output: Path, model: str | None = None) -
 
 
 def main(argv: list[str] | None = None) -> int:
+    argv = sys.argv[1:] if argv is None else argv
+    if argv[:1] == ["radar"]:  # frontier feed searcher: standard library only, see research/radar
+        from .radar.__main__ import main as radar_main
+        return radar_main(argv[1:])
     parser = argparse.ArgumentParser(description="Free exact mathematical-physics research experiments")
     commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("radar", help="Frontier research radar: fetch / rebuild / search / validate (see research/radar)")
     run = commands.add_parser("run", help="Reproduce geometry, residues, bootstrap seed and finite hypotheses")
     run.add_argument("--max-vertices", type=int, choices=range(3, 8), default=6)
     run.add_argument("--output", type=Path, default=Path("research/results"))

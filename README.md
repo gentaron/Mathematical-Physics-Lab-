@@ -77,6 +77,35 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
 | 11 | 8 | 14,065,744 | 103,048 |
 | 12 | 9 | 210,682,080 | 518,858 |
 
+## 最先端レーダー（数学・数学×AI・基礎物理の検索型RSS）
+
+`docs/radar/`（公開先 `https://cosmolab.qd.je/radar/`）に、数学・数学のためのAI・基礎物理学の
+**最先端だけ**を集めて順位づけする検索ページとRSSを置いています。GitHub Actions が6時間ごとに更新します。
+
+- **情報源（27）**: Physical Review Letters / PRX / Nature / Nature Physics / Science / Inventiones /
+  Publ. IHÉS / CMP、arXiv（数論・幾何・解析・組合せ・数理物理・重力・数学×AI）、Quanta、
+  Terence Tao・Gil Kalai・Kevin Buzzard（Lean）・n-Category Café などのブログ、CERN、
+  DeepMind、フィールズ賞・アーベル賞・ブレイクスルー賞・ショウ賞・ノーベル物理学賞などの受賞報道。
+  一覧は [`research/radar/sources.json`](research/radar/sources.json) と `docs/radar/sources.opml`。
+- **順位**: 情報源の格 + 分野の一致 + 重要語（「〜の証明」「反例」「長年の未解決問題」など） +
+  注目研究者 + 複数媒体での報道を、半減期10日で新しさに応じて減衰。各項目の理由は `why` に残ります。
+  arXiv の改訂版や訂正記事は落とし、分野に当たらない投稿は載せません。
+- **検索**: `langlands`、`"quantum gravity"`、`au:tao`、`topic:math-ai`、`tier:1`、`since:7d`、`-survey`。
+- **購読**: `docs/radar/feed.xml`（全体）と `feed-<分野>.xml`（8分野）。
+
+```bash
+python -m research radar validate                       # 情報源の設定を検査
+python -m research radar fetch --out docs/radar --site  # 取得・順位づけ・書き出し
+python -m research radar search "langlands since:30d" --data docs/radar/radar.json
+python -m research radar rebuild --out docs/radar --site  # 設定変更後の再採点（通信なし）
+```
+
+**安全設計**（標準ライブラリだけ・追加の依存なし）: HTTPS のみ・TLS 1.2 以上・許可したホストだけ
+（リダイレクト先も毎回検査）、応答と展開後のサイズ上限、XML の実体宣言を拒否（XML爆弾・XXE対策）、
+HTML は平文に変換、双方向制御文字やゼロ幅文字を除去、`javascript:` などのリンクを破棄、
+ページは厳格な CSP と `textContent` だけで描画、ワークフローは最小権限で `docs/radar/` 以外を公開しない。
+集めた表題・要旨は `"trust": "untrusted-external-text"` と明記し、下流の AI が命令として読まないようにしています。
+
 ## ネットワーク
 
 - **出す**: `python -m research feed` が `docs/feed.json`（gentaron.feed/1）を書く。ハブのナレッジベースが毎日取り込むので、ほかのリポジトリから `kb_search` で引ける。失敗した検査は `draft` として出し、`verified` と偽らない
