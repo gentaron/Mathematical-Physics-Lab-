@@ -1023,6 +1023,10 @@ def render_page(config: dict, radar: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="{csp}">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../icons/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#101d35">
 <title>{_e(radar["title"])}</title>
 <meta name="description" content="{_e(radar["description"])}">
 <meta name="robots" content="index, follow, max-snippet:-1">
