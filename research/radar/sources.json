@@ -1,0 +1,665 @@
+{
+ "schema": "deeptech.radar.config/1",
+ "id": "math-physics-radar",
+ "title": "Mathematical Physics Lab — Frontier Radar",
+ "description": "数学・数学のためのAI・基礎物理学の最先端だけを、最上位の学術誌・arXiv・一流研究者のブログ・主要な賞の報道から集めて順位づけする検索型RSSリーダー。",
+ "kicker": "Mathematics · AI for Math · Fundamental Physics",
+ "lang": "ja",
+ "site_url": "https://cosmolab.qd.je",
+ "public_path": "radar",
+ "repo_url": "https://github.com/gentaron/Mathematical-Physics-Lab-",
+ "limits": {
+  "half_life_days": 10,
+  "retention_days": 180,
+  "archive_max": 2500,
+  "feed_max": 120,
+  "topic_feed_max": 60,
+  "min_score": 3.0,
+  "page_max": 80
+ },
+ "host_delay_seconds": {
+  "rss.arxiv.org": 3,
+  "news.google.com": 2,
+  "feeds.aps.org": 1,
+  "www.nature.com": 1
+ },
+ "topics": {
+  "prizes": {
+   "label": "賞・受賞",
+   "label_en": "Prizes",
+   "keywords": [
+    "Fields Medal",
+    "Fields medalist",
+    "Abel Prize",
+    "Breakthrough Prize",
+    "New Horizons Prize",
+    "Shaw Prize",
+    "Wolf Prize",
+    "Nobel Prize in Physics",
+    "Nobel laureate",
+    "Dirac Medal",
+    "Crafoord Prize",
+    "Chern Medal",
+    "Gauss Prize",
+    "Clay Research Award",
+    "Salem Prize",
+    "SASTRA Ramanujan",
+    "Ostrowski Prize",
+    "Kyoto Prize",
+    "Heineman Prize",
+    "Sakurai Prize",
+    "Steele Prize",
+    "Cole Prize",
+    "Veblen Prize",
+    "Bôcher Prize",
+    "Rolf Schock Prize",
+    "Maryam Mirzakhani New Frontiers",
+    "フィールズ賞",
+    "アーベル賞",
+    "ノーベル物理学賞"
+   ]
+  },
+  "number-theory": {
+   "label": "数論・ラングランズ",
+   "label_en": "Number theory & Langlands",
+   "keywords": [
+    "Langlands",
+    "geometric Langlands",
+    "automorphic",
+    "Galois representation",
+    "Shimura variety",
+    "modularity",
+    "perfectoid",
+    "prismatic",
+    "condensed mathematics",
+    "Riemann hypothesis",
+    "L-function",
+    "zeta function",
+    "abc conjecture",
+    "Birch and Swinnerton-Dyer",
+    "elliptic curve",
+    "twin prime",
+    "prime gaps",
+    "Goldbach",
+    "Iwasawa theory",
+    "p-adic",
+    "arithmetic geometry",
+    "Diophantine"
+   ]
+  },
+  "geometry-topology": {
+   "label": "幾何・トポロジー",
+   "label_en": "Geometry & topology",
+   "keywords": [
+    "Hodge conjecture",
+    "mirror symmetry",
+    "Calabi-Yau",
+    "Gromov-Witten",
+    "Floer homology",
+    "symplectic",
+    "4-manifold",
+    "Ricci flow",
+    "minimal surface",
+    "sphere packing",
+    "knot invariant",
+    "moduli space",
+    "derived category",
+    "Bridgeland stability",
+    "motives",
+    "motivic",
+    "homotopy theory",
+    "higher category",
+    "infinity-category",
+    "K-theory",
+    "Poincaré conjecture",
+    "exotic sphere",
+    "Kervaire invariant"
+   ]
+  },
+  "analysis-probability": {
+   "label": "解析・確率",
+   "label_en": "Analysis & probability",
+   "keywords": [
+    "Navier-Stokes",
+    "Euler equations",
+    "finite-time blow-up",
+    "singularity formation",
+    "Kakeya",
+    "restriction conjecture",
+    "harmonic analysis",
+    "dispersive equation",
+    "Yang-Mills existence",
+    "mass gap",
+    "random matrix",
+    "percolation",
+    "Schramm-Loewner",
+    "SLE",
+    "Liouville quantum gravity",
+    "Gaussian free field",
+    "spin glass",
+    "KPZ",
+    "Kardar-Parisi-Zhang",
+    "mean curvature flow",
+    "optimal transport",
+    "ergodic theory"
+   ]
+  },
+  "combinatorics": {
+   "label": "組合せ論・離散",
+   "label_en": "Combinatorics",
+   "keywords": [
+    "Ramsey number",
+    "sunflower conjecture",
+    "cap set",
+    "Kahn-Kalai",
+    "union-closed",
+    "chromatic number",
+    "graph minor",
+    "additive combinatorics",
+    "Szemerédi",
+    "polynomial method",
+    "matroid",
+    "Erdős",
+    "Erdos",
+    "hypergraph",
+    "Sidorenko",
+    "expander",
+    "discrete geometry",
+    "sensitivity conjecture",
+    "P versus NP",
+    "circuit lower bound"
+   ]
+  },
+  "math-ai": {
+   "label": "数学 × AI",
+   "label_en": "AI for mathematics",
+   "keywords": [
+    "Lean 4",
+    "Lean theorem prover",
+    "mathlib",
+    "formalization",
+    "formalized",
+    "formalised",
+    "autoformalization",
+    "theorem proving",
+    "automated theorem",
+    "interactive theorem",
+    "formal proof",
+    "formal verification of mathematics",
+    "proof assistant",
+    "AlphaProof",
+    "AlphaGeometry",
+    "AlphaEvolve",
+    "FunSearch",
+    "International Mathematical Olympiad",
+    "IMO gold",
+    "FrontierMath",
+    "mathematical reasoning",
+    "mathematical discovery",
+    "Isabelle",
+    "Coq",
+    "Rocq",
+    "AI mathematician",
+    "machine-assisted proof",
+    "Erdős problems"
+   ]
+  },
+  "hep-gravity": {
+   "label": "量子重力・高エネルギー",
+   "label_en": "Quantum gravity & HEP",
+   "keywords": [
+    "quantum gravity",
+    "string theory",
+    "holography",
+    "holographic",
+    "AdS/CFT",
+    "black hole information",
+    "Page curve",
+    "island formula",
+    "amplituhedron",
+    "scattering amplitude",
+    "positive geometry",
+    "cosmohedron",
+    "conformal bootstrap",
+    "swampland",
+    "celestial holography",
+    "de Sitter",
+    "quantum field theory",
+    "lattice QCD",
+    "Standard Model",
+    "beyond the Standard Model",
+    "Higgs",
+    "supersymmetry",
+    "muon g-2",
+    "neutrino mass",
+    "dark matter",
+    "dark energy",
+    "cosmic inflation",
+    "gravitational wave",
+    "LIGO",
+    "Hubble tension",
+    "DESI",
+    "cosmic microwave background",
+    "wavefunction of the universe",
+    "cosmological correlator",
+    "black hole"
+   ]
+  },
+  "math-physics": {
+   "label": "数理物理",
+   "label_en": "Mathematical physics",
+   "keywords": [
+    "topological quantum field theory",
+    "TQFT",
+    "vertex operator algebra",
+    "vertex algebra",
+    "integrable system",
+    "integrability",
+    "Seiberg-Witten",
+    "Donaldson invariant",
+    "Chern-Simons",
+    "factorization algebra",
+    "quantum group",
+    "conformal field theory",
+    "Bethe ansatz",
+    "Virasoro",
+    "moonshine",
+    "resurgence",
+    "generalized symmetries",
+    "higher-form symmetry",
+    "non-invertible symmetry",
+    "mathematical physics"
+   ]
+  }
+ },
+ "signals": {
+  "proof of the": 1.5,
+  "resolves the": 1.5,
+  "resolve the": 1.0,
+  "settles": 1.5,
+  "disproves": 2.0,
+  "disproof": 2.0,
+  "counterexample to": 2.0,
+  "breakthrough": 1.2,
+  "long-standing": 1.0,
+  "decades-old": 1.2,
+  "century-old": 1.5,
+  "conjecture": 0.6,
+  "open problem": 1.0,
+  "first proof": 1.5,
+  "landmark": 1.0,
+  "Millennium Prize": 2.0,
+  "Hilbert's": 1.2,
+  "Annals of Mathematics": 2.0,
+  "Inventiones": 1.0,
+  "Acta Mathematica": 1.5,
+  "Fields medalist": 1.5,
+  "Nobel": 0.8,
+  "discovery": 0.5,
+  "first detection": 1.5,
+  "first observation": 1.5,
+  "five-sigma": 1.5,
+  "5 sigma": 1.5,
+  "new particle": 1.5,
+  "solved": 0.8
+ },
+ "demote": {
+  "erratum": -4,
+  "corrigendum": -4,
+  "author correction": -4,
+  "publisher correction": -4,
+  "retraction note": -1,
+  "editorial expression of concern": -1,
+  "book review": -2,
+  "obituary": -1.5,
+  "lecture notes": -1.5,
+  "survey": -0.5,
+  "review of": -0.5,
+  "news & views": -0.5,
+  "podcast": -1.5,
+  "webinar": -2,
+  "sponsored": -3
+ },
+ "watch_authors": [
+  "Terence Tao",
+  "Peter Scholze",
+  "Dustin Clausen",
+  "Maryna Viazovska",
+  "June Huh",
+  "James Maynard",
+  "Hugo Duminil-Copin",
+  "Akshay Venkatesh",
+  "Manjul Bhargava",
+  "Jacob Lurie",
+  "Dennis Gaitsgory",
+  "Sam Raskin",
+  "Laurent Fargues",
+  "Vincent Lafforgue",
+  "Ana Caraiani",
+  "Kevin Buzzard",
+  "Bhargav Bhatt",
+  "Jacob Tsimerman",
+  "Jack Thorne",
+  "Hong Wang",
+  "Joshua Zahl",
+  "Yu Deng",
+  "Zaher Hani",
+  "Lisa Sauermann",
+  "Julian Sahasrabudhe",
+  "Mehtaab Sawhney",
+  "Ashwin Sah",
+  "Jinyoung Park",
+  "Kannan Soundararajan",
+  "Ngô Bảo Châu",
+  "Maxim Kontsevich",
+  "Martin Hairer",
+  "Alessio Figalli",
+  "Caucher Birkar",
+  "Avi Wigderson",
+  "Edward Witten",
+  "Juan Maldacena",
+  "Nima Arkani-Hamed",
+  "Netta Engelhardt",
+  "Geoffrey Penington",
+  "Ahmed Almheiri",
+  "Andrew Strominger",
+  "Cumrun Vafa",
+  "Hiraku Nakajima",
+  "Kenji Fukaya",
+  "Yuji Tachikawa",
+  "Hirosi Ooguri",
+  "Davide Gaiotto",
+  "Kevin Costello",
+  "Tadashi Takayanagi",
+  "Thomas Hales"
+ ],
+ "allow_hosts": [
+  "deepmind.google",
+  "feeds.aps.org",
+  "gilkalai.wordpress.com",
+  "golem.ph.utexas.edu",
+  "home.cern",
+  "link.springer.com",
+  "news.google.com",
+  "rss.arxiv.org",
+  "terrytao.wordpress.com",
+  "www.math.columbia.edu",
+  "www.nature.com",
+  "www.quantamagazine.org",
+  "www.science.org",
+  "xenaproject.wordpress.com"
+ ],
+ "sources": [
+  {
+   "id": "prl",
+   "name": "Physical Review Letters",
+   "url": "https://feeds.aps.org/rss/recent/prl.xml",
+   "tier": 1,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "prx",
+   "name": "Physical Review X",
+   "url": "https://feeds.aps.org/rss/recent/prx.xml",
+   "tier": 1,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "nature-physics",
+   "name": "Nature Physics",
+   "url": "https://www.nature.com/nphys.rss",
+   "tier": 1,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "nature",
+   "name": "Nature",
+   "url": "https://www.nature.com/nature.rss",
+   "tier": 1,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "science",
+   "name": "Science",
+   "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
+   "tier": 1,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "inventiones",
+   "name": "Inventiones Mathematicae",
+   "url": "https://link.springer.com/search.rss?facet-journal-id=222",
+   "tier": 1,
+   "topics": [
+    "number-theory",
+    "geometry-topology",
+    "analysis-probability"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "publ-ihes",
+   "name": "Publications mathématiques de l'IHÉS",
+   "url": "https://link.springer.com/search.rss?facet-journal-id=10240",
+   "tier": 1,
+   "topics": [
+    "number-theory",
+    "geometry-topology"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "cmp",
+   "name": "Communications in Mathematical Physics",
+   "url": "https://link.springer.com/search.rss?facet-journal-id=220",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "aps-physics",
+   "name": "APS Physics (Viewpoints)",
+   "url": "https://feeds.aps.org/rss/recent/physics.xml",
+   "tier": 2,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-arith-geom",
+   "name": "arXiv math.NT / AG / RT",
+   "url": "https://rss.arxiv.org/rss/math.NT+math.AG+math.RT",
+   "tier": 2,
+   "topics": [
+    "number-theory",
+    "geometry-topology"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-topology",
+   "name": "arXiv math.GT / AT / SG / DG",
+   "url": "https://rss.arxiv.org/rss/math.GT+math.AT+math.SG+math.DG",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-analysis",
+   "name": "arXiv math.AP / CA / PR / DS",
+   "url": "https://rss.arxiv.org/rss/math.AP+math.CA+math.PR+math.DS",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-combinatorics",
+   "name": "arXiv math.CO / LO / cs.CC / cs.DM",
+   "url": "https://rss.arxiv.org/rss/math.CO+math.LO+cs.CC+cs.DM",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-math-ph",
+   "name": "arXiv math-ph / hep-th",
+   "url": "https://rss.arxiv.org/rss/math-ph+hep-th",
+   "tier": 2,
+   "topics": [
+    "math-physics",
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-gravity",
+   "name": "arXiv gr-qc / astro-ph.CO / hep-ph",
+   "url": "https://rss.arxiv.org/rss/gr-qc+astro-ph.CO+hep-ph",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-ai-math",
+   "name": "arXiv cs.AI / cs.LG / cs.LO (AI for math)",
+   "url": "https://rss.arxiv.org/rss/cs.AI+cs.LG+cs.LO",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "quanta",
+   "name": "Quanta Magazine",
+   "url": "https://www.quantamagazine.org/feed/",
+   "tier": 2,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "tao",
+   "name": "Terence Tao — What's new",
+   "url": "https://terrytao.wordpress.com/feed/",
+   "tier": 1,
+   "topics": [
+    "analysis-probability",
+    "combinatorics",
+    "math-ai"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "kalai",
+   "name": "Gil Kalai — Combinatorics and more",
+   "url": "https://gilkalai.wordpress.com/feed/",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "xena",
+   "name": "Kevin Buzzard — Xena (Lean)",
+   "url": "https://xenaproject.wordpress.com/feed/",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "ncafe",
+   "name": "The n-Category Café",
+   "url": "https://golem.ph.utexas.edu/category/atom10.xml",
+   "tier": 2,
+   "topics": [
+    "geometry-topology",
+    "math-physics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "woit",
+   "name": "Peter Woit — Not Even Wrong",
+   "url": "https://www.math.columbia.edu/~woit/wordpress/?feed=rss2",
+   "tier": 3,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "deepmind",
+   "name": "Google DeepMind Blog",
+   "url": "https://deepmind.google/blog/rss.xml",
+   "tier": 2,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "cern",
+   "name": "CERN News",
+   "url": "https://home.cern/api/news/news/feed.rss",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-prizes",
+   "name": "News: math & physics prizes",
+   "url": "https://news.google.com/rss/search?q=%28%22Fields+Medal%22+OR+%22Abel+Prize%22+OR+%22Breakthrough+Prize%22+OR+%22New+Horizons+Prize%22+OR+%22Shaw+Prize%22+OR+%22Wolf+Prize%22+OR+%22Nobel+Prize+in+Physics%22+OR+%22Dirac+Medal%22+OR+%22Crafoord+Prize%22+OR+%22Chern+Medal%22+OR+%22Gauss+Prize%22+OR+%22Clay+Research+Award%22+OR+%22Salem+Prize%22+OR+%22SASTRA+Ramanujan%22+OR+%22Ostrowski+Prize%22+OR+%22Kyoto+Prize%22+OR+%22Heineman+Prize%22+OR+%22Sakurai+Prize%22%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 2,
+   "topics": [
+    "prizes"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-math",
+   "name": "News: mathematics breakthroughs",
+   "url": "https://news.google.com/rss/search?q=%28mathematician+OR+mathematicians%29+%28proof+OR+conjecture+OR+theorem%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "news-physics",
+   "name": "News: fundamental physics",
+   "url": "https://news.google.com/rss/search?q=%28%22quantum+gravity%22+OR+%22dark+matter%22+OR+%22string+theory%22+OR+%22gravitational+waves%22+OR+%22Standard+Model%22+OR+%22new+particle%22%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [],
+   "require_topic": true
+  }
+ ]
+}

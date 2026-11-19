@@ -1,0 +1,60 @@
+name: Frontier Radar (math · AI for math · physics)
+
+# Fetches the configured feeds (research/radar/sources.json), ranks them and
+# publishes docs/radar/ (search page, radar.json, RSS feeds, OPML).
+# Security: no third-party Python packages (standard library only), pinned
+# actions, read-only token except for the single commit step, generated files
+# only (the job refuses to push anything outside docs/radar/).
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: frontier-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    name: Fetch and publish the radar
+    if: github.repository == 'gentaron/Mathematical-Physics-Lab-' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write # commit the regenerated docs/radar/ files back to main
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate the source allowlist
+        run: |
+          python3 -c 'import sys; assert sys.version_info >= (3, 11), sys.version'
+          python3 -I -c 'import sys; sys.path.insert(0, "."); from research.radar.__main__ import main; raise SystemExit(main(["validate"]))'
+      - name: Fetch, rank and render (fail-soft per source)
+        run: python3 -I -c 'import sys; sys.path.insert(0, "."); from research.radar.__main__ import main; raise SystemExit(main(["fetch", "--out", "docs/radar", "--site"]))'
+      - name: Check the output before publishing
+        run: |
+          python3 -I - <<'PY'
+          import json, pathlib, xml.etree.ElementTree as ET
+          out = pathlib.Path("docs/radar")
+          data = json.loads((out / "radar.json").read_text(encoding="utf-8"))
+          assert data["schema"] == "deeptech.radar/1", data.get("schema")
+          assert all(i["url"].startswith(("https://", "http://")) for i in data["items"])
+          for feed in out.glob("*.xml"):
+              ET.fromstring(feed.read_bytes())
+          print(f"{len(data['items'])} items, sources {data['health']}")
+          PY
+      - name: Commit generated files only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add docs/radar
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          outside="$(git status --porcelain --untracked-files=all | grep -v '^.. docs/radar/' || true)"
+          if [ -n "$outside" ]; then echo "refusing to publish files outside docs/radar:"; echo "$outside"; exit 1; fi
+          git -c user.name='frontier-radar[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -q -m "radar: update docs/radar ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main

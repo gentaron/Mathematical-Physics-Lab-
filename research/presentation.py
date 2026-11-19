@@ -84,6 +84,8 @@ def render_homepage(report: dict, data_href: str = "run.json") -> str:
     rows = _geometry(report)
     if data_href not in ("run.json", "latest.json"):
         raise ValueError("Use a local report filename")
+    radar_link = ('\n      <li><a href="radar/">最先端レーダー（数学・AI・物理の最新情報）</a></li>'
+                  if data_href == "latest.json" else "")
     latest = rows[-1]
     n, dimension = latest["polygon_vertices"], latest["polytope_dimension"]
     vector = latest["codimension_vector"]
@@ -161,7 +163,7 @@ def render_homepage(report: dict, data_href: str = "run.json") -> str:
       <li><a href="#findings">今回わかったこと</a></li>
       <li><a href="#questions">次に調べたい問い</a></li>
       <li><a href="#evidence">数字と検証の記録</a></li>
-      <li><a href="#about">この研究所について</a></li>
+      <li><a href="#about">この研究所について</a></li>{radar_link}
     </ul>
   </nav>
   <main>
