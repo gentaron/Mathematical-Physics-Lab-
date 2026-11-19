@@ -22,7 +22,7 @@ jobs:
     name: Fetch and publish the radar
     if: github.repository == 'gentaron/Mathematical-Physics-Lab-' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 50
     permissions:
       contents: write # commit the regenerated docs/radar/ files back to main
     steps:

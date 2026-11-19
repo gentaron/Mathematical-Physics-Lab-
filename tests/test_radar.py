@@ -277,3 +277,88 @@ def test_shipped_config_is_valid_and_https_only():
     assert all(s["url"].startswith("https://") for s in config["sources"])
     assert {"prizes", "math-ai", "number-theory", "hep-gravity"} <= set(config["topics"])
     assert radar_main(["validate", "--config", str(CONFIG_PATH)]) == 0
+
+
+# --------------------------------------------------------------------------- v2: APIs, paging, archive shards
+
+BIORXIV_JSON = json.dumps({"messages": [{"status": "ok"}], "collection": [
+    {"title": "Prime editing of <i>HBB</i> in vivo", "authors": "Liu, D. R.; Doe, J.", "doi": "10.1101/2026.11.10.000001",
+     "date": "2026-11-12", "version": "2", "category": "genomics", "abstract": "We prove a long-standing Langlands conjecture.",
+     "server": "bioRxiv"},
+    {"title": "Bad doi", "doi": "javascript:alert(1)", "date": "2026-11-12"}, "not-a-dict"]}).encode()
+
+EPMC_JSON = json.dumps({"nextCursorMark": "AoJ1", "resultList": {"result": [
+    {"id": "123", "source": "MED", "doi": "10.1038/s41586-026-0001-1", "title": "Automorphic forms at scale",
+     "authorString": "Scholze P, Fargues L.", "journalTitle": "Nature", "firstPublicationDate": "2026-11-01",
+     "citedByCount": 250, "abstractText": "<h4>Abstract</h4>Langlands programme."},
+    {"id": "../../x", "source": "MED", "title": "No link at all", "firstPublicationDate": "2026-11-01"}]}}).encode()
+
+
+def test_json_apis_are_parsed_and_sanitised():
+    rows, count = engine.parse_biorxiv(BIORXIV_JSON)
+    assert count == 3 and len(rows) == 2
+    assert rows[0]["link"] == "https://www.biorxiv.org/content/10.1101/2026.11.10.000001v2"
+    assert rows[0]["authors"] == ["Liu, D. R.", "Doe, J."] and rows[1]["link"] == ""
+    epmc, cursor = engine.parse_europepmc(EPMC_JSON)
+    assert cursor == "AoJ1" and epmc[0]["cited_by"] == 250 and epmc[0]["venue"] == "Nature"
+    assert epmc[0]["link"] == "https://doi.org/10.1038/s41586-026-0001-1" and epmc[1]["link"] == ""
+    item = engine.normalise(epmc[0], {"id": "e", "url": "https://www.ebi.ac.uk/x", "tier": 2}, NOW)
+    assert item["summary"] == "Abstract Langlands programme." and item["key"] == "doi:10.1038/s41586-026-0001-1"
+    for bad in (b"[]", b"{", b'{"collection": 3}', b"\xff"):
+        with pytest.raises(engine.RadarError):
+            engine.parse_biorxiv(bad)
+    with pytest.raises(engine.RadarError):
+        engine.parse_europepmc(b'{"resultList": {}}')
+
+
+def test_url_templates_and_unknown_placeholders():
+    url = engine.expand_url("https://api.biorxiv.org/details/biorxiv/{since:3}/{today}/{cursor}?o={offset}", NOW, "a b/c", 400)
+    assert url == "https://api.biorxiv.org/details/biorxiv/2026-11-16/2026-11-19/a%20b%2Fc?o=400"
+    base = small_config()
+    with pytest.raises(engine.RadarError):
+        small_config(sources=[dict(base["sources"][0], url="https://rss.arxiv.org/{host}")])
+    with pytest.raises(engine.RadarError):
+        small_config(sources=[dict(base["sources"][0], max_pages=99)])
+    with pytest.raises(engine.RadarError):
+        small_config(sources=[dict(base["sources"][0], format="html")])
+
+
+def test_archive_is_sharded_by_month_and_reloaded(tmp_path):
+    config = small_config(limits={"min_score": 0, "index_max": 100})
+    old = dict(engine.normalise(engine.parse_feed(ARXIV_RSS)[0], {"id": "arxiv-nt", "url": "https://rss.arxiv.org/x", "tier": 2}, NOW),
+               date="2025-06-01T00:00:00Z", key="url:https://example.org/old", title="Langlands in 2025")
+    radar = engine.build(config, [old], {"items": []}, [], NOW)
+    out = tmp_path / "out"
+    engine.write_outputs(config, radar, out)
+    index = json.loads((out / "archive" / "index.json").read_text())
+    assert [m["file"] for m in index["months"]] == ["2025-06.json"]
+    (out / "archive" / "1999-01.json").write_text("{}")
+    archive = engine.load_archive(out / "radar.json")
+    assert [i["title"] for i in archive["items"]] == ["Langlands in 2025"]
+    engine.write_outputs(config, engine.build(config, [], archive, [], NOW), out)
+    assert not (out / "archive" / "1999-01.json").exists(), "stale shards are pruned"
+    found = engine.load_search(out / "radar.json")
+    assert len(found["items"]) == 1
+
+
+def test_corroboration_counts_publishers_not_feeds():
+    config = small_config(sources=small_config()["sources"] + [
+        {"id": "arxiv-nt2", "name": "arXiv math.AG", "url": "https://rss.arxiv.org/rss/math.AG", "tier": 2, "topics": ["nt"]}])
+    item = engine.normalise(engine.parse_feed(ARXIV_RSS)[0], {"id": "arxiv-nt", "url": "https://rss.arxiv.org/x", "tier": 2}, NOW)
+    twin = dict(item, sources=["arxiv-nt2"])
+    merged = engine.merge([item, twin])[0]
+    scored = engine.Scorer(config).score(merged)
+    assert not any("reported by" in w for w in scored["why"])
+    assert engine._detex(r"Erd\H{o}s") == "Erdos"
+
+
+def test_general_topics_count_for_less():
+    base = small_config()
+    topics = dict(base["topics"], general={"label": "全般", "weight": 0.3, "keywords": ["mathematics"]})
+    config = small_config(topics=topics)
+    raw = {"title": "Mathematics of everything", "link": "https://a.example/1", "date": "2026-11-18"}
+    item = engine.normalise(raw, {"id": "tao", "url": "https://terrytao.wordpress.com/feed/", "tier": 1}, NOW)
+    scored = engine.Scorer(config).score(item)
+    assert scored["topics"] == ["general"] and "topics general +0.3" in scored["why"]
+    with pytest.raises(engine.RadarError):
+        small_config(topics=dict(topics, general=dict(topics["general"], weight=9)))

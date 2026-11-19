@@ -2,26 +2,29 @@
  "schema": "deeptech.radar.config/1",
  "id": "math-physics-radar",
  "title": "Mathematical Physics Lab — Frontier Radar",
- "description": "数学・数学のためのAI・基礎物理学の最先端だけを、最上位の学術誌・arXiv・一流研究者のブログ・主要な賞の報道から集めて順位づけする検索型RSSリーダー。",
+ "description": "数学・数学のためのAI・基礎物理学の最先端を、arXiv の全数学分野と高エネルギー物理の新着、キーワード別に数年分さかのぼった arXiv 検索、最上位の学術誌、一流研究者のブログ、主要な賞の報道からまるごと集め、重要度で順位づけする検索型RSSリーダー。",
  "kicker": "Mathematics · AI for Math · Fundamental Physics",
  "lang": "ja",
  "site_url": "https://cosmolab.qd.je",
  "public_path": "radar",
  "repo_url": "https://github.com/gentaron/Mathematical-Physics-Lab-",
  "limits": {
-  "half_life_days": 10,
-  "retention_days": 180,
-  "archive_max": 2500,
-  "feed_max": 120,
-  "topic_feed_max": 60,
+  "half_life_days": 14,
+  "retention_days": 1095,
+  "archive_max": 400000,
+  "index_max": 3000,
+  "feed_max": 150,
+  "topic_feed_max": 80,
   "min_score": 3.0,
-  "page_max": 80
+  "page_max": 100
  },
  "host_delay_seconds": {
   "rss.arxiv.org": 3,
+  "export.arxiv.org": 4,
   "news.google.com": 2,
   "feeds.aps.org": 1,
-  "www.nature.com": 1
+  "www.nature.com": 1,
+  "www.science.org": 2
  },
  "topics": {
   "prizes": {
@@ -56,7 +59,11 @@
     "Maryam Mirzakhani New Frontiers",
     "フィールズ賞",
     "アーベル賞",
-    "ノーベル物理学賞"
+    "ノーベル物理学賞",
+    "Breakthrough Prize in Mathematics",
+    "Breakthrough Prize in Fundamental Physics",
+    "Simons Investigator",
+    "MacArthur Fellow"
    ]
   },
   "number-theory": {
@@ -270,6 +277,79 @@
     "non-invertible symmetry",
     "mathematical physics"
    ]
+  },
+  "math-general": {
+   "label": "数学全般",
+   "label_en": "Mathematics (general)",
+   "weight": 0.3,
+   "keywords": [
+    "mathematics",
+    "mathematician",
+    "mathematicians",
+    "theorem",
+    "conjecture",
+    "proof",
+    "geometry",
+    "topology",
+    "algebra",
+    "algebraic",
+    "number theory",
+    "combinatorics",
+    "probability",
+    "equation",
+    "equations",
+    "polynomial",
+    "manifold",
+    "group theory",
+    "graph theory",
+    "数学",
+    "数学者",
+    "定理",
+    "予想",
+    "証明",
+    "方程式",
+    "幾何",
+    "代数",
+    "数論",
+    "素数"
+   ]
+  },
+  "physics-general": {
+   "label": "物理全般",
+   "label_en": "Physics (general)",
+   "weight": 0.3,
+   "keywords": [
+    "physics",
+    "physicist",
+    "physicists",
+    "quantum",
+    "particle",
+    "particles",
+    "cosmology",
+    "cosmological",
+    "universe",
+    "gravity",
+    "gravitational",
+    "galaxy",
+    "galaxies",
+    "neutrino",
+    "neutrinos",
+    "relativity",
+    "collider",
+    "LHC",
+    "CERN",
+    "Higgs",
+    "dark energy",
+    "物理",
+    "物理学",
+    "素粒子",
+    "宇宙",
+    "重力",
+    "量子",
+    "ブラックホール",
+    "ニュートリノ",
+    "加速器"
+   ]
   }
  },
  "signals": {
@@ -375,21 +455,616 @@
  ],
  "allow_hosts": [
   "deepmind.google",
+  "export.arxiv.org",
   "feeds.aps.org",
   "gilkalai.wordpress.com",
   "golem.ph.utexas.edu",
-  "home.cern",
-  "link.springer.com",
   "news.google.com",
   "rss.arxiv.org",
   "terrytao.wordpress.com",
+  "www.ams.org",
+  "www.ias.edu",
   "www.math.columbia.edu",
   "www.nature.com",
+  "www.pnas.org",
   "www.quantamagazine.org",
   "www.science.org",
+  "www.sciencedaily.com",
+  "www.simonsfoundation.org",
+  "www.symmetrymagazine.org",
   "xenaproject.wordpress.com"
  ],
  "sources": [
+  {
+   "id": "arxiv-nt-ag-rt",
+   "name": "arXiv math.NT / AG / RT / RA / AC",
+   "url": "https://rss.arxiv.org/rss/math.NT+math.AG+math.RT+math.RA+math.AC",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-gt-at-sg",
+   "name": "arXiv math.GT / AT / SG / KT / CT",
+   "url": "https://rss.arxiv.org/rss/math.GT+math.AT+math.SG+math.KT+math.CT",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-dg-mg-gn",
+   "name": "arXiv math.DG / MG / GN / GR / QA",
+   "url": "https://rss.arxiv.org/rss/math.DG+math.MG+math.GN+math.GR+math.QA",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-ap-ca-fa",
+   "name": "arXiv math.AP / CA / FA / CV / SP / OA",
+   "url": "https://rss.arxiv.org/rss/math.AP+math.CA+math.FA+math.CV+math.SP+math.OA",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-pr-ds-st",
+   "name": "arXiv math.PR / DS / ST / OC / NA",
+   "url": "https://rss.arxiv.org/rss/math.PR+math.DS+math.ST+math.OC+math.NA",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-co-lo",
+   "name": "arXiv math.CO / LO / cs.DM / cs.CC / cs.DS",
+   "url": "https://rss.arxiv.org/rss/math.CO+math.LO+cs.DM+cs.CC+cs.DS",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-math-ph",
+   "name": "arXiv math-ph / nlin.SI",
+   "url": "https://rss.arxiv.org/rss/math-ph+nlin.SI",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-hep-th",
+   "name": "arXiv hep-th",
+   "url": "https://rss.arxiv.org/rss/hep-th",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-gr-qc",
+   "name": "arXiv gr-qc / astro-ph.CO",
+   "url": "https://rss.arxiv.org/rss/gr-qc+astro-ph.CO",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-hep-ph-ex",
+   "name": "arXiv hep-ph / hep-ex / hep-lat",
+   "url": "https://rss.arxiv.org/rss/hep-ph+hep-ex+hep-lat",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "arxiv-ai-math",
+   "name": "arXiv cs.AI / cs.LG / cs.LO / cs.CL (AI for math)",
+   "url": "https://rss.arxiv.org/rss/cs.AI+cs.LG+cs.LO+cs.CL+cs.PL",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "arxiv-q-langlands",
+   "name": "arXiv: langlands",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Langlands%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-perfectoid",
+   "name": "arXiv: perfectoid",
+   "url": "https://export.arxiv.org/api/query?search_query=all:perfectoid%20OR%20all:prismatic%20OR%20all:%22condensed%20mathematics%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-riemann",
+   "name": "arXiv: riemann",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Riemann%20hypothesis%22%20OR%20all:%22zeta%20function%22%20OR%20all:%22L-functions%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-elliptic",
+   "name": "arXiv: elliptic",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22elliptic%20curves%22%20OR%20all:%22Birch%20and%20Swinnerton-Dyer%22%20OR%20all:%22abc%20conjecture%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-primes",
+   "name": "arXiv: primes",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22prime%20gaps%22%20OR%20all:%22twin%20primes%22%20OR%20all:%22primes%20in%20arithmetic%20progressions%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-modularity",
+   "name": "arXiv: modularity",
+   "url": "https://export.arxiv.org/api/query?search_query=all:modularity%20OR%20all:%22Galois%20representations%22%20OR%20all:%22Shimura%20varieties%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "number-theory"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-hodge",
+   "name": "arXiv: hodge",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Hodge%20conjecture%22%20OR%20all:%22mirror%20symmetry%22%20OR%20all:%22Calabi-Yau%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-floer",
+   "name": "arXiv: floer",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Floer%20homology%22%20OR%20all:%22Gromov-Witten%22%20OR%20all:%22symplectic%20topology%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-low-dim",
+   "name": "arXiv: low dim",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%224-manifolds%22%20OR%20all:%22knot%20invariants%22%20OR%20all:%22exotic%20spheres%22%20OR%20all:%22Kervaire%20invariant%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-ricci",
+   "name": "arXiv: ricci",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Ricci%20flow%22%20OR%20all:%22mean%20curvature%20flow%22%20OR%20all:%22minimal%20surfaces%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-homotopy",
+   "name": "arXiv: homotopy",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22higher%20categories%22%20OR%20all:%22infinity-categories%22%20OR%20all:%22motivic%20homotopy%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "geometry-topology"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-navier",
+   "name": "arXiv: navier",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Navier-Stokes%22%20OR%20all:%22Euler%20equations%22%20AND%20all:%22blow-up%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-kakeya",
+   "name": "arXiv: kakeya",
+   "url": "https://export.arxiv.org/api/query?search_query=all:Kakeya%20OR%20all:%22restriction%20conjecture%22%20OR%20all:%22decoupling%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-random-matrix",
+   "name": "arXiv: random matrix",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22random%20matrix%22%20OR%20all:%22Tracy-Widom%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-sle",
+   "name": "arXiv: sle",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Schramm-Loewner%22%20OR%20all:%22Liouville%20quantum%20gravity%22%20OR%20all:%22Gaussian%20free%20field%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-kpz-prob",
+   "name": "arXiv: kpz prob",
+   "url": "https://export.arxiv.org/api/query?search_query=all:KPZ%20OR%20all:%22Kardar-Parisi-Zhang%22%20OR%20all:%22directed%20polymer%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-spin-glass",
+   "name": "arXiv: spin glass",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22spin%20glass%22%20OR%20all:%22Parisi%20formula%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "analysis-probability"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-ramsey",
+   "name": "arXiv: ramsey",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Ramsey%20numbers%22%20OR%20all:%22sunflower%20conjecture%22%20OR%20all:%22cap%20set%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-additive",
+   "name": "arXiv: additive",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22additive%20combinatorics%22%20OR%20all:Szemeredi%20OR%20all:%22polynomial%20method%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-sphere-packing",
+   "name": "arXiv: sphere packing",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22sphere%20packing%22%20OR%20all:%22kissing%20number%22%20OR%20all:%22lattice%20packing%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-complexity",
+   "name": "arXiv: complexity",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22circuit%20lower%20bounds%22%20OR%20all:%22P%20versus%20NP%22%20OR%20all:%22PCP%20theorem%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "combinatorics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-lean",
+   "name": "arXiv: lean",
+   "url": "https://export.arxiv.org/api/query?search_query=all:Lean%20AND%20%28all:mathlib%20OR%20all:formalization%20OR%20all:%22theorem%20proving%22%29&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-autoformal",
+   "name": "arXiv: autoformal",
+   "url": "https://export.arxiv.org/api/query?search_query=all:autoformalization%20OR%20all:%22automated%20theorem%20proving%22%20OR%20all:%22formal%20mathematics%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-llm-math",
+   "name": "arXiv: llm math",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22mathematical%20reasoning%22%20AND%20%28all:%22language%20model%22%20OR%20all:LLM%29&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-ai-discovery",
+   "name": "arXiv: ai discovery",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22mathematical%20discovery%22%20OR%20all:FunSearch%20OR%20all:AlphaEvolve%20OR%20all:%22AlphaProof%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-amplitudes",
+   "name": "arXiv: amplitudes",
+   "url": "https://export.arxiv.org/api/query?search_query=all:amplituhedron%20OR%20all:%22positive%20geometry%22%20OR%20all:%22scattering%20amplitudes%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-cosmo-corr",
+   "name": "arXiv: cosmo corr",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22cosmological%20correlators%22%20OR%20all:%22cosmological%20bootstrap%22%20OR%20all:cosmohedron&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-bootstrap",
+   "name": "arXiv: bootstrap",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22conformal%20bootstrap%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-gen-sym",
+   "name": "arXiv: gen sym",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22generalized%20symmetries%22%20OR%20all:%22non-invertible%20symmetries%22%20OR%20all:%22higher-form%20symmetries%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-tqft",
+   "name": "arXiv: tqft",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22topological%20quantum%20field%20theory%22%20OR%20all:%22vertex%20operator%20algebra%22%20OR%20all:%22factorization%20algebra%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "math-physics"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-ads-cft",
+   "name": "arXiv: ads cft",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22AdS%2FCFT%22%20OR%20all:holography%20AND%20all:entanglement&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-bh-info",
+   "name": "arXiv: bh info",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22black%20hole%20information%22%20OR%20all:%22Page%20curve%22%20OR%20all:%22quantum%20extremal%20surface%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-swampland",
+   "name": "arXiv: swampland",
+   "url": "https://export.arxiv.org/api/query?search_query=all:swampland%20OR%20all:%22string%20compactification%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-celestial",
+   "name": "arXiv: celestial",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22celestial%20holography%22%20OR%20all:%22flat%20space%20holography%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-de-sitter",
+   "name": "arXiv: de sitter",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22de%20Sitter%22%20AND%20all:%22quantum%20gravity%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-dark-matter",
+   "name": "arXiv: dark matter",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22dark%20matter%22%20AND%20%28all:detection%20OR%20all:axion%29&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-grav-waves",
+   "name": "arXiv: grav waves",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22gravitational%20waves%22%20AND%20%28all:LIGO%20OR%20all:%22pulsar%20timing%22%20OR%20all:LISA%29&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-neutrino",
+   "name": "arXiv: neutrino",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22neutrino%20mass%22%20OR%20all:%22neutrinoless%20double%20beta%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-hubble",
+   "name": "arXiv: hubble",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22Hubble%20tension%22%20OR%20all:DESI%20AND%20all:%22dark%20energy%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
+  {
+   "id": "arxiv-q-muon",
+   "name": "arXiv: muon",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22muon%20g-2%22%20OR%20all:%22lattice%20QCD%22%20AND%20all:%22hadronic%20vacuum%20polarization%22&sortBy=submittedDate&sortOrder=descending&start={offset}&max_results=200",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": false,
+   "page_size": 200,
+   "max_pages": 1
+  },
   {
    "id": "prl",
    "name": "Physical Review Letters",
@@ -413,10 +1088,31 @@
    "require_topic": true
   },
   {
-   "id": "nature-physics",
-   "name": "Nature Physics",
-   "url": "https://www.nature.com/nphys.rss",
+   "id": "rmp",
+   "name": "Reviews of Modern Physics",
+   "url": "https://feeds.aps.org/rss/recent/rmp.xml",
    "tier": 1,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "prd",
+   "name": "Physical Review D",
+   "url": "https://feeds.aps.org/rss/recent/prd.xml",
+   "tier": 2,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "aps-physics",
+   "name": "APS Physics (Viewpoints)",
+   "url": "https://feeds.aps.org/rss/recent/physics.xml",
+   "tier": 2,
    "topics": [
     "hep-gravity",
     "math-physics"
@@ -432,6 +1128,27 @@
    "require_topic": true
   },
   {
+   "id": "nature-physics",
+   "name": "Nature Physics",
+   "url": "https://www.nature.com/nphys.rss",
+   "tier": 1,
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "nature-astro",
+   "name": "Nature Astronomy",
+   "url": "https://www.nature.com/natastron.rss",
+   "tier": 1,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
    "id": "science",
    "name": "Science",
    "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science",
@@ -440,120 +1157,46 @@
    "require_topic": true
   },
   {
-   "id": "inventiones",
-   "name": "Inventiones Mathematicae",
-   "url": "https://link.springer.com/search.rss?facet-journal-id=222",
+   "id": "sci-adv",
+   "name": "Science Advances",
+   "url": "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv",
+   "tier": 2,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "pnas",
+   "name": "PNAS",
+   "url": "https://www.pnas.org/action/showFeed?type=etoc&feed=rss&jc=pnas",
+   "tier": 1,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "jams",
+   "name": "Journal of the AMS",
+   "url": "https://www.ams.org/rss/jams.rss",
    "tier": 1,
    "topics": [
     "number-theory",
     "geometry-topology",
-    "analysis-probability"
+    "analysis-probability",
+    "combinatorics"
    ],
    "require_topic": false
   },
   {
-   "id": "publ-ihes",
-   "name": "Publications mathématiques de l'IHÉS",
-   "url": "https://link.springer.com/search.rss?facet-journal-id=10240",
+   "id": "bams",
+   "name": "Bulletin of the AMS",
+   "url": "https://www.ams.org/rss/bull.rss",
    "tier": 1,
    "topics": [
     "number-theory",
-    "geometry-topology"
-   ],
-   "require_topic": false
-  },
-  {
-   "id": "cmp",
-   "name": "Communications in Mathematical Physics",
-   "url": "https://link.springer.com/search.rss?facet-journal-id=220",
-   "tier": 2,
-   "topics": [
-    "math-physics"
-   ],
-   "require_topic": false
-  },
-  {
-   "id": "aps-physics",
-   "name": "APS Physics (Viewpoints)",
-   "url": "https://feeds.aps.org/rss/recent/physics.xml",
-   "tier": 2,
-   "topics": [
-    "hep-gravity",
-    "math-physics"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-arith-geom",
-   "name": "arXiv math.NT / AG / RT",
-   "url": "https://rss.arxiv.org/rss/math.NT+math.AG+math.RT",
-   "tier": 2,
-   "topics": [
-    "number-theory",
-    "geometry-topology"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-topology",
-   "name": "arXiv math.GT / AT / SG / DG",
-   "url": "https://rss.arxiv.org/rss/math.GT+math.AT+math.SG+math.DG",
-   "tier": 2,
-   "topics": [
-    "geometry-topology"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-analysis",
-   "name": "arXiv math.AP / CA / PR / DS",
-   "url": "https://rss.arxiv.org/rss/math.AP+math.CA+math.PR+math.DS",
-   "tier": 2,
-   "topics": [
-    "analysis-probability"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-combinatorics",
-   "name": "arXiv math.CO / LO / cs.CC / cs.DM",
-   "url": "https://rss.arxiv.org/rss/math.CO+math.LO+cs.CC+cs.DM",
-   "tier": 2,
-   "topics": [
+    "geometry-topology",
+    "analysis-probability",
     "combinatorics"
    ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-math-ph",
-   "name": "arXiv math-ph / hep-th",
-   "url": "https://rss.arxiv.org/rss/math-ph+hep-th",
-   "tier": 2,
-   "topics": [
-    "math-physics",
-    "hep-gravity"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-gravity",
-   "name": "arXiv gr-qc / astro-ph.CO / hep-ph",
-   "url": "https://rss.arxiv.org/rss/gr-qc+astro-ph.CO+hep-ph",
-   "tier": 2,
-   "topics": [
-    "hep-gravity"
-   ],
-   "require_topic": true
-  },
-  {
-   "id": "arxiv-ai-math",
-   "name": "arXiv cs.AI / cs.LG / cs.LO (AI for math)",
-   "url": "https://rss.arxiv.org/rss/cs.AI+cs.LG+cs.LO",
-   "tier": 2,
-   "topics": [
-    "math-ai"
-   ],
-   "require_topic": true
+   "require_topic": false
   },
   {
    "id": "quanta",
@@ -626,19 +1269,72 @@
    "require_topic": true
   },
   {
-   "id": "cern",
-   "name": "CERN News",
-   "url": "https://home.cern/api/news/news/feed.rss",
+   "id": "symmetry",
+   "name": "Symmetry Magazine",
+   "url": "https://www.symmetrymagazine.org/feed",
    "tier": 2,
    "topics": [
     "hep-gravity"
    ],
+   "require_topic": false
+  },
+  {
+   "id": "ias",
+   "name": "Institute for Advanced Study",
+   "url": "https://www.ias.edu/rss.xml",
+   "tier": 2,
+   "topics": [
+    "number-theory",
+    "hep-gravity"
+   ],
+   "require_topic": false
+  },
+  {
+   "id": "simons",
+   "name": "Simons Foundation",
+   "url": "https://www.simonsfoundation.org/feed/",
+   "tier": 2,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "sd-math",
+   "name": "ScienceDaily: Mathematics",
+   "url": "https://www.sciencedaily.com/rss/computers_math/mathematics.xml",
+   "tier": 3,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "sd-physics",
+   "name": "ScienceDaily: Physics",
+   "url": "https://www.sciencedaily.com/rss/matter_energy/physics.xml",
+   "tier": 3,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "sd-cosmology",
+   "name": "ScienceDaily: Cosmology",
+   "url": "https://www.sciencedaily.com/rss/space_time/cosmology.xml",
+   "tier": 3,
+   "topics": [],
    "require_topic": true
   },
   {
    "id": "news-prizes",
    "name": "News: math & physics prizes",
-   "url": "https://news.google.com/rss/search?q=%28%22Fields+Medal%22+OR+%22Abel+Prize%22+OR+%22Breakthrough+Prize%22+OR+%22New+Horizons+Prize%22+OR+%22Shaw+Prize%22+OR+%22Wolf+Prize%22+OR+%22Nobel+Prize+in+Physics%22+OR+%22Dirac+Medal%22+OR+%22Crafoord+Prize%22+OR+%22Chern+Medal%22+OR+%22Gauss+Prize%22+OR+%22Clay+Research+Award%22+OR+%22Salem+Prize%22+OR+%22SASTRA+Ramanujan%22+OR+%22Ostrowski+Prize%22+OR+%22Kyoto+Prize%22+OR+%22Heineman+Prize%22+OR+%22Sakurai+Prize%22%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "url": "https://news.google.com/rss/search?q=%28%22Fields+Medal%22+OR+%22Abel+Prize%22+OR+%22Breakthrough+Prize%22+OR+%22New+Horizons+Prize%22+OR+%22Shaw+Prize%22+OR+%22Wolf+Prize%22+OR+%22Nobel+Prize+in+Physics%22+OR+%22Dirac+Medal%22+OR+%22Crafoord+Prize%22+OR+%22Chern+Medal%22%29+when%3A60d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 2,
+   "topics": [
+    "prizes"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-prizes-2",
+   "name": "News: more prizes",
+   "url": "https://news.google.com/rss/search?q=%28%22Gauss+Prize%22+OR+%22Clay+Research+Award%22+OR+%22Salem+Prize%22+OR+%22SASTRA+Ramanujan%22+OR+%22Ostrowski+Prize%22+OR+%22Kyoto+Prize%22+OR+%22Heineman+Prize%22+OR+%22Sakurai+Prize%22+OR+%22Steele+Prize%22+OR+%22Cole+Prize%22%29+when%3A60d&hl=en-US&gl=US&ceid=US:en",
    "tier": 2,
    "topics": [
     "prizes"
@@ -647,18 +1343,76 @@
   },
   {
    "id": "news-math",
-   "name": "News: mathematics breakthroughs",
-   "url": "https://news.google.com/rss/search?q=%28mathematician+OR+mathematicians%29+%28proof+OR+conjecture+OR+theorem%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
+   "name": "News: math",
+   "url": "https://news.google.com/rss/search?q=%28mathematician+OR+mathematicians%29+%28proof+OR+conjecture+OR+theorem%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
    "tier": 3,
    "topics": [],
    "require_topic": true
   },
   {
-   "id": "news-physics",
-   "name": "News: fundamental physics",
-   "url": "https://news.google.com/rss/search?q=%28%22quantum+gravity%22+OR+%22dark+matter%22+OR+%22string+theory%22+OR+%22gravitational+waves%22+OR+%22Standard+Model%22+OR+%22new+particle%22%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
+   "id": "news-math-ai",
+   "name": "News: math-ai",
+   "url": "https://news.google.com/rss/search?q=%28%22AI%22+OR+%22language+model%22%29+%28mathematics+OR+theorem+OR+%22math+olympiad%22+OR+Lean%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [
+    "math-ai"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-qgravity",
+   "name": "News: qgravity",
+   "url": "https://news.google.com/rss/search?q=%28%22quantum+gravity%22+OR+%22string+theory%22+OR+%22black+hole%22+OR+holography%29+physicists+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-particles",
+   "name": "News: particles",
+   "url": "https://news.google.com/rss/search?q=%28CERN+OR+LHC+OR+%22new+particle%22+OR+%22dark+matter%22+OR+neutrino+OR+%22muon+g-2%22%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-cosmo",
+   "name": "News: cosmo",
+   "url": "https://news.google.com/rss/search?q=%28%22gravitational+waves%22+OR+%22Hubble+tension%22+OR+%22dark+energy%22+OR+DESI+OR+%22cosmic+microwave%22%29+when%3A30d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [
+    "hep-gravity"
+   ],
+   "require_topic": true
+  },
+  {
+   "id": "news-ja-math",
+   "name": "ニュース: 数学（日本語）",
+   "url": "https://news.google.com/rss/search?q=%28%E6%95%B0%E5%AD%A6%E8%80%85+OR+%E6%95%B0%E5%AD%A6%29+%28%E8%A8%BC%E6%98%8E+OR+%E4%BA%88%E6%83%B3+OR+%E5%AE%9A%E7%90%86%29+when%3A30d&hl=ja&gl=JP&ceid=JP:ja",
    "tier": 3,
    "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "news-ja-physics",
+   "name": "ニュース: 物理学（日本語）",
+   "url": "https://news.google.com/rss/search?q=%28%E7%89%A9%E7%90%86%E5%AD%A6+OR+%E7%B4%A0%E7%B2%92%E5%AD%90+OR+%E5%AE%87%E5%AE%99%E8%AB%96+OR+%E9%87%8D%E5%8A%9B%E6%B3%A2%29+when%3A30d&hl=ja&gl=JP&ceid=JP:ja",
+   "tier": 3,
+   "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "news-ja-prizes",
+   "name": "ニュース: 受賞（日本語）",
+   "url": "https://news.google.com/rss/search?q=%28%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%82%BA%E8%B3%9E+OR+%E3%82%A2%E3%83%BC%E3%83%99%E3%83%AB%E8%B3%9E+OR+%E3%83%8E%E3%83%BC%E3%83%99%E3%83%AB%E7%89%A9%E7%90%86%E5%AD%A6%E8%B3%9E+OR+%E3%83%96%E3%83%AC%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%AB%E3%83%BC%E8%B3%9E%29+when%3A60d&hl=ja&gl=JP&ceid=JP:ja",
+   "tier": 2,
+   "topics": [
+    "prizes"
+   ],
    "require_topic": true
   }
  ]

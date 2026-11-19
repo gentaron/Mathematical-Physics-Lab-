@@ -8,6 +8,9 @@
   const list = document.getElementById("results") || createList();
   const status = document.getElementById("status");
   const chips = Array.from(document.querySelectorAll(".chip"));
+  const all = document.getElementById("all");
+  const MONTH = /^\d{4}-\d{2}\.json$/;
+  let archiveLoaded = false;
   const LIMIT = 120;
   let radar = null;
   const active = new Set();
@@ -19,6 +22,14 @@
     const empty = document.querySelector(".empty");
     (empty ? empty.parentNode : document.querySelector("main")).appendChild(ol);
     return ol;
+  }
+
+  const halfLife = () => (radar && radar.ranking && radar.ranking.half_life_days) || 14;
+  const rankOf = (item, now) => (Number(item.score) || 0) * Math.pow(0.5, Math.max(0, now - Date.parse(item.date)) / 86400e3 / halfLife());
+  function resort() {
+    const now = Date.now();
+    for (const item of radar.items) item.rank = rankOf(item, now);
+    radar.items.sort((a, b) => b.rank - a.rank);
   }
 
   const fold = (s) => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -100,7 +111,9 @@
       const meta = el("p", "meta");
       const time = el("time", "", String(item.date).slice(0, 10));
       time.dateTime = item.date;
-      meta.append(time, " · " + (item.source_names || []).join(" / ") + " · score " + item.score);
+      const venue = item.venue ? [item.venue] : [];
+      const cited = item.cited_by ? " · 被引用 " + item.cited_by : "";
+      meta.append(time, " · " + [...venue, ...(item.source_names || [])].join(" / ") + " · score " + item.score + cited);
       article.appendChild(meta);
       if ((item.authors || []).length) {
         const more = item.authors.length > 5 ? " ほか" : "";
@@ -131,7 +144,7 @@
     const now = Date.now();
     const found = radar.items.filter((item) => matches(item, terms, now));
     render(found.slice(0, LIMIT));
-    status.textContent = `${found.length} 件${found.length > LIMIT ? `（上位 ${LIMIT} 件を表示）` : ""}`;
+    status.textContent = `${found.length.toLocaleString()} 件${found.length > LIMIT ? `（上位 ${LIMIT} 件を表示）` : ""}`;
     const params = new URLSearchParams();
     if (query) params.set("q", query);
     if (active.size) params.set("topic", [...active].join(","));
@@ -158,6 +171,34 @@
     if (chip) { active.add(id); chip.setAttribute("aria-pressed", "true"); }
   }
 
+  async function loadArchive() {
+    if (archiveLoaded || !radar) return;
+    archiveLoaded = true;
+    const seen = new Set(radar.items.map((item) => item.id));
+    try {
+      const index = await (await fetch("archive/index.json", { credentials: "omit", cache: "no-cache" })).json();
+      const months = (index && Array.isArray(index.months) ? index.months : []).filter((m) => m && MONTH.test(m.file));
+      let done = 0;
+      for (const month of months) {
+        const response = await fetch("archive/" + month.file, { credentials: "omit", cache: "no-cache" });
+        if (!response.ok) continue;
+        const shard = await response.json();
+        for (const item of shard && Array.isArray(shard.items) ? shard.items : []) {
+          if (item && !seen.has(item.id) && safeUrl(item.url)) { seen.add(item.id); radar.items.push(item); }
+        }
+        done += 1;
+        status.textContent = `アーカイブ読み込み中 ${done}/${months.length} か月 · ${radar.items.length.toLocaleString()} 件`;
+        if (done % 6 === 0 || done === months.length) { resort(); update(); }
+      }
+    } catch (_) {
+      status.textContent = "アーカイブの一部を読み込めませんでした";
+    }
+    resort();
+    update();
+  }
+
+  if (all) all.addEventListener("change", () => { if (all.checked) loadArchive(); });
+
   fetch("radar.json", { credentials: "omit", cache: "no-cache" })
     .then((response) => {
       if (!response.ok) throw new Error(String(response.status));
@@ -166,7 +207,8 @@
     .then((data) => {
       if (!data || data.schema !== "deeptech.radar/1" || !Array.isArray(data.items)) throw new Error("schema");
       radar = data;
-      status.textContent = `${data.items.length} 件を検索できます`;
+      resort();
+      status.textContent = `${data.items.length.toLocaleString()} 件を検索できます（全期間は「アーカイブも検索」）`;
       if (input.value || active.size) update();
     })
     .catch(() => { status.textContent = "検索データを読み込めませんでした（一覧は表示されています）"; });

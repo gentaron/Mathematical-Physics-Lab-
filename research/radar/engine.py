@@ -44,22 +44,22 @@ import stat
 import tempfile
 import time
 import unicodedata
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 import zlib
 
 SCHEMA = "deeptech.radar/1"
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "2.0.0"
 
 MAX_CONFIG_BYTES = 512 * 1024
-MAX_ARCHIVE_BYTES = 48 * 1024 * 1024
-MAX_FEED_BYTES = 6 * 1024 * 1024
+MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
+MAX_FEED_BYTES = 16 * 1024 * 1024
 MAX_REDIRECTS = 3
-TIMEOUT_SECONDS = 25
-MAX_ENTRIES_PER_FEED = 400
-TITLE_MAX, SUMMARY_MAX, AUTHOR_MAX, AUTHORS_MAX, URL_MAX = 300, 700, 120, 15, 2048
+TIMEOUT_SECONDS = 60
+MAX_ENTRIES_PER_FEED = 2000
+TITLE_MAX, SUMMARY_MAX, AUTHOR_MAX, AUTHORS_MAX, URL_MAX = 300, 520, 120, 12, 2048
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,47}$")
 HOST_RE = re.compile(r"^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$")
 TIER_WEIGHT = {1: 3.0, 2: 2.0, 3: 1.0}
@@ -113,12 +113,14 @@ class _TextExtractor(HTMLParser):
     def handle_starttag(self, tag, attrs):  # noqa: ANN001 - HTMLParser API
         if tag in ("script", "style", "template", "noscript"):
             self._skip += 1
-        elif tag in ("br", "p", "div", "li", "tr", "h1", "h2", "h3", "h4"):
+        elif tag in ("br", "p", "div", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "td", "th"):
             self.parts.append(" ")
 
     def handle_endtag(self, tag):  # noqa: ANN001
         if tag in ("script", "style", "template", "noscript") and self._skip:
             self._skip -= 1
+        elif tag in ("p", "div", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "td", "th"):
+            self.parts.append(" ")
 
     def handle_data(self, data):  # noqa: ANN001
         if not self._skip:
@@ -254,7 +256,7 @@ def validate_config(config: dict) -> dict:
             raise RadarError(f"config.{key} is required")
     if not ID_RE.match(config["id"]):
         raise RadarError("config.id must be a short lowercase slug")
-    hosts = _strings(config.get("allow_hosts"), "allow_hosts", 253, 200)
+    hosts = _strings(config.get("allow_hosts"), "allow_hosts", 253, 400)
     for host in hosts:
         if not HOST_RE.match(host):
             raise RadarError(f"allow_hosts entry is not a lowercase DNS name: {host}")
@@ -270,9 +272,12 @@ def validate_config(config: dict) -> dict:
         if not isinstance(topic.get("label"), str):
             raise RadarError(f"topic {topic_id} needs a label")
         _strings(topic.get("keywords"), f"topics.{topic_id}.keywords")
+        weight = topic.get("weight", 1)
+        if isinstance(weight, bool) or not isinstance(weight, (int, float)) or not 0 <= weight <= 3:
+            raise RadarError(f"topic {topic_id} weight must be in 0..3")
     sources = config.get("sources")
-    if not isinstance(sources, list) or not sources or len(sources) > 200:
-        raise RadarError("config.sources must be a list of 1..200 sources")
+    if not isinstance(sources, list) or not sources or len(sources) > 1000:
+        raise RadarError("config.sources must be a list of 1..1000 sources")
     seen = set()
     for source in sources:
         if not isinstance(source, dict):
@@ -283,7 +288,16 @@ def validate_config(config: dict) -> dict:
         seen.add(sid)
         if not isinstance(source.get("name"), str) or not source["name"].strip():
             raise RadarError(f"source {sid} needs a name")
-        check_url(source.get("url", ""), allow)
+        if not isinstance(source.get("url"), str) or re.search(r"\{(?!today\}|since:\d{1,4}\}|cursor\}|offset\})",
+                                                               source["url"]):
+            raise RadarError(f"source {sid} url has an unknown placeholder")
+        check_url(expand_url(source["url"], utcnow(), "0", 0), allow)
+        if source.get("format", "feed") not in ("feed", "biorxiv", "europepmc"):
+            raise RadarError(f"source {sid} format must be feed, biorxiv or europepmc")
+        for key, low, high in (("max_pages", 1, 50), ("page_size", 1, 2000)):
+            value = source.get(key, low)
+            if isinstance(value, bool) or not isinstance(value, int) or not low <= value <= high:
+                raise RadarError(f"source {sid} {key} must be an integer in {low}..{high}")
         if source.get("tier") not in TIER_WEIGHT:
             raise RadarError(f"source {sid} tier must be 1, 2 or 3")
         if not isinstance(source.get("require_topic", False), bool):
@@ -302,7 +316,7 @@ def validate_config(config: dict) -> dict:
     if not isinstance(limits, dict):
         raise RadarError("config.limits must be an object")
     for key, low, high in (("half_life_days", 1, 365), ("retention_days", 7, 3650),
-                           ("archive_max", 50, 20000), ("feed_max", 10, 500),
+                           ("archive_max", 50, 1000000), ("index_max", 100, 20000), ("feed_max", 10, 500),
                            ("topic_feed_max", 5, 200), ("min_score", 0, 50), ("page_max", 10, 500)):
         if key in limits and (isinstance(limits[key], bool) or not isinstance(limits[key], (int, float))
                               or not low <= limits[key] <= high):
@@ -319,8 +333,8 @@ def config_digest(config: dict) -> str:
 
 
 def limit(config: dict, key: str):
-    defaults = {"half_life_days": 10, "retention_days": 180, "archive_max": 2500, "feed_max": 120,
-                "topic_feed_max": 60, "min_score": 2.0, "page_max": 80}
+    defaults = {"half_life_days": 10, "retention_days": 1095, "archive_max": 400000, "index_max": 3000,
+                "feed_max": 150, "topic_feed_max": 80, "min_score": 2.0, "page_max": 100}
     return config.get("limits", {}).get(key, defaults[key])
 
 
@@ -338,6 +352,11 @@ def _read_bounded(path: Path, max_bytes: int) -> bytes:
 
 def write_atomic(path: Path, data: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        if path.is_file() and path.stat().st_size == len(data) and path.read_bytes() == data:
+            return  # unchanged: keep the file (and the git history) untouched
+    except OSError:
+        pass
     fd, tmp = tempfile.mkstemp(prefix=".radar-", dir=path.parent)
     try:
         with os.fdopen(fd, "wb") as handle:
@@ -395,13 +414,21 @@ def _decode_body(body: bytes, encoding: str) -> bytes:
     return out
 
 
-def fetch(source: dict, opener: urllib.request.OpenerDirector, allow: frozenset[str],
-          user_agent: str, cache: dict | None = None) -> tuple[int, bytes, dict]:
-    """GET one feed. Returns (status, body, validators). 304 means unchanged."""
-    url = check_url(source["url"], allow)
-    headers = {"User-Agent": user_agent, "Accept-Encoding": "gzip, identity",
-               "Accept": "application/rss+xml, application/atom+xml, application/rdf+xml, "
-                         "application/xml;q=0.9, text/xml;q=0.8"}
+def expand_url(template: str, now: datetime, cursor: object = "", offset: int = 0) -> str:
+    """Fill ``{today}``, ``{since:N}`` (N days ago), ``{cursor}`` and ``{offset}`` in a source URL."""
+    url = re.sub(r"\{since:(\d{1,4})\}", lambda m: (now - timedelta(days=int(m.group(1)))).strftime("%Y-%m-%d"),
+                 template)
+    return (url.replace("{today}", now.strftime("%Y-%m-%d")).replace("{offset}", str(int(offset)))
+            .replace("{cursor}", quote(str(cursor), safe="")))
+
+
+def fetch(url: str, opener: urllib.request.OpenerDirector, allow: frozenset[str],
+          user_agent: str, cache: dict | None = None, json_api: bool = False) -> tuple[int, bytes, dict]:
+    """GET one URL. Returns (status, body, validators). 304 means unchanged."""
+    url = check_url(url, allow)
+    accept = ("application/json" if json_api else
+              "application/rss+xml, application/atom+xml, application/rdf+xml, application/xml;q=0.9, text/xml;q=0.8")
+    headers = {"User-Agent": user_agent, "Accept-Encoding": "gzip, identity", "Accept": accept}
     if cache:
         if cache.get("etag"):
             headers["If-None-Match"] = clean_text(cache["etag"], 200)
@@ -497,6 +524,8 @@ def _entry(element: ET.Element) -> dict:
             out.setdefault("doi_text", _text(child))
         elif name == "announce_type":
             out["announce"] = _text(child).strip().lower()
+        elif name in ("journal_ref", "publicationname", "source"):
+            out.setdefault("venue", _text(child))
     if element.get("{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about"):
         links.append(("about", element.get("{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about")))
     preferred = [href for rel, href in links if rel == "alternate"] + [href for _, href in links]
@@ -507,10 +536,82 @@ def _entry(element: ET.Element) -> dict:
     return out
 
 
-def _split_authors(raw: str) -> list[str]:
+def _split_authors(raw: str, separators: str = r",|;|\band\b|\n") -> list[str]:
     raw = re.sub(r"\([^)]*\)", " ", raw or "")  # "a@b (Name)" and affiliations
-    parts = re.split(r"\s*(?:,|;|\band\b|\n)\s*", raw)
+    parts = re.split(r"\s*(?:" + separators + r")\s*", raw)
     return [p for p in (clean_text(x, AUTHOR_MAX) for x in parts) if p and "@" not in p and len(p) > 1]
+
+
+def _json_document(data: bytes) -> object:
+    if len(data) > MAX_FEED_BYTES:
+        raise RadarError("response exceeds the size cap")
+    try:
+        return json.loads(data.decode("utf-8"))
+    except (UnicodeDecodeError, ValueError):
+        raise RadarError("malformed JSON") from None
+
+
+def _int(value: object) -> int:
+    try:
+        number = int(str(value).strip())
+    except (TypeError, ValueError):
+        return 0
+    return number if 0 <= number < 10**8 else 0
+
+
+def parse_biorxiv(data: bytes) -> tuple[list[dict], int]:
+    """api.biorxiv.org/details JSON -> raw entries, number of rows on this page."""
+    doc = _json_document(data)
+    rows = doc.get("collection") if isinstance(doc, dict) else None
+    if not isinstance(rows, list):
+        raise RadarError("bioRxiv response has no collection")
+    out = []
+    for row in rows[:MAX_ENTRIES_PER_FEED]:
+        if not isinstance(row, dict):
+            continue
+        doi = str(row.get("doi") or "")
+        server = str(row.get("server") or "biorxiv").lower()
+        host = "www.medrxiv.org" if server == "medrxiv" else "www.biorxiv.org"
+        version = _int(row.get("version")) or 1
+        out.append({"title": row.get("title"), "summary": row.get("abstract"), "date": row.get("date"),
+                    "authors": _split_authors(str(row.get("authors") or ""), ";"),
+                    "categories": [str(row.get("category") or "")], "doi_text": doi,
+                    "link": f"https://{host}/content/{doi}v{version}" if DOI_RE.fullmatch(doi) else "",
+                    "venue": "medRxiv" if server == "medrxiv" else "bioRxiv"})
+    return out, len(rows)
+
+
+def parse_europepmc(data: bytes) -> tuple[list[dict], str | None]:
+    """Europe PMC REST search JSON (PubMed, PMC, preprints) -> raw entries, next cursor."""
+    doc = _json_document(data)
+    result_list = doc.get("resultList") if isinstance(doc, dict) else None
+    rows = result_list.get("result") if isinstance(result_list, dict) else None
+    if not isinstance(rows, list):
+        raise RadarError("Europe PMC response has no resultList")
+    out = []
+    for row in rows[:MAX_ENTRIES_PER_FEED]:
+        if not isinstance(row, dict):
+            continue
+        doi = str(row.get("doi") or "")
+        journal = row.get("journalTitle")
+        info = row.get("journalInfo")
+        if not journal and isinstance(info, dict) and isinstance(info.get("journal"), dict):
+            journal = info["journal"].get("title")
+        source, ident = str(row.get("source") or ""), str(row.get("id") or "")
+        if DOI_RE.fullmatch(doi):
+            link = f"https://doi.org/{doi}"
+        elif re.fullmatch(r"[A-Z]{2,4}", source) and re.fullmatch(r"[A-Za-z0-9]{1,20}", ident):
+            link = f"https://europepmc.org/article/{source}/{ident}"
+        else:
+            link = ""
+        keywords = row.get("keywordList", {}).get("keyword", []) if isinstance(row.get("keywordList"), dict) else []
+        out.append({"title": row.get("title"), "summary": row.get("abstractText"),
+                    "date": row.get("firstPublicationDate") or row.get("pubYear"),
+                    "authors": _split_authors(str(row.get("authorString") or ""), ","),
+                    "categories": [str(k) for k in keywords[:8]] if isinstance(keywords, list) else [],
+                    "doi_text": doi, "link": link, "venue": journal or "", "cited_by": _int(row.get("citedByCount"))})
+    cursor = doc.get("nextCursorMark")
+    return out, cursor if isinstance(cursor, str) and len(cursor) < 400 else None
 
 
 # --------------------------------------------------------------------------- normalise
@@ -519,10 +620,10 @@ _ARXIV_ABSTRACT = re.compile(r"^\s*arXiv:\S+\s+Announce Type:\s*([\w-]+)\s*Abstr
 
 
 def normalise(raw: dict, source: dict, fetched_at: datetime) -> dict | None:
-    title = clean_text(raw.get("title"), TITLE_MAX)
+    title = _detex(clean_text(raw.get("title"), TITLE_MAX)).rstrip(".")
     summary_source = raw.get("summary") or raw.get("content") or ""
     summary = clean_text(summary_source, SUMMARY_MAX * 2)
-    announce = raw.get("announce", "")
+    announce = str(raw.get("announce") or "")
     match = _ARXIV_ABSTRACT.match(summary)
     if match:
         announce = announce or match.group(1).lower()
@@ -534,14 +635,15 @@ def normalise(raw: dict, source: dict, fetched_at: datetime) -> dict | None:
         return None
     if announce.startswith("replace"):
         return None  # a revision of an old paper is not frontier news
-    date = parse_date(raw.get("date")) or parse_date(raw.get("updated")) or fetched_at
+    date = parse_date(str(raw.get("date") or "")) or parse_date(str(raw.get("updated") or "")) or fetched_at
     date = min(date, fetched_at)
-    authors = []
+    authors: list[str] = []
     for author in raw.get("authors", []):
-        if author not in authors:
-            authors.append(author)
-    aid = arxiv_id(link, raw.get("guid", ""))
-    doi = doi_of(raw.get("doi_text", ""), link, raw.get("guid", ""))
+        name = _detex(clean_text(author, AUTHOR_MAX))
+        if name and name not in authors:
+            authors.append(name)
+    aid = arxiv_id(link, str(raw.get("guid") or ""))
+    doi = doi_of(str(raw.get("doi_text") or ""), link, str(raw.get("guid") or ""))
     key = f"arxiv:{aid}" if aid else f"doi:{doi}" if doi else "url:" + link
     return {
         "id": hashlib.sha256(key.encode()).hexdigest()[:16],
@@ -550,10 +652,12 @@ def normalise(raw: dict, source: dict, fetched_at: datetime) -> dict | None:
         "url": f"https://arxiv.org/abs/{aid}" if aid and "/" not in aid else link,
         "summary": summary,
         "authors": authors[:AUTHORS_MAX],
-        "categories": [c for c in (clean_text(x, 60) for x in raw.get("categories", [])[:12]) if c],
+        "categories": [c for c in (clean_text(x, 60) for x in list(raw.get("categories", []))[:12]) if c],
         "date": iso(date),
         "doi": doi,
         "arxiv": aid,
+        "venue": clean_text(raw.get("venue") or "", 120),
+        "cited_by": _int(raw.get("cited_by")),
         "cross_list": announce == "cross",
         "sources": [source["id"]],
         "tier": source["tier"],
@@ -570,32 +674,54 @@ def _pattern(phrase: str) -> re.Pattern:
     return re.compile(r"(?<![\w])" + body + r"(?![\w])")
 
 
+def _family(host: str) -> str:
+    host = host.removeprefix("www.")
+    return "arxiv" if host.endswith("arxiv.org") else "biorxiv" if host.endswith("biorxiv.org") else host
+
+
+_TEX_ACCENT = re.compile(r"\\[\"'`^~=.Hcuvkr]\{?([A-Za-z])\}?")
+
+
+def _detex(text: str) -> str:
+    return _TEX_ACCENT.sub(r"\1", text).replace("{", "").replace("}", "") if "\\" in text else text
+
+
+def _any(patterns: list[re.Pattern]) -> re.Pattern:
+    return re.compile("|".join(f"(?:{p.pattern})" for p in patterns) or r"(?!)")
+
+
 class Scorer:
     """Transparent ranking: every point an item earns is written into ``why``."""
 
     def __init__(self, config: dict) -> None:
         self.config = config
-        self.topics = {tid: [(k, _pattern(k)) for k in t["keywords"]] for tid, t in config["topics"].items()}
+        self.topics = {tid: _any([_pattern(k) for k in t["keywords"]]) for tid, t in config["topics"].items()}
+        self.weights = {tid: float(t.get("weight", 1)) for tid, t in config["topics"].items()}
         self.signals = [(k, _pattern(k), float(v)) for k, v in config.get("signals", {}).items()]
         self.demote = [(k, _pattern(k), float(v)) for k, v in config.get("demote", {}).items()]
         self.authors = [(a, _pattern(a)) for a in config.get("watch_authors", [])]
+        self.any_author = _any([p for _, p in self.authors])
         self.sources = {s["id"]: s for s in config["sources"]}
+        # Corroboration counts publishers, not feeds: five arXiv listings of one preprint are one report.
+        self.family = {s["id"]: s.get("family") or _family(urlsplit(s["url"]).hostname or "") for s in config["sources"]}
 
     def score(self, item: dict) -> dict | None:
-        title, body = fold(item["title"]), fold(item["summary"] + " " + " ".join(item["categories"]))
+        title = fold(item["title"])
+        body = fold(" ".join([item["summary"], " ".join(item["categories"]), item.get("venue") or ""]))
         why: list[str] = []
         tier = min([self.sources[s]["tier"] for s in item["sources"] if s in self.sources] or [item["tier"]])
         score = TIER_WEIGHT[tier]
         why.append(f"tier {tier} source +{TIER_WEIGHT[tier]:g}")
         topics, topic_points = [], 0.0
-        for tid, patterns in self.topics.items():
-            hit_title = next((k for k, p in patterns if p.search(title)), None)
-            hit_body = hit_title or next((k for k, p in patterns if p.search(body)), None)
-            if hit_body:
+        for tid, pattern in self.topics.items():
+            if pattern.search(title):
                 topics.append(tid)
-                topic_points += 1.0 if hit_title else 0.5
+                topic_points += 1.0 * self.weights[tid]
+            elif pattern.search(body):
+                topics.append(tid)
+                topic_points += 0.5 * self.weights[tid]
         if topics:
-            topic_points = min(topic_points, 3.0)
+            topic_points = round(min(topic_points, 3.0), 2)
             score += topic_points
             why.append(f"topics {','.join(topics)} +{topic_points:g}")
         declared = {t for s in item["sources"] for t in self.sources.get(s, {}).get("topics", [])}
@@ -612,13 +738,15 @@ class Scorer:
         score += min(signal_points, 6.0)
         author_text = fold(" ; ".join(item["authors"]))
         author_points = 0.0
-        for name, pattern in self.authors:
-            if pattern.search(author_text):
-                author_points += 2.5
-                why.append(f"watched author {name} +2.5")
-            elif pattern.search(title) or pattern.search(body):
-                author_points += 1.5
-                why.append(f"mentions {name} +1.5")
+        if self.authors and (self.any_author.search(author_text) or self.any_author.search(title)
+                             or self.any_author.search(body)):
+            for name, pattern in self.authors:
+                if pattern.search(author_text):
+                    author_points += 2.5
+                    why.append(f"watched author {name} +2.5")
+                elif pattern.search(title) or pattern.search(body):
+                    author_points += 1.5
+                    why.append(f"mentions {name} +1.5")
         score += min(author_points, 5.0)
         for phrase, pattern, weight in self.demote:
             if pattern.search(title):
@@ -627,7 +755,13 @@ class Scorer:
         if item.get("cross_list"):
             score -= 0.5
             why.append("arXiv cross-list -0.5")
-        extra = len(set(item["sources"])) - 1
+        cited = item.get("cited_by") or 0
+        if cited > 0:
+            bonus = round(min(3.0, math.log10(1 + cited) * 1.2), 2)
+            score += bonus
+            why.append(f"cited {cited} times +{bonus:g}")
+        families = {self.family.get(s, s) for s in item["sources"]}
+        extra = len(families) - 1
         if extra > 0:
             bonus = min(0.75 * extra, 2.25)
             score += bonus
@@ -664,7 +798,8 @@ def merge(items: list[dict]) -> list[dict]:
         current["first_seen"] = min(seen) if seen else None
         current["tier"] = min(current["tier"], item["tier"])
         current["cross_list"] = current.get("cross_list", False) and item.get("cross_list", False)
-        for field in ("summary", "doi", "arxiv"):
+        current["cited_by"] = max(current.get("cited_by") or 0, item.get("cited_by") or 0)
+        for field in ("summary", "doi", "arxiv", "venue"):
             if not current.get(field) and item.get(field):
                 current[field] = item[field]
         if len(item.get("authors", [])) > len(current.get("authors", [])):
@@ -674,46 +809,102 @@ def merge(items: list[dict]) -> list[dict]:
 
 
 ARCHIVE_FIELDS = ("id", "key", "title", "url", "summary", "authors", "categories", "date", "doi", "arxiv",
-                  "cross_list", "sources", "tier", "first_seen")
+                  "venue", "cited_by", "cross_list", "sources", "tier", "first_seen")
+OUTPUT_FIELDS = ("id", "title", "url", "summary", "authors", "date", "first_seen", "topics", "score", "rank", "tier",
+                 "why", "sources", "source_names", "venue", "cited_by", "doi", "arxiv", "categories", "key",
+                 "cross_list")
+SHARD_RE = re.compile(r"^\d{4}-\d{2}\.json$")
+
+
+def _read_json(path: Path, max_bytes: int = MAX_ARCHIVE_BYTES) -> object:
+    try:
+        return json.loads(_read_bounded(path, max_bytes).decode("utf-8"))
+    except (ValueError, OSError, RadarError):
+        return None
+
+
+def _clean_archived(raw: object) -> dict | None:
+    """Re-sanitise an item read back from disk: the archive is untrusted too."""
+    if not (isinstance(raw, dict) and all(isinstance(raw.get(k), str) for k in ("key", "title", "url", "date"))
+            and isinstance(raw.get("sources"), list)):
+        return None
+    url = safe_link(raw["url"])
+    if not url or not parse_date(raw["date"]):
+        return None
+    item = {k: raw.get(k) for k in ARCHIVE_FIELDS}
+    item["url"] = url
+    item["key"] = clean_text(item["key"], URL_MAX + 10)
+    item["id"] = hashlib.sha256(item["key"].encode()).hexdigest()[:16]
+    item["authors"] = [_detex(clean_text(a, AUTHOR_MAX)) for a in item.get("authors") or [] if isinstance(a, str)][:AUTHORS_MAX]
+    item["categories"] = [clean_text(c, 60) for c in item.get("categories") or [] if isinstance(c, str)][:12]
+    item["title"] = _detex(clean_text(item["title"], TITLE_MAX))
+    item["summary"] = clean_text(item.get("summary") or "", SUMMARY_MAX)
+    item["venue"] = clean_text(item.get("venue") or "", 120)
+    item["cited_by"] = _int(item.get("cited_by"))
+    item["tier"] = item.get("tier") if item.get("tier") in TIER_WEIGHT else 3
+    item["sources"] = [s for s in item["sources"] if isinstance(s, str) and ID_RE.match(s)]
+    item["doi"] = item["doi"] if isinstance(item.get("doi"), str) and DOI_RE.fullmatch(item["doi"]) else None
+    item["arxiv"] = clean_text(item["arxiv"], 40) if isinstance(item.get("arxiv"), str) else None
+    item["cross_list"] = item.get("cross_list") is True
+    item["first_seen"] = item["first_seen"] if isinstance(item.get("first_seen"), str) and parse_date(item["first_seen"]) else None
+    return item if item["title"] and item["sources"] else None
 
 
 def load_archive(path: Path) -> dict:
-    if not path.exists():
-        return {"items": [], "sources": []}
-    try:
-        data = json.loads(_read_bounded(path, MAX_ARCHIVE_BYTES).decode("utf-8"))
-    except (ValueError, OSError):
-        return {"items": [], "sources": []}
-    if not isinstance(data, dict) or data.get("schema") != SCHEMA:
-        return {"items": [], "sources": []}
-    items = []
-    for item in data.get("items", []):
-        if isinstance(item, dict) and all(k in item for k in ("key", "title", "url", "date", "sources")):
-            if safe_link(item["url"]) and parse_date(item["date"]):
-                items.append({k: item.get(k) for k in ARCHIVE_FIELDS})
-    for item in items:
-        item["authors"] = [clean_text(a, AUTHOR_MAX) for a in item.get("authors") or [] if isinstance(a, str)]
-        item["categories"] = [clean_text(c, 60) for c in item.get("categories") or [] if isinstance(c, str)]
-        item["title"] = clean_text(item["title"], TITLE_MAX)
-        item["summary"] = clean_text(item.get("summary") or "", SUMMARY_MAX)
-        item["tier"] = item.get("tier") if item.get("tier") in TIER_WEIGHT else 3
-        item["sources"] = [s for s in item["sources"] if isinstance(s, str) and ID_RE.match(s)]
-    return {"items": items, "sources": data.get("sources", []) if isinstance(data.get("sources"), list) else []}
+    """Everything kept so far: ``archive/*.json`` month shards (or the items of an older radar.json)."""
+    data = _read_json(path) if path.exists() else None
+    statuses = data.get("sources", []) if isinstance(data, dict) and isinstance(data.get("sources"), list) else []
+    raws: list = []
+    shard_dir = path.parent / "archive"
+    index = _read_json(shard_dir / "index.json") if (shard_dir / "index.json").exists() else None
+    if isinstance(index, dict) and isinstance(index.get("months"), list):
+        for month in index["months"]:
+            name = month.get("file", "") if isinstance(month, dict) else ""
+            if isinstance(name, str) and SHARD_RE.match(name) and (shard_dir / name).exists():
+                shard = _read_json(shard_dir / name)
+                if isinstance(shard, dict) and isinstance(shard.get("items"), list):
+                    raws.extend(shard["items"])
+    elif isinstance(data, dict) and data.get("schema") == SCHEMA:
+        raws = data.get("items", []) if isinstance(data.get("items"), list) else []
+    items = [item for item in (_clean_archived(raw) for raw in raws) if item]
+    return {"items": items, "sources": statuses}
 
 
-def load_archive_full(path: Path) -> dict:
-    """A published radar.json for searching (bounded read, schema checked)."""
-    data = json.loads(_read_bounded(path, MAX_ARCHIVE_BYTES).decode("utf-8"))
+def load_search(path: Path) -> dict:
+    """A published radar.json plus its archive shards, for searching everything."""
+    data = _read_json(path)
     if not isinstance(data, dict) or data.get("schema") != SCHEMA or not isinstance(data.get("items"), list):
         raise RadarError(f"{path} is not a {SCHEMA} file")
+    seen = {item.get("id") for item in data["items"] if isinstance(item, dict)}
+    shard_dir = path.parent / "archive"
+    index = _read_json(shard_dir / "index.json") if (shard_dir / "index.json").exists() else None
+    for month in index.get("months", []) if isinstance(index, dict) else []:
+        name = month.get("file", "") if isinstance(month, dict) else ""
+        shard = _read_json(shard_dir / name) if isinstance(name, str) and SHARD_RE.match(name) else None
+        for item in shard.get("items", []) if isinstance(shard, dict) else []:
+            if isinstance(item, dict) and item.get("id") not in seen and safe_link(item.get("url")):
+                seen.add(item.get("id"))
+                data["items"].append(item)
     return data
+
+
+def _with_rank(data: dict, now: datetime | None = None) -> dict:
+    now = now or utcnow()
+    half_life = (data.get("ranking") or {}).get("half_life_days") or 14
+    for item in data["items"]:
+        if not isinstance(item.get("rank"), (int, float)) and isinstance(item.get("score"), (int, float)):
+            item["rank"] = rank(item, now, half_life)
+    return data
+
+
+load_archive_full = load_search  # backwards-compatible name
 
 
 # --------------------------------------------------------------------------- run
 
 def collect(config: dict, fixtures: Path | None = None, previous_status: list | None = None,
-            now: datetime | None = None, log=print) -> tuple[list[dict], list[dict]]:
-    """Fetch every source (or read ``fixtures/<id>.xml``). Never raises for a bad feed."""
+            now: datetime | None = None, log=print, deep: int = 1) -> tuple[list[dict], list[dict]]:
+    """Fetch every source, following pages (or read ``fixtures/<id>.xml|json``). Never raises for a bad feed."""
     now = now or utcnow()
     allow = frozenset(config["allow_hosts"])
     user_agent = config.get("user_agent") or f"deeptech-radar/{ENGINE_VERSION} (+research feed reader)"
@@ -725,45 +916,83 @@ def collect(config: dict, fixtures: Path | None = None, previous_status: list | 
             by_host.setdefault(urlsplit(source["url"]).hostname, []).append(source)
     opener = build_opener(allow)
 
+    def pages_of(source: dict) -> list[tuple[int, bytes, dict]]:
+        """Yield (code, body, validators) per page and stop when the source runs dry."""
+        fmt = source.get("format", "feed")
+        if fixtures:
+            for suffix in (".xml", ".json"):
+                path = fixtures / f"{source['id']}{suffix}"
+                if path.exists():
+                    return [(200, _read_bounded(path, MAX_FEED_BYTES), {})]
+            raise RadarError("no fixture")
+        return []  # network pages are fetched lazily in run_source
+
+    def run_source(source: dict, host: str) -> tuple[dict, list[dict]]:
+        fmt = source.get("format", "feed")
+        paged = any(p in source["url"] for p in ("{cursor}", "{offset}"))
+        templated = paged or "{" in source["url"]
+        max_pages = min(50, int(source.get("max_pages", 1)) * max(1, deep)) if paged else 1
+        size = int(source.get("page_size", 100))
+        status = {"id": source["id"], "name": source["name"], "url": source["url"],
+                  "checked_at": iso(now), "ok": False, "items": 0, "pages": 0}
+        entries: list[dict] = []
+        try:
+            cursor: object = "*" if fmt == "europepmc" else 0
+            fixture_pages = pages_of(source) if fixtures else None
+            for page in range(len(fixture_pages) if fixture_pages is not None else max_pages):
+                if fixture_pages is not None:
+                    code, body, validators = fixture_pages[page]
+                else:
+                    if page:
+                        time.sleep(float(delays.get(host, 1.0)))
+                    url = expand_url(source["url"], now, cursor, page * size)
+                    code, body, validators = _fetch_with_retry(
+                        url, opener, allow, user_agent, None if templated else cache.get(source["id"]),
+                        fmt != "feed")
+                    if page == 0:
+                        status.update(validators)
+                status["pages"] += 1
+                if code == 304:
+                    status["not_modified"] = True
+                    break
+                if fmt == "biorxiv":
+                    raws, count = parse_biorxiv(body)
+                    next_cursor: object = (int(cursor) + count) if count else None
+                elif fmt == "europepmc":
+                    raws, next_cursor = parse_europepmc(body)
+                else:
+                    raws = parse_feed(body)
+                    next_cursor = (page + 1) if len(raws) >= size else None
+                for raw in raws:
+                    item = normalise(raw, source, now)
+                    if item:
+                        item["first_seen"] = iso(now)
+                        entries.append(item)
+                if not raws or next_cursor is None or next_cursor == cursor:
+                    break
+                cursor = next_cursor
+            status.update(ok=True, items=len(entries))
+        except (RadarError, urllib.error.URLError, OSError, ssl.SSLError, ValueError) as error:
+            detail = getattr(error, "reason", None) or error
+            message = f"{type(error).__name__}: {detail}".replace("<", "(").replace(">", ")")
+            status["error"] = clean_text(message, 240)
+            status["ok"] = bool(entries)
+            status["items"] = len(entries)
+        log(f"  {'ok ' if status['ok'] else 'ERR'} {source['id']}: {status['items']} items, "
+            f"{status['pages']} page(s){' (unchanged)' if status.get('not_modified') else ''}"
+            f"{' ' + status['error'] if 'error' in status else ''}")
+        return status, entries
+
     def run_host(host: str, sources: list[dict]) -> list[tuple[dict, list[dict]]]:
         results = []
         for index, source in enumerate(sources):
             if index and not fixtures:
                 time.sleep(float(delays.get(host, 1.0)))
-            status = {"id": source["id"], "name": source["name"], "url": source["url"],
-                      "checked_at": iso(now), "ok": False, "items": 0}
-            entries: list[dict] = []
-            try:
-                if fixtures:
-                    path = fixtures / f"{source['id']}.xml"
-                    if not path.exists():
-                        raise RadarError("no fixture")
-                    code, body, validators = 200, _read_bounded(path, MAX_FEED_BYTES), {}
-                else:
-                    code, body, validators = _fetch_with_retry(source, opener, allow, user_agent,
-                                                               cache.get(source["id"]))
-                status.update(validators)
-                if code == 304:
-                    status.update(ok=True, not_modified=True)
-                else:
-                    for raw in parse_feed(body):
-                        item = normalise(raw, source, now)
-                        if item:
-                            item["first_seen"] = iso(now)
-                            entries.append(item)
-                    status.update(ok=True, items=len(entries))
-            except (RadarError, urllib.error.URLError, OSError, ssl.SSLError, ValueError) as error:
-                detail = getattr(error, "reason", None) or error
-                message = f"{type(error).__name__}: {detail}".replace("<", "(").replace(">", ")")
-                status["error"] = clean_text(message, 240)
-            log(f"  {'ok ' if status['ok'] else 'ERR'} {source['id']}: "
-                f"{status.get('items', 0)} items{' (unchanged)' if status.get('not_modified') else ''}"
-                f"{' ' + status['error'] if 'error' in status else ''}")
-            results.append((status, entries))
+            results.append(run_source(source, host))
         return results
 
     statuses, items = [], []
-    with ThreadPoolExecutor(max_workers=min(8, len(by_host) or 1)) as pool:
+    with ThreadPoolExecutor(max_workers=min(12, len(by_host) or 1)) as pool:
         for host_results in pool.map(lambda pair: run_host(*pair), by_host.items()):
             for status, entries in host_results:
                 statuses.append(status)
@@ -773,21 +1002,22 @@ def collect(config: dict, fixtures: Path | None = None, previous_status: list | 
     return items, statuses
 
 
-def _fetch_with_retry(source, opener, allow, user_agent, cache):
-    for attempt in range(2):
+def _fetch_with_retry(url, opener, allow, user_agent, cache, json_api=False):
+    for attempt in range(3):
         try:
-            return fetch(source, opener, allow, user_agent, cache)
+            return fetch(url, opener, allow, user_agent, cache, json_api)
         except urllib.error.HTTPError as error:
-            if attempt or error.code not in (429, 500, 502, 503, 504):
+            if attempt == 2 or error.code not in (429, 500, 502, 503, 504):
                 raise
         except (urllib.error.URLError, TimeoutError):
-            if attempt:
+            if attempt == 2:
                 raise
-        time.sleep(5)
+        time.sleep(5 * (attempt + 1))
     raise RadarError("unreachable")
 
 
 def build(config: dict, fresh: list[dict], archive: dict, statuses: list[dict], now: datetime | None = None) -> dict:
+    """Merge, rescore and rank everything. ``items`` holds the whole archive, best first."""
     now = now or utcnow()
     retention = now - timedelta(days=limit(config, "retention_days"))
     merged = merge(archive.get("items", []) + fresh)
@@ -831,10 +1061,8 @@ def build(config: dict, fresh: list[dict], archive: dict, statuses: list[dict], 
                     "count": topic_counts.get(tid, 0)} for tid, t in config["topics"].items()],
         "sources": statuses,
         "health": {"sources": len(statuses), "ok": ok, "failed": len(statuses) - ok},
-        "items": [{k: item.get(k) for k in ("id", "title", "url", "summary", "authors", "date", "first_seen",
-                                            "topics", "score", "rank", "tier", "why", "sources", "source_names",
-                                            "doi", "arxiv", "categories", "key", "cross_list")}
-                  for item in kept],
+        "archive": {"total": len(kept), "index": "archive/index.json"},
+        "items": [{k: item.get(k) for k in OUTPUT_FIELDS} for item in kept],
     }
 
 
@@ -863,7 +1091,7 @@ def _rss(config: dict, radar: dict, items: list[dict], title: str, self_name: st
         ET.SubElement(entry, "link").text = item["url"]
         ET.SubElement(entry, "guid", {"isPermaLink": "false"}).text = f"{config['id']}:{item['key']}"
         ET.SubElement(entry, "pubDate").text = email.utils.format_datetime(parse_date(item["date"]))
-        lead = " / ".join(item["source_names"])
+        lead = " / ".join(([item["venue"]] if item.get("venue") else []) + item["source_names"])
         authors = ", ".join(item["authors"][:6])
         ET.SubElement(entry, "description").text = " — ".join(x for x in (item["summary"], authors, lead) if x)
         for topic in item["topics"]:
@@ -877,16 +1105,23 @@ def _opml(config: dict) -> bytes:
     ET.SubElement(head, "title").text = config["title"] + " — sources"
     body = ET.SubElement(opml, "body")
     for source in config["sources"]:
+        if source.get("format", "feed") != "feed" or "{" in source["url"]:
+            continue  # APIs and templated queries are not subscribable feeds
         ET.SubElement(body, "outline", {"type": "rss", "text": source["name"], "title": source["name"],
                                         "xmlUrl": source["url"], "category": ",".join(source.get("topics", []))})
     return b'<?xml version="1.0" encoding="utf-8"?>\n' + ET.tostring(opml, encoding="utf-8") + b"\n"
 
 
 def write_outputs(config: dict, radar: dict, out: Path, site: bool = False) -> list[Path]:
+    """radar.json (best ``index_max``), archive/YYYY-MM.json shards (everything), feeds, OPML, page."""
+    every = radar["items"]
+    # "rank" decays with time but never reorders existing items (all decay alike), so it is computed by
+    # readers from score, date and ranking.half_life_days; leaving it out keeps diffs to the new items only.
+    stable = [{k: v for k, v in item.items() if k != "rank"} for item in every]
+    head = dict(radar, items=stable[: limit(config, "index_max")])
     min_score = limit(config, "min_score")
-    eligible = [i for i in radar["items"] if i["score"] >= min_score]
-    written = []
-    files = {"radar.json": dump_json(radar),
+    eligible = [i for i in every if i["score"] >= min_score]
+    files = {"radar.json": dump_json(dict(head, generated_at=radar["generated_at"])),
              "feed.xml": _rss(config, radar, eligible[: limit(config, "feed_max")], config["title"], "feed.xml"),
              "sources.opml": _opml(config)}
     for topic in radar["topics"]:
@@ -894,23 +1129,39 @@ def write_outputs(config: dict, radar: dict, out: Path, site: bool = False) -> l
         name = f"feed-{topic['id']}.xml"
         files[name] = _rss(config, radar, chosen, f"{config['title']} — {topic['label']}", name)
     if site:
-        files["index.html"] = render_page(config, radar).encode("utf-8")
+        files["index.html"] = render_page(config, dict(head, items=every[: limit(config, "index_max")])).encode("utf-8")
+    months: dict[str, list[dict]] = {}
+    for item in sorted(stable, key=lambda i: (i["date"], i["id"]), reverse=True):
+        months.setdefault(item["date"][:7], []).append(item)
+    index = {"schema": "deeptech.radar.archive/1", "radar": radar["radar"], "generated_at": radar["generated_at"],
+             "total": len(every), "trust": TRUST_LABEL,
+             "months": [{"month": m, "count": len(months[m]), "file": f"{m}.json"} for m in sorted(months, reverse=True)]}
+    for month, items in months.items():
+        files[f"archive/{month}.json"] = dump_json({"schema": "deeptech.radar.shard/1", "radar": radar["radar"],
+                                                    "month": month, "trust": TRUST_LABEL, "items": items})
+    files["archive/index.json"] = dump_json(index)
+    written = []
     for name, data in files.items():
         write_atomic(out / name, data)
         written.append(out / name)
+    shard_dir = out / "archive"
+    for stale in shard_dir.iterdir():
+        if SHARD_RE.match(stale.name) and stale.name[:7] not in months and stale.is_file():
+            stale.unlink()
     return written
 
 
 def run(config_path: Path, out: Path, fixtures: Path | None = None, site: bool = False,
-        offline: bool = False, now: datetime | None = None, log=print) -> dict:
+        offline: bool = False, now: datetime | None = None, log=print, deep: int = 1) -> dict:
     config = load_config(config_path)
     archive = load_archive(out / "radar.json")
     now = now or utcnow()
     if offline:
-        fresh, statuses = [], archive.get("sources", [])
+        ids = {source["id"] for source in config["sources"]}
+        fresh, statuses = [], [st for st in archive.get("sources", []) if isinstance(st, dict) and st.get("id") in ids]
     else:
-        log(f"radar {config['id']}: {len(config['sources'])} sources")
-        fresh, statuses = collect(config, fixtures, archive.get("sources"), now, log)
+        log(f"radar {config['id']}: {len(config['sources'])} sources (archive {len(archive['items'])})")
+        fresh, statuses = collect(config, fixtures, archive.get("sources"), now, log, deep)
     radar = build(config, fresh, archive, statuses, now)
     write_outputs(config, radar, out, site)
     return radar
@@ -967,6 +1218,7 @@ def _since(item: dict, value: str, now: datetime) -> bool:
 
 def search(radar: dict, query: str, limit_: int = 20, now: datetime | None = None, sort: str = "rank") -> list[dict]:
     now = now or utcnow()
+    _with_rank(radar, now)
     terms = parse_query(query)
     found = [item for item in radar.get("items", []) if matches(item, terms, now)]
     if sort == "date":
@@ -997,7 +1249,8 @@ def render_page(config: dict, radar: dict) -> str:
             f'<li class="item" data-id="{_e(item["id"])}"><article>'
             f'<h3><a href="{_e(item["url"])}" rel="noopener noreferrer nofollow" target="_blank">{_e(item["title"])}</a></h3>'
             f'<p class="meta"><time datetime="{_e(item["date"])}">{_e(item["date"][:10])}</time> · '
-            f'{_e(" / ".join(item["source_names"]))} · score {_e(item["score"])}</p>'
+            f'{_e(" / ".join(([item["venue"]] if item.get("venue") else []) + item["source_names"]))} · score {_e(item["score"])}'
+            + (f' · 被引用 {_e(item["cited_by"])}' if item.get("cited_by") else "") + '</p>'
             + (f'<p class="authors">{authors}</p>' if authors else "")
             + (f'<p class="summary">{_e(item["summary"])}</p>' if item["summary"] else "")
             + f'<p class="tags">{topics}</p></article></li>')
@@ -1042,7 +1295,7 @@ def render_page(config: dict, radar: dict) -> str:
 <h1>{_e(radar["title"])}</h1>
 <p>{_e(radar["description"])}</p>
 <p class="meta">更新 <time datetime="{_e(radar["generated_at"])}">{_e(radar["generated_at"].replace("T", " ").replace("Z", " UTC"))}</time>
- · 情報源 {health["ok"]}/{health["sources"]} 稼働 · 収録 {len(radar["items"])} 件</p>
+ · 情報源 {health["ok"]}/{health["sources"]} 稼働 · 収録 {radar.get("archive", {}).get("total", len(radar["items"])):,} 件</p>
 </header>
 <main>
 <section aria-label="検索">
@@ -1052,6 +1305,7 @@ def render_page(config: dict, radar: dict) -> str:
  placeholder='例: langlands  "quantum error correction"  au:tao  since:7d  -review'>
 </form>
 <div class="chips" role="group" aria-label="分野で絞り込み">{chips}</div>
+<p class="scope"><label><input type="checkbox" id="all"> 全期間のアーカイブも検索する（{radar.get("archive", {}).get("total", len(radar["items"])):,} 件・月別に読み込み）</label></p>
 <p class="help">語はすべて含むものを表示。<code>"…"</code> 完全一致、<code>-語</code> 除外、<code>topic:</code> 分野、<code>au:</code> 著者、<code>src:</code> 情報源、<code>tier:1</code> 最上位誌のみ、<code>since:7d</code> 期間。</p>
 <p id="status" class="meta" aria-live="polite"></p>
 </section>

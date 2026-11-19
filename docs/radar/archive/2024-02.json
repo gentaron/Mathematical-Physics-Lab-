@@ -1,0 +1,4830 @@
+{
+ "schema": "deeptech.radar.shard/1",
+ "radar": "math-physics-radar",
+ "month": "2024-02",
+ "trust": "untrusted-external-text",
+ "items": [
+  {
+   "id": "a0ca0517a422fc16",
+   "title": "Higher-group global symmetry and the bosonic M5 brane",
+   "url": "https://arxiv.org/abs/2402.19458",
+   "summary": "Higher-group symmetries are combinations of higher-form symmetries which appear in various field theories. In this paper, we explain how higher-group symmetries arise in 10d and 11d supergravities when the latter are coupled to brane sources. Motivated by this observation, we study field theories at zero and finite temperature invariant under a class of continuous Abelian higher-group symmetries. We restrict the analysis to the low-energy regime where the dynamical field content exclusively consists of Goldstone…",
+   "authors": [
+    "Jay Armas",
+    "Giorgos Batzios",
+    "Akash Jain"
+   ],
+   "date": "2024-02-29T18:51:37Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "JHEP 08 (2024) 003",
+   "cited_by": 0,
+   "doi": "10.1007/jhep08(2024)003",
+   "arxiv": "2402.19458",
+   "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+   ],
+   "key": "arxiv:2402.19458",
+   "cross_list": false
+  },
+  {
+   "id": "3a32f80b054ad11f",
+   "title": "Revisiting string-inspired running-vacuum models under the lens of light primordial black holes",
+   "url": "https://arxiv.org/abs/2402.19373",
+   "summary": "Light primordial black holes (PBHs) with masses $M_\\mathrm{PBH}<10^9\\mathrm{g}$ can interestingly dominate the Universe's energy budget and give rise to early matter-dominated (eMD) eras before Big Bang Nucleosyntesis (BBN). During this eMD era, one is met with an abundant production of induced gravitational waves (GWs) serving as a portal to constrain the underlying theory of gravity. In this work, we study this type of induced GWs within the context of string-inspired running-vaccuum models (StRVMs), which…",
+   "authors": [
+    "Theodoros Papanikolaou",
+    "Charalampos Tzerefos",
+    "Spyros Basilakos",
+    "Emmanuel N. Saridakis",
+    "Nick E. Mavromatos"
+   ],
+   "date": "2024-02-29T17:20:39Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-de-sitter"
+   ],
+   "source_names": [
+    "arXiv: de sitter"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.19373",
+   "categories": [
+    "gr-qc",
+    "astro-ph.CO",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.19373",
+   "cross_list": false
+  },
+  {
+   "id": "147ad79ebbea9612",
+   "title": "The de Sitter swampland conjectures in the context of Chaplygin-inspired inflation",
+   "url": "https://arxiv.org/abs/2402.19051",
+   "summary": "In this work, we discuss the de Sitter swampland conjectures in the context of the generalized Chaplygin-inspired inflationary model. We demonstrate that these conjectures can be satisfied, but only in the region of the parameter space far away from the General Relativity limit. The cosmic microwave background data had already been found to restrict the allowed inflationary potentials of this model. Our results impose a further limitation on the possible potentials.",
+   "authors": [
+    "Orfeu Bertolami",
+    "Robertus Potting",
+    "Paulo M. Sá"
+   ],
+   "date": "2024-02-29T11:28:28Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "Universe 2024, 10(7), 271",
+   "cited_by": 0,
+   "doi": "10.3390/universe10070271",
+   "arxiv": "2402.19051",
+   "categories": [
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.19051",
+   "cross_list": false
+  },
+  {
+   "id": "c2f414ae8dfcc7bf",
+   "title": "Rational Cherednik algebras and torus knot Invariants",
+   "url": "https://arxiv.org/abs/2402.18770",
+   "summary": "The HOMFLY polynomial of the $(m,n)$ torus knot $T_{m,n}$ can be extracted from the doubly graded character of the finite-dimensional representation $L_{m/n}$ of the type $A_{n-1}$ rational Cherednik algebra as observed by Gorsky, Oblomkov, Rasmussen and Shende. It is furthermore conjectured that one can obtain the triply-graded Khovanov-Rozansky homology of $T_{m,n}$ by considering a certain filtration on $L_{m/n}$. In this paper, we show that two of the proposed candidates, the algebraic filtration and the…",
+   "authors": [
+    "Xinchun Ma"
+   ],
+   "date": "2024-02-29T00:23:01Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "Int. Math. Res. Not. 2026, no. 10",
+   "cited_by": 0,
+   "doi": "10.1093/imrn/rnag089",
+   "arxiv": "2402.18770",
+   "categories": [
+    "math.RT",
+    "math.CO"
+   ],
+   "key": "arxiv:2402.18770",
+   "cross_list": false
+  },
+  {
+   "id": "a03d006fea4db5ba",
+   "title": "Localization of Random Surfaces with Monotone Potentials and an FKG-Gaussian Correlation Inequality",
+   "url": "https://arxiv.org/abs/2402.18737",
+   "summary": "The seminal 1975 work of Brascamp-Lieb-Lebowitz initiated the rigorous study of Ginzberg-Landau random surface models. It was conjectured therein that fluctuations are localized on $\\mathbb Z^d$ when $d\\geq 3$ for very general potentials, matching the behavior of the Gaussian free field. We confirm this behavior for all even potentials $U:\\mathbb R\\to\\mathbb R$ satisfying $U'(x)\\geq \\min(\\varepsilon x,\\frac{1+\\varepsilon}{x})$ on $x\\in \\mathbb R^+$. Given correspondingly stronger growth conditions on $U$, we show…",
+   "authors": [
+    "Mark Sellke"
+   ],
+   "date": "2024-02-28T22:33:41Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability +0.5"
+   ],
+   "sources": [
+    "arxiv-q-sle"
+   ],
+   "source_names": [
+    "arXiv: sle"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.18737",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.18737",
+   "cross_list": false
+  },
+  {
+   "id": "06dd8c8925b845a3",
+   "title": "Von Neumann Dimensions and Trace Formulas II: A Jacquet-Langlands correspondence for Arithmetic Group Algebras in $mGL(2)$",
+   "url": "https://arxiv.org/abs/2402.18488",
+   "summary": "We propose a global Jacquet-Langlands correspondence for the modules over the von Neumann algebras of $S$-arithmetic subgroups of $\\rm{GL}(2)$ and of a quaternion algebra $D$, which are both defined over a totally real number field $F$. If a representation $π'=\\otimesπ'_v$ of $D^{\\times}(\\mathbb{A}_F)$ corresponds to a representation $π=\\otimes π_v$ of $\\rm{GL}(2,\\mathbb{A}_F)$, we have $\\frac{\\dim_{\\mathcal{L}(\\rm{SL}(2,\\mathcal{O}_S))}π_S}{\\dim_{\\mathbb{C}}π'_S}=|\\frac{ζ_{D}(0)}{ζ_{F}(0)}|$, where $ζ_F,ζ_{D}$…",
+   "authors": [
+    "Jun Yang"
+   ],
+   "date": "2024-02-28T17:12:44Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.18488",
+   "categories": [
+    "math.RT",
+    "math.NT"
+   ],
+   "key": "arxiv:2402.18488",
+   "cross_list": false
+  },
+  {
+   "id": "2de7dbdfe8c30a56",
+   "title": "Beyond Natural Language: LLMs Leveraging Alternative Formats for Enhanced Reasoning and Communication",
+   "url": "https://arxiv.org/abs/2402.18439",
+   "summary": "Natural language (NL) has long been the predominant format for human cognition and communication, and by extension, has been similarly pivotal in the development and application of Large Language Models (LLMs). Yet, besides NL, LLMs have seen various non-NL formats during pre-training, such as code and logical expression. NL's status as the optimal format for LLMs, particularly in single-LLM reasoning and multi-agent communication, has not been thoroughly examined. In this work, we challenge the default use of NL…",
+   "authors": [
+    "Weize Chen",
+    "Chenfei Yuan",
+    "Jiarui Yuan",
+    "Yusheng Su",
+    "Chen Qian",
+    "Cheng Yang",
+    "Ruobing Xie",
+    "Zhiyuan Liu",
+    "Maosong Sun"
+   ],
+   "date": "2024-02-28T16:07:54Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.18439",
+   "categories": [
+    "cs.CL",
+    "cs.AI"
+   ],
+   "key": "arxiv:2402.18439",
+   "cross_list": false
+  },
+  {
+   "id": "598de1a9cfe45d3c",
+   "title": "Generalised Hydrodynamics description of the Page curve-like dynamics of a freely expanding fermionic gas",
+   "url": "https://arxiv.org/abs/2402.18422",
+   "summary": "We consider an analytically tractable model that exhibits the main features of the Page curve characterizing the evolution of entanglement entropy during evaporation of a black hole. Our model is a gas of non-interacting fermions on a lattice that is released from a box into the vacuum. More precisely, our Hamiltonian is a tight-binding model with a defect at the junction between the filled box and the vacuum. In addition to the entanglement entropy we consider several other observables, such as the spatial…",
+   "authors": [
+    "Madhumita Saha",
+    "Manas Kulkarni",
+    "Abhishek Dhar"
+   ],
+   "date": "2024-02-28T15:42:23Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity +1"
+   ],
+   "sources": [
+    "arxiv-q-bh-info"
+   ],
+   "source_names": [
+    "arXiv: bh info"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.18422",
+   "categories": [
+    "quant-ph",
+    "cond-mat.mes-hall",
+    "cond-mat.quant-gas",
+    "cond-mat.stat-mech",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.18422",
+   "cross_list": false
+  },
+  {
+   "id": "c651ebe9426dffce",
+   "title": "Homogeneity of arithmetic quantum limits for hyperbolic $4$-manifolds",
+   "url": "https://arxiv.org/abs/2402.18218",
+   "summary": "We work toward the arithmetic quantum unique ergodicity (AQUE) conjecture for sequences of Hecke--Maass forms on hyperbolic $4$-manifolds. We show that limits of such forms can only scar on totally geodesic $3$-submanifolds, and in fact that all ergodic components of the microlocal lift other than the uniform measure arise from the uniform measures on these submanifolds.",
+   "authors": [
+    "Zvi Shem-Tov",
+    "Lior Silberman"
+   ],
+   "date": "2024-02-28T10:26:19Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general",
+    "physics-general"
+   ],
+   "score": 3.05,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general,physics-general +0.45",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.18218",
+   "categories": [
+    "math.NT",
+    "math-ph",
+    "math.DS"
+   ],
+   "key": "arxiv:2402.18218",
+   "cross_list": false
+  },
+  {
+   "id": "928f2a49b32d62f3",
+   "title": "Primordial black holes in non-minimal Gauss-Bonnet inflation in light of the PTA data",
+   "url": "https://arxiv.org/abs/2403.00021",
+   "summary": "Here, we investigate the formation of primordial black holes (PBHs) in non-minimal coupling Gauss-Bonnet inflationary model in the presence of power-law potentials. We employ a two part coupling function to enhance primordial curvatures at small scales as well as satisfy Planck measurements at the CMB scale. Moreover, our model satisfies the swampland criteria. We find PBHs with different mass scales and demonstrate that PBHs with masses around $\\mathcal{O}(10^{-14})M_{\\odot}$ can account for almost all of the…",
+   "authors": [
+    "Milad Solbi",
+    "Kayoomars Karami"
+   ],
+   "date": "2024-02-28T09:40:41Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity +0.5"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "Eur. Phys. J. C 84, 918 (2024)",
+   "cited_by": 0,
+   "doi": "10.1140/epjc/s10052-024-13271-x",
+   "arxiv": "2403.00021",
+   "categories": [
+    "gr-qc",
+    "hep-th"
+   ],
+   "key": "arxiv:2403.00021",
+   "cross_list": false
+  },
+  {
+   "id": "5c9c160a8d9d1fd6",
+   "title": "Model Structures on Infinity-Categories of Filtrations",
+   "url": "https://arxiv.org/abs/2402.17921",
+   "summary": "In 1974, Gugenheim and May showed that the cohomology $\\text{Ext}_A(R,R)$ of a connected augmented algebra over a field $R$ is generated by elements with $s = 1$ under matric Massey products. In particular, this applies to the $E_2$ page of the $H\\mathbb{F}_p$-based Adams spectral sequence. By studying a novel sequence of deformations of a presentably symmetric monoidal stable $\\infty$-category $C$, we show that for a variety of spectral sequences coming from filtered spectra, the set of elements on the $E_2$…",
+   "authors": [
+    "Colin Aitken"
+   ],
+   "date": "2024-02-27T22:27:53Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-homotopy"
+   ],
+   "source_names": [
+    "arXiv: homotopy"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17921",
+   "categories": [
+    "math.AT"
+   ],
+   "key": "arxiv:2402.17921",
+   "cross_list": false
+  },
+  {
+   "id": "c066286cd6adffb5",
+   "title": "Independent Learning in Constrained Markov Potential Games",
+   "url": "https://arxiv.org/abs/2402.17885",
+   "summary": "Constrained Markov games offer a formal mathematical framework for modeling multi-agent reinforcement learning problems where the behavior of the agents is subject to constraints. In this work, we focus on the recently introduced class of constrained Markov Potential Games. While centralized algorithms have been proposed for solving such constrained games, the design of converging independent learning algorithms tailored for the constrained setting remains an open question. We propose an independent policy…",
+   "authors": [
+    "Philip Jordan",
+    "Anas Barakat",
+    "Niao He"
+   ],
+   "date": "2024-02-27T20:57:35Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17885",
+   "categories": [
+    "cs.LG",
+    "cs.GT",
+    "cs.MA"
+   ],
+   "key": "arxiv:2402.17885",
+   "cross_list": false
+  },
+  {
+   "id": "545312a5829f7894",
+   "title": "Descending finite projective modules from a Novikov ring",
+   "url": "https://arxiv.org/abs/2402.17852",
+   "summary": "We prove a descent result for finite projective modules, motivated by a question in perfectoid geometry. Given a commutative ring $A$, we formulate a descent problem for descending a finite projective module over the Novikov ring with coefficients in $A$ to a finite projective module over $A$. The main theorem of this paper is that all such descent data are effective. As an application, we prove for every perfect $\\mathbb{F}_p$-algebra $A$, a vector bundle on $\\operatorname{Spd} A$ always descends to a vector…",
+   "authors": [
+    "Dongryul Kim"
+   ],
+   "date": "2024-02-27T19:36:18Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17852",
+   "categories": [
+    "math.AC",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.17852",
+   "cross_list": false
+  },
+  {
+   "id": "6e679d5d720e243f",
+   "title": "Prismatic $F$-Gauges and Fontaine--Laffaille modules",
+   "url": "https://arxiv.org/abs/2402.17755",
+   "summary": "Let $k$ be a perfect field of characteristic $p$ and $W(k)$ its ring of Witt vectors. We construct an equivalence of categories between the full subcategory of the derived category of quasi-coherent sheaves on the syntomification of $W(k)$ spanned by objects whose Hodge-Tate weights are between $[0,p-2]$ and an appropriate derived category of Fontaine-Laffaille modules.",
+   "authors": [
+    "Gleb Terentiuk",
+    "Vadim Vologodsky",
+    "Yujie Xu"
+   ],
+   "date": "2024-02-27T18:47:13Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "geometry-topology"
+   ],
+   "score": 3.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,geometry-topology +1.5"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "Compositio Mathematica (2026)",
+   "cited_by": 0,
+   "doi": "10.1017/s0010437x26102978",
+   "arxiv": "2402.17755",
+   "categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.17755",
+   "cross_list": false
+  },
+  {
+   "id": "a92041dd378c64d7",
+   "title": "High dimensional Gross--Zagier formula: a survey",
+   "url": "https://arxiv.org/abs/2402.17656",
+   "summary": "We survey recent developments on generalizing the Gross--Zagier formula to high dimensional Shimura varieties, with an emphasis on the Arithmetic Gan--Gross--Prasad conjecture and the relative trace formula approach.",
+   "authors": [
+    "Wei Zhang"
+   ],
+   "date": "2024-02-27T16:24:59Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.25,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15",
+    "signal 'conjecture' +0.6",
+    "demoted 'survey' -0.5"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17656",
+   "categories": [
+    "math.NT",
+    "math.AG",
+    "math.RT"
+   ],
+   "key": "arxiv:2402.17656",
+   "cross_list": false
+  },
+  {
+   "id": "59cbfbae55ed236d",
+   "title": "Invariants of flat connections on 4-manifolds from Hopf group-algebras",
+   "url": "https://arxiv.org/abs/2402.17484",
+   "summary": "For a given group $G$, we construct an invariant of flat $G$-connections on 4-manifolds from a finite type involutory quasitriangular Hopf $G$-algebra. Hopf $G$-algebras are generalizations of Hopf algebras, equipped with gradings by $G$. In our construction, we color the dotted components of a Kirby diagram with elements of $G$ and employ the Hennings-type procedure. When $G$ is finite, we also define an invariant of 4-manifolds by summing the invariants over all flat $G$-connections.",
+   "authors": [
+    "Tomoro Mochida"
+   ],
+   "date": "2024-02-27T13:09:42Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1142/s0218216526500136",
+   "arxiv": "2402.17484",
+   "categories": [
+    "math.GT",
+    "math.QA"
+   ],
+   "key": "arxiv:2402.17484",
+   "cross_list": false
+  },
+  {
+   "id": "8196ea5ffb733eea",
+   "title": "Time-resolved ARPES studies of quantum materials",
+   "url": "http://link.aps.org/doi/10.1103/RevModPhys.96.015003",
+   "summary": "Author(s): Fabio Boschini, Marta Zonno, and Andrea Damascelli Time-resolved angle-resolved photoemission spectroscopy provides access to light-induced changes in the electronic band structure and interactions of solids, and to the out-of-equilibrium electron dynamics. This article reviews the history and future prospects for the development of the technique, and offers an overview of recent achievements in studying unoccupied and light-driven states, photoinduced phase transitions, electron-phonon scattering, and…",
+   "authors": [
+    "Fabio Boschini",
+    "Marta Zonno",
+    "Andrea Damascelli"
+   ],
+   "date": "2024-02-27T10:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 3.3,
+   "tier": 1,
+   "why": [
+    "tier 1 source +3",
+    "topics physics-general +0.3"
+   ],
+   "sources": [
+    "rmp"
+   ],
+   "source_names": [
+    "Reviews of Modern Physics"
+   ],
+   "venue": "Rev. Mod. Phys. 96, 015003 (2024)",
+   "cited_by": 0,
+   "doi": "10.1103/revmodphys.96.015003",
+   "arxiv": null,
+   "categories": [],
+   "key": "doi:10.1103/revmodphys.96.015003",
+   "cross_list": false
+  },
+  {
+   "id": "219882f3bbdcbf45",
+   "title": "A smooth Birman-Hilden theory for hyperkähler manifolds",
+   "url": "https://arxiv.org/abs/2402.17047",
+   "summary": "This article grew out of an effort to understand the smooth mapping class groups of certain 4-manifolds in a geometric manner. We prove a smooth analog of the Birman-Hilden theorem for manifolds that admit a hyperkähler structure. This allows us to probe the smooth mapping class groups associated to certain manifolds with nontrivial fundamental groups. Along the way, and of independent interest, we prove a global Torelli theorem for generalized Enriques manifolds. The techniques used are analogous to…",
+   "authors": [
+    "Sidhanth Raman"
+   ],
+   "date": "2024-02-26T22:14:51Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17047",
+   "categories": [
+    "math.GT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.17047",
+   "cross_list": false
+  },
+  {
+   "id": "5734eaa514601be6",
+   "title": "REFACTOR: Learning to Extract Theorems from Proofs",
+   "url": "https://arxiv.org/abs/2402.17032",
+   "summary": "Human mathematicians are often good at recognizing modular and reusable theorems that make complex mathematical results within reach. In this paper, we propose a novel method called theoREm-from-prooF extrACTOR (REFACTOR) for training neural networks to mimic this ability in formal mathematical theorem proving. We show on a set of unseen proofs, REFACTOR is able to extract 19.6% of the theorems that humans would use to write the proofs. When applying the model to the existing Metamath library, REFACTOR extracted…",
+   "authors": [
+    "Jin Peng Zhou",
+    "Yuhuai Wu",
+    "Qiyang Li",
+    "Roger Grosse"
+   ],
+   "date": "2024-02-26T21:21:30Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-ai,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17032",
+   "categories": [
+    "cs.AI",
+    "cs.LG"
+   ],
+   "key": "arxiv:2402.17032",
+   "cross_list": false
+  },
+  {
+   "id": "c5bf1c89ab47394a",
+   "title": "Convergence of the open WASEP stationary measure without Liggett's condition",
+   "url": "https://arxiv.org/abs/2402.17021",
+   "summary": "We demonstrate that Liggett's condition can be relaxed without disrupting the convergence of open ASEP stationary measures to the open KPZ stationary measure. This is equivalent to demonstrating that, under weak asymmetry scaling and appropriate scaling of time and space, the four-parameter Askey-Wilson process converges to a two-parameter continuous dual Hahn process. We conjecture that the convergence of the open ASEP height function process to solutions to the open KPZ equation will hold for a wider range of…",
+   "authors": [
+    "Zoe Himwich"
+   ],
+   "date": "2024-02-26T20:59:34Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 3.25,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +0.65",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.17021",
+   "categories": [
+    "math.PR"
+   ],
+   "key": "arxiv:2402.17021",
+   "cross_list": false
+  },
+  {
+   "id": "939befa928497591",
+   "title": "Cluster deep loci and mirror symmetry",
+   "url": "https://arxiv.org/abs/2402.16970",
+   "summary": "Affine cluster varieties are covered up to codimension 2 by open algebraic tori. We put forth a general conjecture (based on earlier conversation between Vivek Shende and the last author) characterizing their deep locus, i.e. the complement of all cluster charts, as the locus of points with non-trivial stabilizer under the action of cluster automorphisms. We use the diagrammatics of Demazure weaves to verify the conjecture for skew-symmetric cluster varieties of finite cluster type with arbitrary choice of…",
+   "authors": [
+    "Marco Castronovo",
+    "Mikhail Gorsky",
+    "José Simental",
+    "David E Speyer"
+   ],
+   "date": "2024-02-26T19:09:57Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 3.75,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +1.15",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16970",
+   "categories": [
+    "math.AG",
+    "math.CO",
+    "math.RA",
+    "math.RT",
+    "math.SG"
+   ],
+   "key": "arxiv:2402.16970",
+   "cross_list": false
+  },
+  {
+   "id": "18ef69d3c0ca2ca1",
+   "title": "The Physics of (good) LDPC Codes II. Product constructions",
+   "url": "https://arxiv.org/abs/2402.16831",
+   "summary": "We continue the study of classical and quantum low-density parity check (LDPC) codes from a physical perspective. We focus on constructive approaches and formulate a general framework for systematically constructing codes with various features on generic Euclidean and non-Euclidean graphs. These codes can serve as fixed-point limits for phases of matter. To build our machinery, we unpack various product constructions from the coding literature in terms of physical principles such as symmetries and redundancies…",
+   "authors": [
+    "Tibor Rakovszky",
+    "Vedika Khemani"
+   ],
+   "date": "2024-02-26T18:56:46Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16831",
+   "categories": [
+    "quant-ph",
+    "cond-mat.stat-mech",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.16831",
+   "cross_list": false
+  },
+  {
+   "id": "b44adf1204db9d58",
+   "title": "Multicolor, multipartite Ramsey numbers for quadrilateral",
+   "url": "https://arxiv.org/abs/2402.16816",
+   "summary": "The $p$-partite Ramsey number for quadrilateral, denoted by $r_p(C_4,k)$, is the least positive integer $n$ such that any coloring of the edges of a complete $p$-partite graph with $n$ vertices in each partition with $k$ colors will result in a monochromatic copy of $C_4$. In this paper, we present an upper bound for $r_p(C_4,k)$ and the exact values of $r_p(C_4,2)$ for all $p\\geq2$. In tripartite case we show that $r_3(C_4,k) \\leq \\lfloor (k+1)^2/2\\rfloor-1$ and the exact value of 4-color tripartite Ramsey…",
+   "authors": [
+    "Janusz Dybizbański",
+    "Yaser Rowshan"
+   ],
+   "date": "2024-02-26T18:39:20Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "combinatorics"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics combinatorics +0.5"
+   ],
+   "sources": [
+    "arxiv-q-ramsey"
+   ],
+   "source_names": [
+    "arXiv: ramsey"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16816",
+   "categories": [
+    "math.CO"
+   ],
+   "key": "arxiv:2402.16816",
+   "cross_list": false
+  },
+  {
+   "id": "877f6cd7576adcf5",
+   "title": "BV bialgebra structures in Floer theory and string topology",
+   "url": "https://arxiv.org/abs/2402.16794",
+   "summary": "We derive the notions of BV unital infinitesimal bialgebra and BV Frobenius algebra from the topology of suitable compactifications of moduli spaces of decorated genus 0 curves. We construct these structures respectively on reduced symplectic homology and Rabinowitz Floer homology. As an application, we construct these structures in nonequivariant string topology. We also show how the Lie bialgebra structure in equivariant string topology, and more generally on $S^1$-equivariant symplectic homology, is obtained…",
+   "authors": [
+    "Janko Latschev",
+    "Alexandru Oancea"
+   ],
+   "date": "2024-02-26T18:08:47Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16794",
+   "categories": [
+    "math.SG",
+    "math.AT",
+    "math.QA"
+   ],
+   "key": "arxiv:2402.16794",
+   "cross_list": false
+  },
+  {
+   "id": "cb590f98c277ca25",
+   "title": "Quantum intersection numbers and the Gromov-Witten invariants of $\\mathbbCP^1$",
+   "url": "https://arxiv.org/abs/2402.16464",
+   "summary": "The notion of a quantum tau-function for a natural quantization of the KdV hierarchy was introduced in a work of Dubrovin, Guéré, Rossi, and the second author. A certain natural choice of a quantum tau-function was then described by the first author, the coefficients of the logarithm of this series are called the quantum intersection numbers. Because of the Kontsevich-Witten theorem, a part of the quantum intersection numbers coincides with the classical intersection numbers of psi-classes on the moduli spaces of…",
+   "authors": [
+    "Xavier Blot",
+    "Alexandr Buryak"
+   ],
+   "date": "2024-02-26T10:12:23Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-physics",
+    "math-general",
+    "physics-general"
+   ],
+   "score": 3.95,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-physics,math-general,physics-general +1.95"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "Letters in Mathematical Physics 114 (2024), article number 131, https://link.springer.com/article/10.1007/s11005-024-01…",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16464",
+   "categories": [
+    "math.AG",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.16464",
+   "cross_list": false
+  },
+  {
+   "id": "b241a341b60afa77",
+   "title": "Dynamics of a Model of Polluted Lakes via Fractal-Fractional Operators with Two Different Numerical Algorithms",
+   "url": "https://arxiv.org/abs/2406.12856",
+   "summary": "We employ Mittag-Leffler type kernels to solve a system of fractional differential equations using fractal-fractional (FF) operators with two fractal and fractional orders. Using the notion of FF-derivatives with nonsingular and nonlocal fading memory, a model of three polluted lakes with one source of pollution is investigated. The properties of a non-decreasing and compact mapping are used in order to prove the existence of a solution for the FF-model of polluted lake system. For this purpose, the…",
+   "authors": [
+    "Tanzeela Kanwal",
+    "Azhar Hussain",
+    "İbrahim Avcı",
+    "Sina Etemad",
+    "Shahram Rezapour",
+    "Delfim F. M. Torres"
+   ],
+   "date": "2024-02-26T09:27:19Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-additive"
+   ],
+   "source_names": [
+    "arXiv: additive"
+   ],
+   "venue": "Chaos Solitons Fractals 181 (2024), Art. 114653, 21 pp",
+   "cited_by": 0,
+   "doi": "10.1016/j.chaos.2024.114653",
+   "arxiv": "2406.12856",
+   "categories": [
+    "math.DS"
+   ],
+   "key": "arxiv:2406.12856",
+   "cross_list": false
+  },
+  {
+   "id": "ceb74437c9140c8c",
+   "title": "Lower bound for large transversal fluctuations in exactly solvable KPZ models",
+   "url": "https://arxiv.org/abs/2402.16332",
+   "summary": "The study of transversal fluctuation of the optimal path has been a crucial aspect of the Kadar-Parisi-Zhang (KPZ) universality class. In this paper, we establish a new probability lower bound, with optimal exponential order, for the rare event in which a given level of the optimal path has a large transversal fluctuation. We present our results in both zero and positive temperature settings. The previously known lower bounds were obtained in zero temperature models, and they hold for the maximum transversal…",
+   "authors": [
+    "Xiao Shen"
+   ],
+   "date": "2024-02-26T06:27:26Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16332",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.16332",
+   "cross_list": false
+  },
+  {
+   "id": "612de0b3efe83018",
+   "title": "A note on homotopy and pseudoisotopy of diffeomorphisms of $4$-manifolds",
+   "url": "https://arxiv.org/abs/2402.16167",
+   "summary": "This note serves to record examples of diffeomorphisms of closed smooth $4$-manifolds $X$ that are homotopic but not pseudoisotopic to the identity, and to explain why there are no such examples when $X$ is orientable and its fundamental group is a free group.",
+   "authors": [
+    "Manuel Krannich",
+    "Alexander Kupers"
+   ],
+   "date": "2024-02-25T18:29:11Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16167",
+   "categories": [
+    "math.GT",
+    "math.AT"
+   ],
+   "key": "arxiv:2402.16167",
+   "cross_list": false
+  },
+  {
+   "id": "11d2aa8aceea530f",
+   "title": "Motivic Toda brackets",
+   "url": "https://arxiv.org/abs/2402.15906",
+   "summary": "We construct Toda brackets in unstable motivic homotopy theory and prove some fundamental properties of them. Furthermore we construct some examples of motivic Toda brackets.",
+   "authors": [
+    "Xiaowen Dong"
+   ],
+   "date": "2024-02-24T21:10:12Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology +1"
+   ],
+   "sources": [
+    "arxiv-q-homotopy"
+   ],
+   "source_names": [
+    "arXiv: homotopy"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.15906",
+   "categories": [
+    "math.AG",
+    "math.AT"
+   ],
+   "key": "arxiv:2402.15906",
+   "cross_list": false
+  },
+  {
+   "id": "85366e3ff79d472e",
+   "title": "Unified Interpretation of Muon g-2 anomaly, 95 GeV Diphoton, and $b\\barb$ Excesses in the General Next-to-Minimal Supersymmetric Standard Model",
+   "url": "https://arxiv.org/abs/2402.15847",
+   "summary": "We investigate three intriguing anomalies within the framework of the General Next-to-Minimal Supersymmetric Standard Model. These anomalies include a significant deviation of the experimental results for the muon anomalous magnetic moment from its Standard Model prediction, with a confidence level of $5.1σ$; a joint observation by the CMS and ATLAS collaborations of a diphoton excess with a local significance of $3.1 σ$ in the invariant mass distribution around 95.4 GeV; and a reported excess in the $b\\bar{b}$…",
+   "authors": [
+    "Junjie Cao",
+    "Xinglong Jia",
+    "Jingwei Lian"
+   ],
+   "date": "2024-02-24T16:30:03Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity +1"
+   ],
+   "sources": [
+    "arxiv-q-muon"
+   ],
+   "source_names": [
+    "arXiv: muon"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.15847",
+   "categories": [
+    "hep-ph"
+   ],
+   "key": "arxiv:2402.15847",
+   "cross_list": false
+  },
+  {
+   "id": "b2f08f5cc4fcafc5",
+   "title": "Instantons and Khovanov homology in $\\mathbbRP^3$",
+   "url": "https://arxiv.org/abs/2402.15716",
+   "summary": "We study the instanton Floer homology for links in $\\mathbb{RP}^3$ and compute the second page of Kronheimer--Mrowka's spectral sequence. As an application, we show that Khovanov homology detects the unknot and the projective unknot in $\\mathbb{RP}^3$.",
+   "authors": [
+    "Hongjian Yang"
+   ],
+   "date": "2024-02-24T04:47:38Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology +0.5"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "Trans. Amer. Math. Soc. 378 (2025), 4991-5009",
+   "cited_by": 0,
+   "doi": "10.1090/tran/9405",
+   "arxiv": "2402.15716",
+   "categories": [
+    "math.GT"
+   ],
+   "key": "arxiv:2402.15716",
+   "cross_list": false
+  },
+  {
+   "id": "b5a3be1b1966e35c",
+   "title": "Restoring the fluctuation-dissipation theorem in Kardar-Parisi-Zhang universality class through a new emergent fractal dimension",
+   "url": "https://arxiv.org/abs/2402.15576",
+   "summary": "The Kardar-Parisi-Zhang (KPZ) equation describes a wide range of growth-like phenomena, with applications in physics, chemistry and biology. There are three central questions in the study of KPZ growth: the determination of height probability distributions; the search for ever more precise universal growth exponents; and the apparent absence of a fluctuation-dissipation theorem (FDT) for spatial dimension $d>1$. Notably, these questions were answered exactly only for $1+1$ dimensions. In this work, we propose a…",
+   "authors": [
+    "Márcio S. Gomes-Filho",
+    "Pablo de Castro",
+    "Danilo B. Liarte",
+    "Fernando A. Oliveira"
+   ],
+   "date": "2024-02-23T19:26:41Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general",
+    "physics-general"
+   ],
+   "score": 3.45,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general,physics-general +1.45"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "Entropy 2024, 26(3), 260",
+   "cited_by": 0,
+   "doi": "10.3390/e26030260",
+   "arxiv": "2402.15576",
+   "categories": [
+    "cond-mat.stat-mech"
+   ],
+   "key": "arxiv:2402.15576",
+   "cross_list": false
+  },
+  {
+   "id": "84c431db3e48a252",
+   "title": "Is a model equivalent to its computer implementation?",
+   "url": "https://arxiv.org/abs/2402.15364",
+   "summary": "A recent trend in mathematical modeling is to publish the computer code together with the research findings. Here we explore the formal question, whether and in which sense a computer implementation is distinct from the mathematical model. We argue that, despite the convenience of implemented models, a set of implicit assumptions is perpetuated with the implementation to the extent that even in widely used models the causal link between the (formal) mathematical model and the set of results is no longer certain…",
+   "authors": [
+    "Beatrix C. Hiesmayr",
+    "Marc-Thorsten Hütt"
+   ],
+   "date": "2024-02-23T14:54:40Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "Proceedings of the European Academy of Sciences and Arts, 3. (2024)",
+   "cited_by": 0,
+   "doi": "10.4081/peasa.26",
+   "arxiv": "2402.15364",
+   "categories": [
+    "cs.CY",
+    "quant-ph"
+   ],
+   "key": "arxiv:2402.15364",
+   "cross_list": false
+  },
+  {
+   "id": "c98b6ba068ad29ba",
+   "title": "Beyond-mean-field corrections to the blueshift of a driven-dissipative exciton-polariton condensate",
+   "url": "https://arxiv.org/abs/2402.15316",
+   "summary": "In the absence of vortices or phase slips, the phase dynamics of exciton-polariton condensates was shown to map onto the Kardar-Parisi-Zhang (KPZ) equation, which describes the stochastic growth of a classical interface. This implies that the coherence of such non-equilibrium quasi-condensates decays in space and time following stretched exponentials, characterized by KPZ universal critical exponents. In this work, we focus on the time evolution of the average phase of a one-dimensional exciton-polariton…",
+   "authors": [
+    "Félix Helluin",
+    "Léonie Canet",
+    "Anna Minguzzi"
+   ],
+   "date": "2024-02-23T13:34:08Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "Physical Review B 2023 (Vol. 109, No. 19)",
+   "cited_by": 0,
+   "doi": "10.1103/physrevb.109.195304",
+   "arxiv": "2402.15316",
+   "categories": [
+    "cond-mat.quant-gas"
+   ],
+   "key": "arxiv:2402.15316",
+   "cross_list": false
+  },
+  {
+   "id": "177176e50c49d326",
+   "title": "Logarithmic A$_m inf$-cohomology",
+   "url": "https://arxiv.org/abs/2402.15154",
+   "summary": "We extend the construction of A$_{\\rm inf}$-cohomology by Bhatt-Morrow-Scholze to the context of log $p$-adic formal schemes over a log perfectoid base. In particular, using coordinates, we prove comparison theorems between log A$_{\\rm inf}$-cohomology with other $p$-adic cohomology theories, including log de Rham, log (q-)crystalline, log prismatic, and Kummer étale cohomology, as well as the derived A$_{\\rm inf}$-cohomology of certain infinite root stacks. Along the way, we define and give a combinatorial…",
+   "authors": [
+    "Hansheng Diao",
+    "Zijian Yao"
+   ],
+   "date": "2024-02-23T07:30:12Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +0.5"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.15154",
+   "categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.15154",
+   "cross_list": false
+  },
+  {
+   "id": "924ff6a73ff5c869",
+   "title": "The KSBA moduli space of stable log Calabi-Yau surfaces",
+   "url": "https://arxiv.org/abs/2402.15117",
+   "summary": "We prove that every irreducible component of the coarse Kollár-Shepherd-Barron and Alexeev (KSBA) moduli space of stable log Calabi--Yau surfaces admits a finite cover by a projective toric variety. This verifies a conjecture of Hacking-Keel-Yu. The proof combines tools from log smooth deformation theory, the minimal model program, punctured log Gromov-Witten theory and mirror symmetry.",
+   "authors": [
+    "Valery Alexeev",
+    "Hülya Argüz",
+    "Pierrick Bousseau"
+   ],
+   "date": "2024-02-23T06:06:52Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 3.75,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +1.15",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.15117",
+   "categories": [
+    "math.AG",
+    "math.SG"
+   ],
+   "key": "arxiv:2402.15117",
+   "cross_list": false
+  },
+  {
+   "id": "cfdb09e763c6dbef",
+   "title": "Practical Software for Triangulating and Simplifying 4-Manifolds",
+   "url": "https://arxiv.org/abs/2402.15087",
+   "summary": "Dimension 4 is the first dimension in which exotic smooth manifold pairs appear -- manifolds which are topologically the same but for which there is no smooth deformation of one into the other. Whilst smooth and triangulated 4-manifolds do coincide, comparatively little work has been done towards gaining an understanding of smooth 4-manifolds from the discrete and algorithmic perspective. In this paper we introduce new software tools to make this possible, including a software implementation of an algorithm which…",
+   "authors": [
+    "Rhuaidi Antonio Burke"
+   ],
+   "date": "2024-02-23T04:13:24Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.15087",
+   "categories": [
+    "math.GT",
+    "cs.CG"
+   ],
+   "key": "arxiv:2402.15087",
+   "cross_list": false
+  },
+  {
+   "id": "388a05f627f48da8",
+   "title": "Non-Invertible Duality Interfaces in Field Theories with Exotic Symmetries",
+   "url": "https://arxiv.org/abs/2402.14944",
+   "summary": "In recent years, the concept of global symmetry has generalized considerably. Two dramatic examples of this generalization are the exotic symmetries that govern theories with fractons and non-invertible symmetries, which do not fuse according to a group law. Only recently has the interplay between these two been examined. In this paper, we provide further examples of the interplay in the XY plaquette model, XY cube model, 1+1 d theory with global dipole symmetry, and the 2+1 d Lifshitz theory. They are analogs of…",
+   "authors": [
+    "Ryan C. Spieler"
+   ],
+   "date": "2024-02-22T20:00:01Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.14944",
+   "categories": [
+    "hep-th",
+    "cond-mat.str-el"
+   ],
+   "key": "arxiv:2402.14944",
+   "cross_list": false
+  },
+  {
+   "id": "7d5be7c598ca5b0b",
+   "title": "SymTh for non-finite symmetries",
+   "url": "https://arxiv.org/abs/2402.14813",
+   "summary": "Symmetry topological field theory (SymTFT) is a convenient tool for studying finite generalized symmetries of a given quantum field theory (QFT). In particular, SymTFTs encode all the symmetry structures and properties, including anomalies. Recently, this tool has been applied for non-finite symmetries as well. In this paper, we take a different route, which consists of considering a free theory rather than a topological field theory in the bulk. We call it Symmetry Theory (SymTh). We study its topological…",
+   "authors": [
+    "Fabio Apruzzi",
+    "Francesco Bedogna",
+    "Nicola Dondi"
+   ],
+   "date": "2024-02-22T18:59:25Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "math-physics",
+    "physics-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,math-physics,physics-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.14813",
+   "categories": [
+    "hep-th"
+   ],
+   "key": "arxiv:2402.14813",
+   "cross_list": false
+  },
+  {
+   "id": "5cd58e2b4cb778ed",
+   "title": "On the Central Limit Theorem for the log-partition function of 2D directed polymers",
+   "url": "https://arxiv.org/abs/2402.14647",
+   "summary": "The log-partition function $ \\log W_N(β)$ of the two-dimensional directed polymer in random environment is known to converge in distribution to a normal distribution when considering temperature in the subcritical regime $β=β_N=\\hatβ\\sqrt{π/\\log N}$, $\\hatβ\\in (0,1)$ (Caravenna, Sun, Zygouras, Ann. Appl. Prob. (2017)). In this paper, we present an elementary proof of this result relying on a decoupling argument and the central limit theorem for sums of independent random variables. The argument is inspired by an…",
+   "authors": [
+    "Clément Cosco",
+    "Anna Donadini"
+   ],
+   "date": "2024-02-22T15:52:13Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.14647",
+   "categories": [
+    "math.PR"
+   ],
+   "key": "arxiv:2402.14647",
+   "cross_list": false
+  },
+  {
+   "id": "290469ce0a62dd43",
+   "title": "New exact solution and $\\mathcalO\\,(1/\\sqrtω)$ anomaly in Brans-Dicke gravity with trace-carrying matter",
+   "url": "https://arxiv.org/abs/2402.14076",
+   "summary": "We present an exact static spherisymmetric solution for the Brans-Dicke action sourced by a self-gravitating massless Klein-Gordon helicity-0 field. In contrast to the Maxwell electromagnetic field, a Klein-Gordon field possesses an energy-momentum tensor with $\\textit{non-vanishing trace}$. Upon a Weyl mapping into the Einstein frame, the transformed Brans-Dicke scalar field takes on the role of a \"dilaton\" coupled with the Klein-Gordon field. Despite this dilatonic coupling, the field equations of the resulting…",
+   "authors": [
+    "Hoang Ky Nguyen",
+    "Bertrand Chauvineau"
+   ],
+   "date": "2024-02-21T19:05:45Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general",
+    "physics-general"
+   ],
+   "score": 2.45,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general,physics-general +0.45"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "Phys. Rev. D 110, 064075 (2024)",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.14076",
+   "categories": [
+    "gr-qc",
+    "hep-th",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.14076",
+   "cross_list": false
+  },
+  {
+   "id": "955be6c8b74949b9",
+   "title": "Visible GeV ALP from TeV Vector-like Leptons",
+   "url": "https://arxiv.org/abs/2402.14059",
+   "summary": "We present a model where a GeV axion-like-particle (ALP) is predicted in a large portion of the parameter space due to the presence of explicit Peccei-Quinn symmetry-breaking terms in an exotic leptonic sector. The latter provides a solution to the muon $g-2$ anomaly, within the framework of the Linear Seesaw neutrino mechanism. The spectrum is extended by a complex scalar singlet only transforming under the Peccei-Quinn symmetry, which generates the ALP. Its couplings with fermions can continuously span over…",
+   "authors": [
+    "Arturo de Giorgi",
+    "Marta Fuentes Zamoro",
+    "Luca Merlo"
+   ],
+   "date": "2024-02-21T19:00:01Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-muon"
+   ],
+   "source_names": [
+    "arXiv: muon"
+   ],
+   "venue": "Fortschr. Phys. 2025, 2400165",
+   "cited_by": 0,
+   "doi": "10.1002/prop.202400165",
+   "arxiv": "2402.14059",
+   "categories": [
+    "hep-ph"
+   ],
+   "key": "arxiv:2402.14059",
+   "cross_list": false
+  },
+  {
+   "id": "2c0833f4e84441bb",
+   "title": "Spectral mod p Satake isomorphism for GL_n",
+   "url": "https://arxiv.org/abs/2402.14011",
+   "summary": "Let $K/\\mathbb{Q}_p$ be a finite extension with residue field $k$. By a work of Emerton--Gee, irreducible components inside the reduced special fiber of the moduli stack of rank $n$ étale $(\\varphi,Γ)$-modules are labeled by Serre weights of $\\mathrm{GL}_n(k)$. Let $σ$ be a non-Steinberg Serre weight and $\\mathcal{C}_σ$ be the corresponding irreducible component. Motivated by the categorical $p$-adic local Langlands program, we construct a natural injective map $\\mathcal{O}(\\mathcal{C}_σ) \\hookrightarrow…",
+   "authors": [
+    "Heejong Lee"
+   ],
+   "date": "2024-02-21T18:51:02Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +0.5"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.14011",
+   "categories": [
+    "math.NT",
+    "math.RT"
+   ],
+   "key": "arxiv:2402.14011",
+   "cross_list": false
+  },
+  {
+   "id": "4ba44d5f349ee830",
+   "title": "di-Langlands correspondence and extended observables",
+   "url": "https://arxiv.org/abs/2402.13888",
+   "summary": "We explore the $\\textit{difference Langlands correspondence}$ using the four dimensional ${\\mathcal{N}}=2$ super-QCD. Surface defects and surface observables play the crucial role. As an application, we give the first construction of the full set of quantum integrals, i.e. commuting differential operators, such that the partition function of the so-called regular monodromy surface defect is their joint eigenvectors in an evaluation module over the Yangian $Y(\\mathfrak{gl}(2))$, making it the wavefunction of a…",
+   "authors": [
+    "Saebyeok Jeong",
+    "Norton Lee",
+    "Nikita Nekrasov"
+   ],
+   "date": "2024-02-21T16:00:36Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "physics-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,physics-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "JHEP 2024, 105 (2024)",
+   "cited_by": 0,
+   "doi": "10.1007/jhep06(2024)105",
+   "arxiv": "2402.13888",
+   "categories": [
+    "hep-th",
+    "math-ph",
+    "math.DG",
+    "math.QA",
+    "nlin.SI"
+   ],
+   "key": "arxiv:2402.13888",
+   "cross_list": false
+  },
+  {
+   "id": "8dcca4cdbdfbdcb8",
+   "title": "Erratum: Optical diagnostics of laser-produced plasmas [Rev. Mod. Phys. 94, 035002 (2022)]",
+   "url": "http://link.aps.org/doi/10.1103/RevModPhys.96.019901",
+   "summary": "Author(s): S. S. Harilal, M. C. Phillips, D. H. Froula, K. K. Anoop, R. C. Issac, and F. N. Beg [Rev. Mod. Phys. 96, 019901] Published Wed Feb 21, 2024",
+   "authors": [
+    "S. S. Harilal",
+    "M. C. Phillips",
+    "D. H. Froula",
+    "K. K. Anoop",
+    "R. C. Issac",
+    "F. N. Beg"
+   ],
+   "date": "2024-02-21T10:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "score": -1.0,
+   "tier": 1,
+   "why": [
+    "tier 1 source +3",
+    "demoted 'erratum' -4"
+   ],
+   "sources": [
+    "rmp"
+   ],
+   "source_names": [
+    "Reviews of Modern Physics"
+   ],
+   "venue": "Rev. Mod. Phys. 96, 019901 (2024)",
+   "cited_by": 0,
+   "doi": "10.1103/revmodphys.96.019901",
+   "arxiv": null,
+   "categories": [],
+   "key": "doi:10.1103/revmodphys.96.019901",
+   "cross_list": false
+  },
+  {
+   "id": "a2e863ab8ee70022",
+   "title": "Completely fixed point free isometry and cyclic orbifold of lattice vertex operator algebras",
+   "url": "https://arxiv.org/abs/2402.13621",
+   "summary": "We continue our study of cyclic orbifolds of lattice vertex operator algebras and their full automorphism groups. We consider some special isometry $g\\in O(L)$ such that $g^i$ is fixed point free on $L$ for any $1\\leq i\\leq |g|-1$. We show that when $L_2=\\emptyset$ and $g^i$ is fixed point free on $L$ for any $1\\leq i\\leq |g|-1$, $V_L^{\\hat{g}}$ has extra automorphisms implies either (1) the order of $g$ is a prime or (2) $L$ is isometric to the Leech lattice or some coinvariant sublattices of the Leech lattice.",
+   "authors": [
+    "Hsian-Yang Chen",
+    "Ching Hung Lam"
+   ],
+   "date": "2024-02-21T08:49:03Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-tqft"
+   ],
+   "source_names": [
+    "arXiv: tqft"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.13621",
+   "categories": [
+    "math.QA"
+   ],
+   "key": "arxiv:2402.13621",
+   "cross_list": false
+  },
+  {
+   "id": "46c4d51b91bcdcea",
+   "title": "Diagonal poset Ramsey numbers",
+   "url": "https://arxiv.org/abs/2402.13423",
+   "summary": "A poset $(Q,\\le_Q)$ contains an induced copy of a poset $(P,\\le_P)$ if there exists an injective mapping $φ\\colon P\\to Q$ such that for any two elements $X,Y\\in P$, $X\\le_P Y$ if and only if $φ(X)\\le_Q φ(Y)$. By $Q_n$ we denote the Boolean lattice $(2^{[n]},\\subseteq)$. The poset Ramsey number $R(P,Q)$ for posets $P$ and $Q$ is the least integer $N$ for which any coloring of the elements of $Q_N$ in blue and red contains either a blue induced copy of $P$ or a red induced copy of $Q$. In this paper, we show that…",
+   "authors": [
+    "Maria Axenovich",
+    "Christian Winter"
+   ],
+   "date": "2024-02-20T23:27:56Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "combinatorics"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics combinatorics +0.5"
+   ],
+   "sources": [
+    "arxiv-q-ramsey"
+   ],
+   "source_names": [
+    "arXiv: ramsey"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.13423",
+   "categories": [
+    "math.CO"
+   ],
+   "key": "arxiv:2402.13423",
+   "cross_list": false
+  },
+  {
+   "id": "15b7335d296641db",
+   "title": "Some cusp-transitive hyperbolic 4-manifolds",
+   "url": "https://arxiv.org/abs/2402.13209",
+   "summary": "We realize 4 of the 6 closed orientable flat 3-manifolds as a cusp section of an orientable finite-volume hyperbolic 4-manifold whose symmetry group acts transitively on the set of cusps.",
+   "authors": [
+    "Edoardo Rizzi"
+   ],
+   "date": "2024-02-20T18:20:57Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "Geom Dedicata 219, 61 (2025)",
+   "cited_by": 0,
+   "doi": "10.1007/s10711-025-01010-9",
+   "arxiv": "2402.13209",
+   "categories": [
+    "math.GT"
+   ],
+   "key": "arxiv:2402.13209",
+   "cross_list": false
+  },
+  {
+   "id": "3232e00cdade8873",
+   "title": "homotopy.io: a proof assistant for finitely-presented globular $n$-categories",
+   "url": "https://arxiv.org/abs/2402.13179",
+   "summary": "We present the proof assistant homotopy.io for working with finitely-presented semistrict higher categories. The tool runs in the browser with a point-and-click interface, allowing direct manipulation of proof objects via a graphical representation. We describe the user interface and explain how the tool can be used in practice. We also describe the essential subsystems of the tool, including collapse, contraction, expansion, typechecking, and layout, as well as key implementation details including data structure…",
+   "authors": [
+    "Nathan Corbyn",
+    "Lukas Heidemann",
+    "Nick Hu",
+    "Chiara Sarti",
+    "Calin Tataru",
+    "Jamie Vicary"
+   ],
+   "date": "2024-02-20T17:46:49Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-ai,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-homotopy"
+   ],
+   "source_names": [
+    "arXiv: homotopy"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.13179",
+   "categories": [
+    "cs.LO",
+    "math.CT"
+   ],
+   "key": "arxiv:2402.13179",
+   "cross_list": false
+  },
+  {
+   "id": "2fd0d8c66904ac51",
+   "title": "Deformations of Prismatic Higher $(G,μ)$-Displays over Quasi-Syntomic Rings",
+   "url": "https://arxiv.org/abs/2402.12879",
+   "summary": "We prove a deformation theorem for prismatic higher $(G,μ)$-displays over quasi-syntomic rings. As an application, we extend the classification of $p$-divisible groups via prismatic Dieudonné modules to a class of rings, properly containing quasi-syntomic rings. Finally, we relate the stack of prismatic higher $(G,μ)$-displays to integral local Shimura varieties.",
+   "authors": [
+    "Mohammad Hadi Hedayatzadeh",
+    "Ali Partofard"
+   ],
+   "date": "2024-02-20T10:16:29Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12879",
+   "categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.12879",
+   "cross_list": false
+  },
+  {
+   "id": "5cae4406afbb7380",
+   "title": "Nonlocal Symmetries of Two 2-component Equations of Camassa-Holm Type",
+   "url": "https://arxiv.org/abs/2402.12618",
+   "summary": "For a 2-component Camassa-Holm equation, as well as a 2-component generalization of the modified Camassa-Holm equation, nonlocal infinitesimal symmetries quadratically depending on eigenfunctions of linear spectral problems are constructed from functional gradients of spectral parameters. With appropriate pseudo-potentials, these nonlocal infinitesimal symmetries are prolonged to enlarged systems, and then explicitly integrated to generate symmetry transformations in finite form for enlarged systems. As…",
+   "authors": [
+    "Ziqi Li",
+    "Kai Tian"
+   ],
+   "date": "2024-02-20T00:55:11Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12618",
+   "categories": [
+    "nlin.SI"
+   ],
+   "key": "arxiv:2402.12618",
+   "cross_list": false
+  },
+  {
+   "id": "cc7ae59426f31fd2",
+   "title": "On the phase diagram of the polymer model",
+   "url": "https://arxiv.org/abs/2402.12580",
+   "summary": "In dimensions 3 or larger, it is a classical fact that the directed polymer model has two phases: Brownian behavior at high temperature, and non-Brownian behavior at low temperature. We consider the response of the polymer to an external field or tilt, and show that at fixed temperature, the polymer has Brownian behavior for some fields and non-Brownian behavior for others. In other words, the external field can induce the phase transition in the directed polymer model.",
+   "authors": [
+    "Arjun Krishnan",
+    "Sevak Mkrtchyan",
+    "Scott Neville"
+   ],
+   "date": "2024-02-19T22:20:44Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12580",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.12580",
+   "cross_list": false
+  },
+  {
+   "id": "291d14dc21f16a08",
+   "title": "Homoclinic Floer homology via direct limits",
+   "url": "https://arxiv.org/abs/2402.12345",
+   "summary": "Assume $M$ to be $\\mathbb R^2$ or a closed surface of genus $g \\geq 1$ and $ω$ a symplectic form on $M$. Let $\\varphi: M \\to M$ be a symplectomorphism with hyperbolic fixed point $x$ and transversely intersecting stable and unstable manifolds $W^s(\\varphi, x)$ and $ W^u(\\varphi, x)$. The intersection points $W^s(\\varphi, x) \\cap\\ W^u(\\varphi, x)=:{\\mathcal H}(\\varphi, x)$ are called homoclinic points, and the (un)stable manifolds of a symplectomorphism are Lagrangian submanifolds. For this Lagrangian intersection…",
+   "authors": [
+    "Sonja Hohloch"
+   ],
+   "date": "2024-02-19T18:20:12Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology +1"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12345",
+   "categories": [
+    "math.SG",
+    "math.DS"
+   ],
+   "key": "arxiv:2402.12345",
+   "cross_list": false
+  },
+  {
+   "id": "9f2da5ccd8ee5bb3",
+   "title": "Geometric and arithmetic theta correspondences",
+   "url": "https://arxiv.org/abs/2402.12159",
+   "summary": "Geometric/arithmetic theta correspondences provide correspondences between automorphic forms and cohomology classes/algebraic cycles on Shimura varieties. We give an introduction focusing on the example of unitary groups and highlight recent advances in the arithmetic theory (also known as the Kudla program) and their applications. These are expanded lecture notes for the IHES 2022 Summer School on the Langlands Program.",
+   "authors": [
+    "Chao Li"
+   ],
+   "date": "2024-02-19T14:14:49Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12159",
+   "categories": [
+    "math.NT",
+    "math.AG",
+    "math.RT"
+   ],
+   "key": "arxiv:2402.12159",
+   "cross_list": false
+  },
+  {
+   "id": "8d2476db45d95a0e",
+   "title": "The sign of linear periods",
+   "url": "https://arxiv.org/abs/2402.12106",
+   "summary": "Let $G$ be a group with subgroup $H$, and let $(π,V)$ be a complex representation of $G$. The natural action of the normalizer $N$ of $H$ in $G$ on the space $\\mathrm{Hom}_H(π,\\mathbb{C})$ of $H$-invariant linear forms on $V$, provides a representation $χ_π$ of $N$ trivial on $H$, which is a character when $\\mathrm{Hom}_H(π,\\mathbb{C})$ is one dimensional. If moreover $G$ is a reductive group over a local field, and $π$ is smooth irreducible, it is an interesting problem to express $χ_π$ in terms of the possibly…",
+   "authors": [
+    "U. K. Anandavardhanan",
+    "Hengfei Lu",
+    "Nadir Matringe",
+    "Vincent Sécherre",
+    "Chang Yang"
+   ],
+   "date": "2024-02-19T12:55:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.12106",
+   "categories": [
+    "math.RT"
+   ],
+   "key": "arxiv:2402.12106",
+   "cross_list": false
+  },
+  {
+   "id": "a4812ee5dba70b1d",
+   "title": "Exact decay of the persistence probability in the Airy$_1$ process",
+   "url": "https://arxiv.org/abs/2402.10661",
+   "summary": "We consider the Airy$_1$ process, which is the limit process in KPZ growth models with flat and non-random initial conditions. We study the persistence probability, namely the probability that the process stays below a given threshold $c$ for a time span of length $L$. This is expected to decay as $e^{-κ(c) L}$. We determine an analytic expression for $κ(c)$ for all $c\\geq 3/2$ starting with the continuum statistics formula for the persistence probability. As the formula is analytic only for $c>0$, we determine…",
+   "authors": [
+    "Patrik L. Ferrari",
+    "Min Liu"
+   ],
+   "date": "2024-02-16T13:11:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.10661",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.10661",
+   "cross_list": false
+  },
+  {
+   "id": "0815d10c8b3cc03a",
+   "title": "WDVV-based recursion for open Gromov-Witten invariants",
+   "url": "https://arxiv.org/abs/2402.10542",
+   "summary": "We give a computability result for open Gromov-Witten invariants based on open WDVV equations. This is analogous to the result of Kontsevich-Manin for closed Gromov-Witten invariants. For greater generality, we base the argument on a formal object, the Frobenius superpotential, that generalizes several different definitions of open Gromov-Witten invariants. As an application, we prove vanishing properties for open Gromov-Witten invariants on products of projective spaces.",
+   "authors": [
+    "Roi Blumberg",
+    "Sara B. Tukachinsky"
+   ],
+   "date": "2024-02-16T10:10:39Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1112/topo.70063",
+   "arxiv": "2402.10542",
+   "categories": [
+    "math.SG",
+    "hep-th",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.10542",
+   "cross_list": false
+  },
+  {
+   "id": "9069ed5984466ff1",
+   "title": "Cousin complexes in motivic homotopy theory",
+   "url": "https://arxiv.org/abs/2402.10541",
+   "summary": "We investigate Cousin (bi-)complexes in the setting of motives. Over essentially smooth local schemes, the columns of the Cousin bicomplex with coefficients in any stable motivic homotopy type are shown to be acyclic. On the other hand, we also construct a family of non-acyclic Cousin complexes over any positive dimensional base scheme. Our method of proof employs the notion of extended compactified framed correspondences. Three major motivations for this study are to further our understanding of strict homotopy…",
+   "authors": [
+    "A. Druzhinin",
+    "Håkon Kolderup",
+    "Paul Arne Østvær"
+   ],
+   "date": "2024-02-16T10:01:06Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-homotopy"
+   ],
+   "source_names": [
+    "arXiv: homotopy"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.10541",
+   "categories": [
+    "math.AG",
+    "math.KT"
+   ],
+   "key": "arxiv:2402.10541",
+   "cross_list": false
+  },
+  {
+   "id": "ed8702815a3609f0",
+   "title": "Khovanov homology and exotic $4$-manifolds",
+   "url": "https://arxiv.org/abs/2402.10452",
+   "summary": "We show that the Khovanov-Rozansky $\\mathfrak{gl}_2$ skein lasagna module distinguishes the exotic pair of knot traces $X_{-1}(-5_2)$ and $X_{-1}(P(3,-3,-8))$, an example first discovered by Akbulut. This gives the first analysis-free proof of the existence of exotic compact orientable $4$-manifolds. We also present a family of exotic knot traces that seem not directly recoverable from gauge/Floer-theoretic methods. Along the way, we present new explicit calculations of the Khovanov skein lasagna modules, and we…",
+   "authors": [
+    "Qiuyu Ren",
+    "Michael Willis"
+   ],
+   "date": "2024-02-16T04:58:58Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 3.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15",
+    "signal 'proof of the' +1.5"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.10452",
+   "categories": [
+    "math.GT",
+    "math.QA"
+   ],
+   "key": "arxiv:2402.10452",
+   "cross_list": false
+  },
+  {
+   "id": "60a19d85b27ce20a",
+   "title": "Rank three instantons, representations and sutures",
+   "url": "https://arxiv.org/abs/2402.10448",
+   "summary": "We show that the knot group of any knot in any integer homology sphere admits a non-abelian representation into $SU(3)$ such that meridians are mapped to matrices whose eigenvalues are the three distinct third roots of unity. This answers the $N=3$ case of a question posed by Xie and the first author. We also characterize when a $PU(3)$-bundle admits a flat connection. The key ingredient in the proofs is a study of the ring structure of $U(3)$ instanton Floer homology of $S^1\\times Σ_g$. In an earlier paper, Xie…",
+   "authors": [
+    "Aliakbar Daemi",
+    "Nobuo Iida",
+    "Christopher Scaduto"
+   ],
+   "date": "2024-02-16T04:45:23Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology +0.5"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.10448",
+   "categories": [
+    "math.GT"
+   ],
+   "key": "arxiv:2402.10448",
+   "cross_list": false
+  },
+  {
+   "id": "40daf48b92cc8c58",
+   "title": "Seiberg-Witten Equations and Einstein Metrics on Finite Volume 4-Manifolds with Asymptotically Hyperbolic Ends",
+   "url": "https://arxiv.org/abs/2402.10366",
+   "summary": "We construct infinitely many examples of finite volume 4-manifolds with $T^3$ ends that do not admit any cusped asymptotically hyperbolic Einstein metrics yet satisfy a strict logarithmic version of the Hitchin-Thorpe inequality due to Dai-Wei. This is done by using estimates from Seiberg-Witten theory due to LeBrun as well as a method for constructing solutions to the Seiberg-Witten equations on noncompact manifolds due to Biquard. We also use constructions coming from the $Pin^-(2)$ monopole equations to obtain…",
+   "authors": [
+    "Alex Xu"
+   ],
+   "date": "2024-02-15T23:18:22Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-physics,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.10366",
+   "categories": [
+    "math.DG",
+    "math.GT"
+   ],
+   "key": "arxiv:2402.10366",
+   "cross_list": false
+  },
+  {
+   "id": "026da197f2167b03",
+   "title": "An improved lower bound on the Shannon capacities of complements of odd cycles",
+   "url": "https://arxiv.org/abs/2402.10025",
+   "summary": "Improving a 2003 result of Bohman and Holzman, we show that for $n \\geq 1$, the Shannon capacity of the complement of the $2n+1$-cycle is at least $(2^{r_n} + 1)^{1/r_n} = 2 + Ω(2^{-r_n}/r_n)$, where $r_n = \\exp(O((\\log n)^2))$ is the number of partitions of $2(n-1)$ into powers of $2$. We also discuss a connection between this result and work by Day and Johnson in the context of graph Ramsey numbers.",
+   "authors": [
+    "Daniel G. Zhu"
+   ],
+   "date": "2024-02-15T15:45:44Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "combinatorics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-ramsey"
+   ],
+   "source_names": [
+    "arXiv: ramsey"
+   ],
+   "venue": "Proc. Amer. Math. Soc. 153 (2025), 1751-1759",
+   "cited_by": 0,
+   "doi": "10.1090/proc/17091",
+   "arxiv": "2402.10025",
+   "categories": [
+    "math.CO",
+    "cs.IT"
+   ],
+   "key": "arxiv:2402.10025",
+   "cross_list": false
+  },
+  {
+   "id": "ebb36ccdbc5474e5",
+   "title": "Advanced fuel fusion, phase space engineering, and structure-preserving geometric algorithms",
+   "url": "https://arxiv.org/abs/2402.09622",
+   "summary": "Non-thermal advanced fuel fusion trades the requirement of a large amount of recirculating tritium in the system for that of large recirculating power. Phase space engineering technologies utilizing externally injected electromagnetic fields can be applied to meet the challenge of maintaining non-thermal particle distributions at a reasonable cost. The physical processes of the phase space engineering are studied from a theoretical and algorithmic perspective. It is emphasized that the operational space of phase…",
+   "authors": [
+    "Hong Qin"
+   ],
+   "date": "2024-02-14T23:56:52Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "Phys. Plasmas 31, 050601 (2024)",
+   "cited_by": 0,
+   "doi": "10.1063/5.0203707",
+   "arxiv": "2402.09622",
+   "categories": [
+    "physics.plasm-ph",
+    "math-ph",
+    "math.NA",
+    "math.SG",
+    "physics.comp-ph"
+   ],
+   "key": "arxiv:2402.09622",
+   "cross_list": false
+  },
+  {
+   "id": "1e29a323098d9fb3",
+   "title": "Anisotropic Dark Energy from String Compactifications",
+   "url": "https://arxiv.org/abs/2402.09570",
+   "summary": "We explore the cosmological dynamics of a minimalistic yet generic string-inspired model for multifield dark energy. Adopting a supergravity four-dimensional viewpoint, we motivate the model's structure arising from superstring compactifications involving a chiral superfield and a pure $U(1)$ gauge sector. The chiral sector gives rise to a pair of scalar fields, such as the axio-dilaton, which are kinetically coupled. However, the scalar potential depends on only one of them, further entwined with the vector…",
+   "authors": [
+    "Diego Gallego",
+    "J. Bayron Orjuela-Quintana",
+    "César A. Valenzuela-Toledo"
+   ],
+   "date": "2024-02-14T20:42:33Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.09570",
+   "categories": [
+    "hep-th",
+    "astro-ph.CO",
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.09570",
+   "cross_list": false
+  },
+  {
+   "id": "b0c0a0b4c1803e1e",
+   "title": "C3NN: Cosmological Correlator Convolutional Neural Network -- an interpretable machine learning tool for cosmological analyses",
+   "url": "https://arxiv.org/abs/2402.09526",
+   "summary": "Modern cosmological research in large scale structure has witnessed an increasing number of applications of machine learning methods. Among them, Convolutional Neural Networks (CNNs) have received substantial attention due to their outstanding performance in image classification, cosmological parameter inference and various other tasks. However, many models which make use of CNNs are criticized as \"black boxes\" due to the difficulties in relating their outputs intuitively and quantitatively to the cosmological…",
+   "authors": [
+    "Zhengyangguang Gong",
+    "Anik Halder",
+    "Annabelle Bohrdt",
+    "Stella Seitz",
+    "David Gebauer"
+   ],
+   "date": "2024-02-14T19:07:18Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-cosmo-corr"
+   ],
+   "source_names": [
+    "arXiv: cosmo corr"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.09526",
+   "categories": [
+    "astro-ph.CO"
+   ],
+   "key": "arxiv:2402.09526",
+   "cross_list": false
+  },
+  {
+   "id": "fe43fafcdfa0420c",
+   "title": "Kennedy-Tasaki transformation and non-invertible symmetry in lattice models beyond one dimension",
+   "url": "https://arxiv.org/abs/2402.09520",
+   "summary": "We give an explicit operator representation (via a sequential circuit and projection to symmetry subspaces) of Kramers-Wannier duality transformation in higher-dimensional subsystem symmetric models generalizing the construction in the 1D transverse-field Ising model. Using the Kramers-Wannier duality operator, we also construct the Kennedy-Tasaki transformation that maps subsystem symmetry-protected topological phases to spontaneous subsystem symmetry breaking phases, where the symmetry group for the former is…",
+   "authors": [
+    "Aswin Parayil Mana",
+    "Yabo Li",
+    "Hiroki Sukeno",
+    "Tzu-Chieh Wei"
+   ],
+   "date": "2024-02-14T19:00:19Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-physics +1"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "Phys. Rev. B 109, 245129 (2024)",
+   "cited_by": 0,
+   "doi": "10.1103/physrevb.109.245129",
+   "arxiv": "2402.09520",
+   "categories": [
+    "cond-mat.str-el",
+    "hep-th",
+    "quant-ph"
+   ],
+   "key": "arxiv:2402.09520",
+   "cross_list": false
+  },
+  {
+   "id": "4526bb0a22d30db6",
+   "title": "Efficient Unitary T-designs from Random Sums",
+   "url": "https://arxiv.org/abs/2402.09335",
+   "summary": "Unitary $T$-designs play an important role in quantum information, with diverse applications in quantum algorithms, benchmarking, tomography, and communication. Until now, the most efficient construction of unitary $T$-designs for $n$-qudit systems has been via random local quantum circuits, which have been shown to converge to approximate $T$-designs in the diamond norm using $O(T^{5+o(1)} n^2)$ quantum gates. In this work, we provide a new construction of $T$-designs via random matrix theory using…",
+   "authors": [
+    "Chi-Fang Chen",
+    "Jordan Docter",
+    "Michelle Xu",
+    "Adam Bouland",
+    "Patrick Hayden"
+   ],
+   "date": "2024-02-14T17:32:30Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "physics-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,physics-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-additive"
+   ],
+   "source_names": [
+    "arXiv: additive"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1109/focs61266.2024.00037",
+   "arxiv": "2402.09335",
+   "categories": [
+    "quant-ph",
+    "cs.DS",
+    "math.PR"
+   ],
+   "key": "arxiv:2402.09335",
+   "cross_list": false
+  },
+  {
+   "id": "91b6bdab0d9747c7",
+   "title": "On-shell Bootstrap for n-gluons and gravitons scattering in (A)dS, Unitarity and Soft limit",
+   "url": "https://arxiv.org/abs/2402.09111",
+   "summary": "We propose an algorithm to recursively bootstrap $n$-point gluon and graviton Mellin-Momentum amplitudes in (A)dS spacetime using only three-point amplitude. We discover that gluon amplitudes are simply determined by factorization for $n\\geq 5$. The same principle applies to $n$-point graviton amplitudes, but additional constraints such as flat space and soft limits are needed to fix contact terms. Furthermore, we establish a mapping from $n$-point Mellin-Momentum amplitudes to $n$-point cosmological correlators…",
+   "authors": [
+    "Jiajie Mei",
+    "Yuyu Mo"
+   ],
+   "date": "2024-02-14T11:54:20Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-cosmo-corr"
+   ],
+   "source_names": [
+    "arXiv: cosmo corr"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.09111",
+   "categories": [
+    "hep-th",
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.09111",
+   "cross_list": false
+  },
+  {
+   "id": "e0be298f1dfa9ef9",
+   "title": "Controlling mass and energy diffusion with metamaterials",
+   "url": "http://link.aps.org/doi/10.1103/RevModPhys.96.015002",
+   "summary": "Author(s): Fubao Yang, Zeren Zhang, Liujun Xu, Zhoufei Liu, Peng Jin, Pengfei Zhuang, Min Lei, Jinrong Liu, Jian-Hua Jiang, Xiaoping Ouyang, Fabio Marchesoni, and Jiping Huang Metamaterials are artificially patterned structures designed to behave as artificial materials with novel properties. A popular application is controlling electromagnetic waves with subwavelength patterning, leading to properties like negative indices of refraction. Metamaterials can also control diffusion processes, which are different…",
+   "authors": [
+    "Fubao Yang",
+    "Zeren Zhang",
+    "Liujun Xu",
+    "Zhoufei Liu",
+    "Peng Jin",
+    "Pengfei Zhuang",
+    "Min Lei",
+    "Jinrong Liu",
+    "Jian-Hua Jiang",
+    "Xiaoping Ouyang",
+    "Fabio Marchesoni",
+    "Jiping Huang"
+   ],
+   "date": "2024-02-14T10:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "score": 3.0,
+   "tier": 1,
+   "why": [
+    "tier 1 source +3"
+   ],
+   "sources": [
+    "rmp"
+   ],
+   "source_names": [
+    "Reviews of Modern Physics"
+   ],
+   "venue": "Rev. Mod. Phys. 96, 015002 (2024)",
+   "cited_by": 0,
+   "doi": "10.1103/revmodphys.96.015002",
+   "arxiv": null,
+   "categories": [],
+   "key": "doi:10.1103/revmodphys.96.015002",
+   "cross_list": false
+  },
+  {
+   "id": "d99a9c9b31d75424",
+   "title": "Prismatic: Interactive Multi-View Cluster Analysis of Concept Stocks",
+   "url": "https://arxiv.org/abs/2402.08978",
+   "summary": "Financial cluster analysis allows investors to discover investment alternatives and avoid undertaking excessive risks. However, this analytical task faces substantial challenges arising from many pairwise comparisons, the dynamic correlations across time spans, and the ambiguity in deriving implications from business relational knowledge. We propose Prismatic, a visual analytics system that integrates quantitative analysis of historical performance and qualitative analysis of business relational knowledge to…",
+   "authors": [
+    "Wong Kam-Kwai",
+    "Yan Luo",
+    "Xuanwu Yue",
+    "Wei Chen",
+    "Huamin Qu"
+   ],
+   "date": "2024-02-14T06:47:30Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +1"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.08978",
+   "categories": [
+    "cs.HC",
+    "cs.CE",
+    "cs.LG"
+   ],
+   "key": "arxiv:2402.08978",
+   "cross_list": false
+  },
+  {
+   "id": "a1e3d945218923b1",
+   "title": "MUSTARD: Mastering Uniform Synthesis of Theorem and Proof Data",
+   "url": "https://arxiv.org/abs/2402.08957",
+   "summary": "Recent large language models (LLMs) have witnessed significant advancement in various tasks, including mathematical reasoning and theorem proving. As these two tasks require strict and formal multi-step inference, they are appealing domains for exploring the reasoning ability of LLMs but still face important challenges. Previous studies such as Chain-of-Thought (CoT) have revealed the effectiveness of intermediate steps guidance. However, such step-wise annotation requires heavy labor, leading to insufficient…",
+   "authors": [
+    "Yinya Huang",
+    "Xiaohan Lin",
+    "Zhengying Liu",
+    "Qingxing Cao",
+    "Huajian Xin",
+    "Haiming Wang",
+    "Zhenguo Li",
+    "Linqi Song",
+    "Xiaodan Liang"
+   ],
+   "date": "2024-02-14T05:57:58Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai",
+    "math-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-ai,math-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "ICLR 2024 spotlight",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.08957",
+   "categories": [
+    "cs.AI",
+    "cs.CL",
+    "cs.FL",
+    "cs.LG",
+    "cs.PL"
+   ],
+   "key": "arxiv:2402.08957",
+   "cross_list": false
+  },
+  {
+   "id": "2302836a31ae516c",
+   "title": "Extended symmetry analysis of (1+2)-dimensional fine Kolmogorov backward equation",
+   "url": "https://arxiv.org/abs/2402.08822",
+   "summary": "Within the class of (1+2)-dimensional ultraparabolic linear equations, we distinguish a fine Kolmogorov backward equation with a quadratic diffusivity. Modulo the point equivalence, it is a unique equation within the class whose essential Lie invariance algebra is five-dimensional and nonsolvable. Using the direct method, we compute the point symmetry pseudogroup of this equation and analyze its structure. In particular, we single out its essential subgroup and classify its discrete elements. We exhaustively…",
+   "authors": [
+    "Serhii D. Koval",
+    "Roman O. Popovych"
+   ],
+   "date": "2024-02-13T22:05:22Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "Stud. Appl. Math. 153 (2024), e12695",
+   "cited_by": 0,
+   "doi": "10.1111/sapm.12695",
+   "arxiv": "2402.08822",
+   "categories": [
+    "math-ph",
+    "math.AP"
+   ],
+   "key": "arxiv:2402.08822",
+   "cross_list": false
+  },
+  {
+   "id": "bf99cd56f7f81452",
+   "title": "Deriving the Gibbons-Maldacena-Nunez no-go theorem from the Raychaudhuri equation",
+   "url": "https://arxiv.org/abs/2402.08805",
+   "summary": "In this article, we point out that to solve the null Raychaudhuri equation for higher dimensional spacetime with accelerating FRW solution in external directions and static compact internal directions, it is necessary to violate the Strong Energy condition in higher dimensions. This constraint is well-known in obtaining accelerating cosmological solutions in string compactification, first described by Gibbons-Maldacena-Nunez. In deriving this constraint, we do not make any assumptions regarding the matter content.",
+   "authors": [
+    "Mir Mehedi Faruk"
+   ],
+   "date": "2024-02-13T21:22:50Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general",
+    "physics-general"
+   ],
+   "score": 2.45,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general,physics-general +0.45"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "Phys.Rev.D 109 (2024) 6, L061902",
+   "cited_by": 0,
+   "doi": "10.1103/physrevd.109.l061902",
+   "arxiv": "2402.08805",
+   "categories": [
+    "hep-th"
+   ],
+   "key": "arxiv:2402.08805",
+   "cross_list": false
+  },
+  {
+   "id": "cec75b77a3126c64",
+   "title": "Asymptotic Weak Gravity Conjecture in M-theory on K3 $\\times$ K3",
+   "url": "https://arxiv.org/abs/2402.08389",
+   "summary": "The Asymptotic WGC has been proposed as a special case of the tower WGC that probes infinite distances in the moduli space corresponding to weakly coupled gauge regimes. The conjecture has been studied in M-theory on Calabi-Yau threefold (CY3) with finite volume inducing a 5D effective QFT. In this paper, we extend the scope of the previous study to encompass lower dimensions, particularly we generalise the obtained 5D asymptotic WGC to the effective field theory $EFT_{3D}$ coupled to 3D gravity that descends…",
+   "authors": [
+    "M. Charkaoui",
+    "R. Sammani",
+    "E. H Saidi",
+    "R. Ahl Laamara"
+   ],
+   "date": "2024-02-13T11:30:42Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general",
+    "physics-general"
+   ],
+   "score": 3.7,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general,physics-general +1.1",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1093/ptep/ptae100",
+   "arxiv": "2402.08389",
+   "categories": [
+    "hep-th"
+   ],
+   "key": "arxiv:2402.08389",
+   "cross_list": false
+  },
+  {
+   "id": "fe95d25e2ed16aee",
+   "title": "On two modular geometric realizations of an affine Hecke algebra",
+   "url": "https://arxiv.org/abs/2402.08281",
+   "summary": "In this paper we construct equivalences of monoidal categories relating three geometric or representation-theoretic categorical incarnations of the affine Hecke algebra of a connected reductive algebraic group $G$ over a field of positive characteristic: a category of Harish-Chandra bimodules for the Lie algebra of $G$; the derived category of equivariant coherent sheaves on (a completed version of) the Steinberg variety of the Frobenius twist $G^{(1)}$ of $G$; a derived category of constructible sheaves on the…",
+   "authors": [
+    "Roman Bezrukavnikov",
+    "Simon Riche"
+   ],
+   "date": "2024-02-13T08:14:13Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.08281",
+   "categories": [
+    "math.RT"
+   ],
+   "key": "arxiv:2402.08281",
+   "cross_list": false
+  },
+  {
+   "id": "2345c987a659ebd8",
+   "title": "Logarithmic negative tangency and root stacks",
+   "url": "https://arxiv.org/abs/2402.08014",
+   "summary": "We study stable maps to normal crossings pairs with possibly negative tangency orders. There are two independent models: punctured Gromov-Witten theory of pairs and orbifold Gromov-Witten theory of root stacks with extremal ages. Exploiting the tropical structure of the punctured mapping space, we define and study a new virtual class for the punctured theory. This arises as a refined intersection product on the Artin fan, and produces a distinguished sector of punctured Gromov-Witten invariants. Restricting to…",
+   "authors": [
+    "Luca Battistella",
+    "Navid Nabijou",
+    "Dhruv Ranganathan"
+   ],
+   "date": "2024-02-12T19:23:19Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology +0.5"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.08014",
+   "categories": [
+    "math.AG"
+   ],
+   "key": "arxiv:2402.08014",
+   "cross_list": false
+  },
+  {
+   "id": "c268d927c50bc664",
+   "title": "The Multiplicative Formula of Langlands for Orbital Integrals in GL(2)",
+   "url": "https://arxiv.org/abs/2402.08013",
+   "summary": "Langlands has introduced a formula for a specific product of orbital integrals in $\\mbox{GL}(2, \\mathbb{Q})$. Altuğ employs this formula to manipulate the regular elliptic part of the trace formula, with the aim of eliminating the contribution of the trivial representation from the spectral side. Arthur predicts that this formula coincides with a product of polynomials associated with zeta functions of orders developed by Zhiwei Yun. In a previous paper, the author determined the explicit polynomials for the…",
+   "authors": [
+    "Malors Espinosa"
+   ],
+   "date": "2024-02-12T19:22:49Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +1"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.08013",
+   "categories": [
+    "math.NT"
+   ],
+   "key": "arxiv:2402.08013",
+   "cross_list": false
+  },
+  {
+   "id": "355b4fa079b8453e",
+   "title": "Zeta Functions of Certain Quadratic Orders",
+   "url": "https://arxiv.org/abs/2402.08007",
+   "summary": "Langlands provides a formula for certain product of orbital integrals in $GL(2, \\mathbb{Q})$. Its generalization has become an important question for the strategy of Beyond Endoscopy. Arthur predicts this formula should coincide with a product of polynomials associated to zeta functions of orders constructed by Zhiwei Yun. In this paper we compute, for a certain family of orders, explicit formulas for these zeta functions by a recursive method. We use these zeta functions in a further paper to prove that Arthur's…",
+   "authors": [
+    "Malors Espinosa"
+   ],
+   "date": "2024-02-12T19:12:44Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "Journal of Number Theory, Volume 252, November 2023, Pages 379-404",
+   "cited_by": 0,
+   "doi": "10.1016/j.jnt.2023.06.002",
+   "arxiv": "2402.08007",
+   "categories": [
+    "math.NT"
+   ],
+   "key": "arxiv:2402.08007",
+   "cross_list": false
+  },
+  {
+   "id": "1482aaa871760efa",
+   "title": "EvoGPT-f: An Evolutionary GPT Framework for Benchmarking Formal Math Languages",
+   "url": "https://arxiv.org/abs/2402.16878",
+   "summary": "Formal mathematics is the discipline of translating mathematics into a programming language in which any statement can be unequivocally checked by a computer. Mathematicians and computer scientists have spent decades of painstaking formalization efforts developing languages such as Coq, HOL, and Lean. Machine learning research has converged on these formal math corpora and given rise to an assortment of methodologies to aid in interactive and automated theorem proving. However, these papers have primarily focused…",
+   "authors": [
+    "Johnathan Mercer"
+   ],
+   "date": "2024-02-12T19:10:11Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-ai,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.16878",
+   "categories": [
+    "cs.AI",
+    "cs.CL",
+    "cs.LG",
+    "cs.NE"
+   ],
+   "key": "arxiv:2402.16878",
+   "cross_list": false
+  },
+  {
+   "id": "82948b475ada5415",
+   "title": "Prismatic VLMs: Investigating the Design Space of Visually-Conditioned Language Models",
+   "url": "https://arxiv.org/abs/2402.07865",
+   "summary": "Visually-conditioned language models (VLMs) have seen growing adoption in applications such as visual dialogue, scene understanding, and robotic task planning; adoption that has fueled a wealth of new models such as LLaVa, InstructBLIP, and PaLI-3. Despite the volume of new releases, key design decisions around image preprocessing, architecture, and optimization are under-explored, making it challenging to understand what factors account for model performance $-$ a challenge further complicated by the lack of…",
+   "authors": [
+    "Siddharth Karamcheti",
+    "Suraj Nair",
+    "Ashwin Balakrishna",
+    "Percy Liang",
+    "Thomas Kollar",
+    "Dorsa Sadigh"
+   ],
+   "date": "2024-02-12T18:21:14Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +1"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07865",
+   "categories": [
+    "cs.CV",
+    "cs.AI",
+    "cs.CL",
+    "cs.LG"
+   ],
+   "key": "arxiv:2402.07865",
+   "cross_list": false
+  },
+  {
+   "id": "4fc7bdbee0c16b6c",
+   "title": "Comparing skill of historical rainfall data based monsoon rainfall prediction in India with NWP forecasts",
+   "url": "https://arxiv.org/abs/2402.07851",
+   "summary": "The Indian summer monsoon is a highly complex and critical weather system that directly affects the livelihoods of over a billion people across the Indian subcontinent. Accurate short-term forecasting remains a major scientific challenge due to the monsoon's intrinsic nonlinearity and its sensitivity to multi-scale drivers, including local land-atmosphere interactions and large-scale ocean-atmosphere phenomena. In this study, we address the problem of forecasting daily rainfall across India during the summer…",
+   "authors": [
+    "Apoorva Narula",
+    "Aastha Jain",
+    "Jatin Batra",
+    "MN Rajeevan",
+    "Sandeep Juneja"
+   ],
+   "date": "2024-02-12T17:59:20Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-ai"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-autoformal"
+   ],
+   "source_names": [
+    "arXiv: autoformal"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07851",
+   "categories": [
+    "cs.LG"
+   ],
+   "key": "arxiv:2402.07851",
+   "cross_list": false
+  },
+  {
+   "id": "78bb10a696d648c4",
+   "title": "Application of the Inclusion-Exclusion Principle to Prime Number Subsequences",
+   "url": "https://arxiv.org/abs/2402.13214",
+   "summary": "We apply the Inclusion-Exclusion Principle to a unique pair of prime number subsequences to determine whether these subsequences form a small set or a large set and thus whether the infinite sum of the inverse of their terms converges or diverges. In this paper, we analyze the complementary prime number subsequences P(prime) and P(double-prime) as well as revisit the twin prime subsequence P2.",
+   "authors": [
+    "Michael P. May"
+   ],
+   "date": "2024-02-12T17:32:36Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-primes"
+   ],
+   "source_names": [
+    "arXiv: primes"
+   ],
+   "venue": "European Journal of Pure and Applied Mathematics, 17(1), 42-58 (2024)",
+   "cited_by": 0,
+   "doi": "10.29020/nybg.ejpam.v17i1.4979",
+   "arxiv": "2402.13214",
+   "categories": [
+    "math.GM"
+   ],
+   "key": "arxiv:2402.13214",
+   "cross_list": false
+  },
+  {
+   "id": "ba9a9f21e2bbd1e8",
+   "title": "Novel Low-Complexity Model Development for Li-ion Cells Using Online Impedance Measurement",
+   "url": "https://arxiv.org/abs/2402.07777",
+   "summary": "Modeling of Li-ion cells is used in battery management systems (BMS) to determine key states such as state-of-charge (SoC), state-of-health (SoH), etc. Accurate models are also useful in developing a cell-level digital-twin that can be used for protection and diagnostics in the BMS. In this paper, a low-complexity model development is proposed based on the equivalent circuit model (ECM) of the Li-ion cells. The proposed approach uses online impedance measurement at discrete frequencies to derive the ECM that…",
+   "authors": [
+    "Abhijit Kulkarni",
+    "Ahsan Nadeem",
+    "Roberta Di Fonso",
+    "Yusheng Zheng",
+    "Remus Teodorescu"
+   ],
+   "date": "2024-02-12T16:43:02Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "2024",
+   "cited_by": 0,
+   "doi": "10.1016/j.est.2024.112029",
+   "arxiv": "2402.07777",
+   "categories": [
+    "eess.SY"
+   ],
+   "key": "arxiv:2402.07777",
+   "cross_list": false
+  },
+  {
+   "id": "5f9f69786935bc44",
+   "title": "Lecture notes on Heegaard Floer homology",
+   "url": "https://arxiv.org/abs/2402.07558",
+   "summary": "These are the notes for a lecture series on Heegaard Floer homology, given by the first author at the Rényi Institute in January 2023, as part of a special semester titled ``Singularities and Low Dimensional Topology''. Familiarity with Heegaard diagrams and Morse theory is assumed. We first illustrate the relevant algebraic structures via grid homology, and then highlight the geometric rather than combinatorial nature of the general theory. We then define Heegaard Floer homology in the context of Lagrangian…",
+   "authors": [
+    "C. -M. Michael Wong",
+    "Sarah Zampa"
+   ],
+   "date": "2024-02-12T10:50:29Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 1.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +1.15",
+    "demoted 'lecture notes' -1.5"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07558",
+   "categories": [
+    "math.GT"
+   ],
+   "key": "arxiv:2402.07558",
+   "cross_list": false
+  },
+  {
+   "id": "c359a704a4c6f612",
+   "title": "Depth Separations in Neural Networks: Separating the Dimension from the Accuracy",
+   "url": "https://arxiv.org/abs/2402.07248",
+   "summary": "We prove an exponential size separation between depth 2 and depth 3 neural networks (with real inputs), when approximating a $\\mathcal{O}(1)$-Lipschitz target function to constant accuracy, with respect to a distribution with support in the unit ball, under the mild assumption that the weights of the depth 2 network are exponentially bounded. This resolves an open problem posed in \\citet{safran2019depth}, and proves that the curse of dimensionality manifests itself in depth 2 approximation, even in cases where…",
+   "authors": [
+    "Itay Safran",
+    "Daniel Reichman",
+    "Paul Valiant"
+   ],
+   "date": "2024-02-11T17:27:26Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "combinatorics"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "signal 'open problem' +1"
+   ],
+   "sources": [
+    "arxiv-q-complexity"
+   ],
+   "source_names": [
+    "arXiv: complexity"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07248",
+   "categories": [
+    "cs.LG",
+    "stat.ML"
+   ],
+   "key": "arxiv:2402.07248",
+   "cross_list": false
+  },
+  {
+   "id": "1c052050f42f5243",
+   "title": "Relative representability and parahoric level structures",
+   "url": "https://arxiv.org/abs/2402.07135",
+   "summary": "We establish a representability criterion of $v$-sheaf theoretic modifications of formal schemes and apply this criterion to moduli spaces of parahoric level structures on local shtukas. In the proof, we introduce nice classes of equivariant profinite perfectoid covers and study geometric quotients of perfectoid formal schemes by profinite groups. As a corollary, we show the local representability of integral models of local Shimura varieties under hyperspecial levels, and study the forgetful morphisms between…",
+   "authors": [
+    "Yuta Takaya"
+   ],
+   "date": "2024-02-11T09:31:01Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07135",
+   "categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.07135",
+   "cross_list": false
+  },
+  {
+   "id": "3ec2425256046912",
+   "title": "On the space-time fluctuations of the SHE and KPZ equation in the entire $L^2$-regime for spatial dimensions $d \\geq 3$",
+   "url": "https://arxiv.org/abs/2402.06874",
+   "summary": "We consider the mollified versions of the Kardar-Parisi-Zhang (KPZ) equation and the stochastic heat equation (SHE) in high dimensions $d\\geq 3$ and analyze their probability distributions as the mollification is removed. Up to the $L^2$-criticality, we prove Gaussian limits, possibly with random perturbations, for the space-time fluctuations of the mollified versions around their stationarity. This result establishes a continuous analogue of the discrete case obtained by Cosco and Nakajima (2021), and further…",
+   "authors": [
+    "Te-Chun Wang"
+   ],
+   "date": "2024-02-10T03:35:43Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.06874",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.06874",
+   "cross_list": false
+  },
+  {
+   "id": "0df5decce4343cbd",
+   "title": "The Asymptotic Structure of Cosmological Integrals",
+   "url": "https://arxiv.org/abs/2402.06558",
+   "summary": "We provide a general analysis of the asymptotic behaviour of perturbative contributions to observables in arbitrary power-law FRW cosmologies, indistinctly the Bunch-Davies wavefunction and cosmological correlators. We consider a large class of scalar toy models, including conformally-coupled and massless scalars in arbitrary dimensions, that admits a first principle definition in terms of (generalised/weighted) cosmological polytopes. The perturbative contributions to an observable can be expressed as an…",
+   "authors": [
+    "Paolo Benincasa",
+    "Francisco Vazão"
+   ],
+   "date": "2024-02-09T17:18:27Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-cosmo-corr"
+   ],
+   "source_names": [
+    "arXiv: cosmo corr"
+   ],
+   "venue": "SciPost Phys. 19, 029 (2025)",
+   "cited_by": 0,
+   "doi": "10.21468/scipostphys.19.2.029",
+   "arxiv": "2402.06558",
+   "categories": [
+    "hep-th",
+    "gr-qc",
+    "math-ph",
+    "math.CO"
+   ],
+   "key": "arxiv:2402.06558",
+   "cross_list": false
+  },
+  {
+   "id": "2a5ea3bda04191eb",
+   "title": "Categorical-Symmetry Resolved Entanglement in CFT",
+   "url": "https://arxiv.org/abs/2402.06322",
+   "summary": "We propose a symmetry resolution of entanglement for categorical non-invertible symmetries (CaT-SREE) in (1 + 1)-dimensional CFTs. The definition parallels that of group-like invertible symmetries, employing the concept of symmetric boundary states with respect to a categorical symmetry. Our examination extends to rational CFTs, where the behavior of CaT-SREE mirrors that of group-like invertible symmetries. We find that CaT-SREE can be defined if there is no obstruction to gauging the categorical symmetry, as…",
+   "authors": [
+    "P. Saura-Bastida",
+    "A. Das",
+    "G. Sierra",
+    "J. Molina-Vilaplana"
+   ],
+   "date": "2024-02-09T11:03:51Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1103/physrevd.109.105026",
+   "arxiv": "2402.06322",
+   "categories": [
+    "hep-th",
+    "cond-mat.stat-mech",
+    "cond-mat.str-el"
+   ],
+   "key": "arxiv:2402.06322",
+   "cross_list": false
+  },
+  {
+   "id": "661269cfff3bf465",
+   "title": "Prismatic Kunz's theorem",
+   "url": "https://arxiv.org/abs/2402.06207",
+   "summary": "In this paper, we prove \"prismatic Kunz's theorem\" which states that a complete Noetherian local ring $R$ of residue characteristic $p$ is a regular local ring if and only if the Frobenius lift on a prismatic complex of (a derived enhancement of) $R$ over a specific prism $(A, I)$ is faithfully flat. This generalizes classical Kunz's theorem from the perspective of extending the \"Frobenius map\" to mixed characteristic rings. Our approach involves studying the deformation problem of the \"regularity\" of prisms and…",
+   "authors": [
+    "Ryo Ishizuka",
+    "Kei Nakazato"
+   ],
+   "date": "2024-02-09T06:20:58Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1016/j.jalgebra.2026.01.010",
+   "arxiv": "2402.06207",
+   "categories": [
+    "math.AC",
+    "math.AG",
+    "math.NT"
+   ],
+   "key": "arxiv:2402.06207",
+   "cross_list": false
+  },
+  {
+   "id": "5af45a10cc2e4567",
+   "title": "On operadic open-closed maps in characteristic $p$",
+   "url": "https://arxiv.org/abs/2402.06183",
+   "summary": "Consider a closed monotone symplectic manifold $(M,ω)$. \\cite{Gan2} constructed a cyclic open-closed map, which goes from the cyclic homology of the Fukaya category of $M$ to the $S^1$-equivariant quantum cohomology of $M$. In this paper, we show that with mod $p$ coefficients, Ganatra's cyclic open-closed map is compatible with a certain $\\mathbb{Z}/p$-equivariant open-closed map under the natural $\\mathbb{Z}/p$-Gysin type comparison map for Hochschild homology. Along with the proof, this paper gives a new…",
+   "authors": [
+    "Zihong Chen"
+   ],
+   "date": "2024-02-09T04:39:10Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general",
+    "physics-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general,physics-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.06183",
+   "categories": [
+    "math.SG",
+    "math.KT"
+   ],
+   "key": "arxiv:2402.06183",
+   "cross_list": false
+  },
+  {
+   "id": "66b2bfd649bbfb8f",
+   "title": "Volume-Dependent Field Theories",
+   "url": "https://arxiv.org/abs/2402.06691",
+   "summary": "We develop the axiom system proposed by Kontsevich and Segal to define volume-dependent field theories (VFTs), a class of non-topological quantum field theories whose dependence on the background metric factors through the associated density. We construct a well-defined Lorentzian limit of a Wick-rotated VFT defined on smooth, possibly degenerate Lorentzian bordisms with incoming and outgoing boundary both nonempty. When the VFT is reflection positive, this extends the main theorem given by Kontsevich and Segal.",
+   "authors": [
+    "Richard Wedeen"
+   ],
+   "date": "2024-02-08T19:56:45Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general",
+    "physics-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general,physics-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-tqft"
+   ],
+   "source_names": [
+    "arXiv: tqft"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.06691",
+   "categories": [
+    "math-ph",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.06691",
+   "cross_list": false
+  },
+  {
+   "id": "d199e9f09ad07bf1",
+   "title": "Moments of primes in progressions to a large modulus",
+   "url": "https://arxiv.org/abs/2402.07941",
+   "summary": "Assuming a uniform $q$-variant of the prime $k$-tuple conjecture, we compute moments of the number of primes in arithmetic progressions to a large modulus $q$ as the residue classes vary. Consequently, depending on the size of $\\varphi(q)$, the prime count follows either a Gaussian or a Poisson distribution. In particular, the least prime in progressions follows an exponential distribution, with some unexpected discrepancies observed for smooth moduli.",
+   "authors": [
+    "Sun-Kai Leung"
+   ],
+   "date": "2024-02-08T19:24:11Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.75,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-primes"
+   ],
+   "source_names": [
+    "arXiv: primes"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.07941",
+   "categories": [
+    "math.NT",
+    "math.PR"
+   ],
+   "key": "arxiv:2402.07941",
+   "cross_list": false
+  },
+  {
+   "id": "699b283895eb9873",
+   "title": "The In-Out Formalism for In-In Correlators",
+   "url": "https://arxiv.org/abs/2402.05999",
+   "summary": "Cosmological correlators, the natural observables of the primordial universe, have been extensively studied in the past two decades using the in-in formalism pioneered by Schwinger and Keldysh for the study of dissipative open systems. Ironically, most applications in cosmology have focused on non-dissipative closed systems. We show that, for non-dissipative systems, correlators can be equivalently computed using the in-out formalism with the familiar Feynman rules. In particular, the myriad of in-in propagators…",
+   "authors": [
+    "Yaniv Donath",
+    "Enrico Pajer"
+   ],
+   "date": "2024-02-08T19:00:07Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-cosmo-corr"
+   ],
+   "source_names": [
+    "arXiv: cosmo corr"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.05999",
+   "categories": [
+    "hep-th",
+    "astro-ph.CO",
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.05999",
+   "cross_list": false
+  },
+  {
+   "id": "54defd23b6667cf5",
+   "title": "Duality for condensed cohomology of the Weil group of a p-adic field",
+   "url": "https://arxiv.org/abs/2402.05565",
+   "summary": "We use the theory of Condensed Mathematics to build a condensed cohomology theory for the Weil group of a $p$-adic field. The cohomology groups are proved to be locally compact abelian groups of finite ranks in some special cases. This allows us to enlarge the local Tate Duality to a more general category of non-necessarily discrete coefficients, where it takes the form of a Pontryagin duality between locally compact abelian groups.",
+   "authors": [
+    "Marco Artusa"
+   ],
+   "date": "2024-02-08T11:03:13Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.4171/dm/977",
+   "arxiv": "2402.05565",
+   "categories": [
+    "math.NT"
+   ],
+   "key": "arxiv:2402.05565",
+   "cross_list": false
+  },
+  {
+   "id": "88b904f834a4e59b",
+   "title": "Assessment of models for nonlinear oscillatory flow through a hexagonal sphere pack",
+   "url": "https://arxiv.org/abs/2402.05320",
+   "summary": "We review models for unsteady porous media flow in the volume-averaging framework and we discuss the theoretical relations between the models and the definition of the model coefficients (and the uncertainty therein). The different models are compared against direct numerical simulations of oscillatory flow through a hexagonal sphere pack. The model constants are determined based on their definition in terms of the Stokes flow, the potential flow and steady nonlinear flow. Thus, the discrepancies between the…",
+   "authors": [
+    "Lukas Unglehrt",
+    "Michael Manhart"
+   ],
+   "date": "2024-02-07T23:44:42Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-sphere-packing"
+   ],
+   "source_names": [
+    "arXiv: sphere packing"
+   ],
+   "venue": "Transport in Porous Media (2024)",
+   "cited_by": 0,
+   "doi": "10.1007/s11242-024-02110-y",
+   "arxiv": "2402.05320",
+   "categories": [
+    "physics.flu-dyn"
+   ],
+   "key": "arxiv:2402.05320",
+   "cross_list": false
+  },
+  {
+   "id": "fe4c8e473b5dd989",
+   "title": "Colorings of $k$-sets with low discrepancy on small sets",
+   "url": "https://arxiv.org/abs/2402.05286",
+   "summary": "For $0<δ\\leq 1$, let $R_k(m;δ)$ denote the smallest $N$ such that every coloring of $k$-element subsets by two colors yields an $m$-element set $M$ with relative discrepancy $δ$, which means that one color class has at least $(\\frac{1+δ}2){m\\choose k}$ elements. The number $R_k(m;δ)$ may be viewed as an extension of the usual $k$-hypergraph Ramsey number because $R_k(m)=R_k(m,1)$. Our main result is the following theorem. %\\begin{theorem} For some constants $c,k_0$, and $\\eps>0$, and for all $k\\geq k_0$, $c\\log…",
+   "authors": [
+    "Pavel Pudlák",
+    "Vojtěch Rödl"
+   ],
+   "date": "2024-02-07T22:00:52Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "combinatorics",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics combinatorics,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-ramsey"
+   ],
+   "source_names": [
+    "arXiv: ramsey"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.05286",
+   "categories": [
+    "math.CO"
+   ],
+   "key": "arxiv:2402.05286",
+   "cross_list": false
+  },
+  {
+   "id": "b3df9ae2be75ad61",
+   "title": "Massive carrollian fields at timelike infinity",
+   "url": "https://arxiv.org/abs/2402.05190",
+   "summary": "Motivated by flat space holography, we demonstrate that massive spin-$s$ fields in Minkowski space near timelike infinity are massive carrollian fields on the carrollian counterpart of anti-de Sitter space called $\\mathsf{Ti}$. Its isometries form the Poincaré group, and we construct the carrollian spin-$s$ fields using the method of induced representations. We provide a dictionary between massive carrollian fields on $\\mathsf{Ti}$ and massive fields in Minkowski space, as well as to fields in the conformal…",
+   "authors": [
+    "Emil Have",
+    "Kevin Nguyen",
+    "Stefan Prohazka",
+    "Jakob Salzer"
+   ],
+   "date": "2024-02-07T19:02:48Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity +0.5"
+   ],
+   "sources": [
+    "arxiv-q-celestial"
+   ],
+   "source_names": [
+    "arXiv: celestial"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.05190",
+   "categories": [
+    "hep-th",
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.05190",
+   "cross_list": false
+  },
+  {
+   "id": "ab89056c80b82089",
+   "title": "Hot spaces with positive cosmological constant in the canonical ensemble: de Sitter solution, Schwarzschild-de Sitter black hole, and Nariai universe",
+   "url": "https://arxiv.org/abs/2402.05166",
+   "summary": "In a space with positive cosmological constant $Λ$, we consider a black hole surrounded by a heat reservoir at radius $R$ and temperature $T$, i.e., we analyze the Schwarzschild-de Sitter black hole in a cavity. We use the Euclidean path integral approach to quantum gravity to study its canonical ensemble and thermodynamics. We give the action, energy, entropy, temperature, and heat capacity. $T$, $Λ$, the black hole radius $r_+$, and the cosmological horizon radius $r_{\\rm c}$, are gauged in $R$ units to $RT$…",
+   "authors": [
+    "José P. S. Lemos",
+    "Oleg B. Zaslavskii"
+   ],
+   "date": "2024-02-07T19:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-de-sitter"
+   ],
+   "source_names": [
+    "arXiv: de sitter"
+   ],
+   "venue": "Physical Review D 109, 084016 (2024)",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.05166",
+   "categories": [
+    "hep-th",
+    "cond-mat.stat-mech",
+    "gr-qc"
+   ],
+   "key": "arxiv:2402.05166",
+   "cross_list": false
+  },
+  {
+   "id": "c5e8f1125893c3bc",
+   "title": "Muon $g-2$ and Proton Lifetime in SUSY SU(5) GUTs with Split Superpartners",
+   "url": "https://arxiv.org/abs/2402.04850",
+   "summary": "We consider the interplay of the muon $g-2$ anomaly and the proton decay in the SUSY SU(5) GUTs with generation-independent scalar soft masses. In these scenarios, we introduce a number of $\\bf 5+{\\bar 5}$ messenger fields with doublet-triplet splitting in general gauge mediation to transmit SUSY breaking to the visible sector by gauge loops. As a result, squarks and sleptons receive generation-independent soft SUSY breaking masses, which are split already at the messenger scale. Taking into account the…",
+   "authors": [
+    "Seong-Sik Kim",
+    "Hyun Min Lee",
+    "Sung-Bo Sim"
+   ],
+   "date": "2024-02-07T13:48:40Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-muon"
+   ],
+   "source_names": [
+    "arXiv: muon"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04850",
+   "categories": [
+    "hep-ph",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.04850",
+   "cross_list": false
+  },
+  {
+   "id": "a467c1b4d129ea6a",
+   "title": "Calculating the interaction index of a fuzzy measure: a polynomial approach based on sampling",
+   "url": "https://arxiv.org/abs/2402.04774",
+   "summary": "In this paper we address the problem of fuzzy measures index calculation. On the basis of fuzzy sets, Murofushi and Soneda proposed an interaction index to deal with the relations between two individuals. This index was later extended in a common frame-work by Grabisch. Both indices are fundamental in the literature of fuzzy measures. Nevertheless, the corresponding calculation still presents a highly complex problem for which no approximation solution has been proposed yet. Then, using a representation of the…",
+   "authors": [
+    "Inmaculada Gutiérrez",
+    "Javier Castro",
+    "Daniel Gómez",
+    "Rosa Espínola"
+   ],
+   "date": "2024-02-07T11:49:06Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-additive"
+   ],
+   "source_names": [
+    "arXiv: additive"
+   ],
+   "venue": "Fuzzy Sets and Systems, 2023, 466, 108454",
+   "cited_by": 0,
+   "doi": "10.1016/j.fss.2022.12.010",
+   "arxiv": "2402.04774",
+   "categories": [
+    "math.ST"
+   ],
+   "key": "arxiv:2402.04774",
+   "cross_list": false
+  },
+  {
+   "id": "7b7e4cb7612ea4c9",
+   "title": "Out of the Dark: WISPs in String Theory and the Early Universe",
+   "url": "https://arxiv.org/abs/2402.04725",
+   "summary": "New light hidden sector degrees of freedom represent one of the most approaches to going beyond the Standard Model. I give a short account of how such WISP candidates naturally appear in string compactifications and some descriptions of ways that they can affect early universe cosmology.",
+   "authors": [
+    "Joseph P. Conlon"
+   ],
+   "date": "2024-02-07T10:23:24Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04725",
+   "categories": [
+    "hep-th",
+    "hep-ph"
+   ],
+   "key": "arxiv:2402.04725",
+   "cross_list": false
+  },
+  {
+   "id": "729ff51ee899ab52",
+   "title": "Colloquium: Sliding and pinning in structurally lubric 2D material interfaces",
+   "url": "http://link.aps.org/doi/10.1103/RevModPhys.96.011002",
+   "summary": "Author(s): Jin Wang, Ali Khosravi, Andrea Vanossi, and Erio Tosatti Friction at highly lubric interfaces of two-dimensional materials is important yet incompletely characterized. This Colloquium discusses sliding and pinning between two-dimensional layers, using simulations of twisted graphene interfaces as a prototypical system. The resulting insights are of potential relevance for a larger category of bilayer and multilayer systems as well. [Rev. Mod. Phys. 96, 011002] Published Wed Feb 07, 2024",
+   "authors": [
+    "Jin Wang",
+    "Ali Khosravi",
+    "Andrea Vanossi",
+    "Erio Tosatti"
+   ],
+   "date": "2024-02-07T10:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "math-physics"
+   ],
+   "score": 3.0,
+   "tier": 1,
+   "why": [
+    "tier 1 source +3"
+   ],
+   "sources": [
+    "rmp"
+   ],
+   "source_names": [
+    "Reviews of Modern Physics"
+   ],
+   "venue": "Rev. Mod. Phys. 96, 011002 (2024)",
+   "cited_by": 0,
+   "doi": "10.1103/revmodphys.96.011002",
+   "arxiv": null,
+   "categories": [],
+   "key": "doi:10.1103/revmodphys.96.011002",
+   "cross_list": false
+  },
+  {
+   "id": "f3f4fce7bfa901c3",
+   "title": "Algebraic Montgomery-Yang problem and smooth obstructions",
+   "url": "https://arxiv.org/abs/2402.04569",
+   "summary": "Let $S$ be a rational homology complex projective plane with quotient singularities. The algebraic Montgomery-Yang problem conjectures that the number of singular points of $S$ is at most three if its smooth locus is simply-connected. In this paper, we leverage results from the study of smooth 4-manifolds, including the Donaldson diagonalization theorem and Heegaard Floer correction terms, to establish additional conditions for $S$. As a result, we eliminate the possibility of a rational homology complex…",
+   "authors": [
+    "Woohyeok Jo",
+    "Jongil Park",
+    "Kyungbae Park"
+   ],
+   "date": "2024-02-07T04:07:54Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04569",
+   "categories": [
+    "math.GT",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.04569",
+   "cross_list": false
+  },
+  {
+   "id": "d6484ddb744845e1",
+   "title": "Combinatorial 2d higher topological quantum field theory from a local cyclic $A_\\infty$ algebra",
+   "url": "https://arxiv.org/abs/2402.04468",
+   "summary": "We construct combinatorial analogs of 2d higher topological quantum field theories. We consider triangulations as vertices of a certain CW complex $Ξ$. In the \"flip theory,\" cells of $Ξ_\\mathrm{flip}$ correspond to polygonal decompositions obtained by erasing the edges in a triangulation. These theories assign to a cobordism $Σ$ a cochain $Z$ on $Ξ_\\mathrm{flip}$ constructed as a contraction of structure tensors of a cyclic $A_\\infty$ algebra $V$ assigned to polygons. The cyclic $A_\\infty$ equations imply the…",
+   "authors": [
+    "Justin Beck",
+    "Andrey Losev",
+    "Pavel Mnev"
+   ],
+   "date": "2024-02-06T23:28:01Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "math-physics",
+    "math-general",
+    "physics-general"
+   ],
+   "score": 4.6,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,math-physics,math-general,physics-general +2.6"
+   ],
+   "sources": [
+    "arxiv-q-tqft"
+   ],
+   "source_names": [
+    "arXiv: tqft"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04468",
+   "categories": [
+    "math-ph",
+    "hep-th",
+    "math.AT",
+    "math.GT"
+   ],
+   "key": "arxiv:2402.04468",
+   "cross_list": false
+  },
+  {
+   "id": "20b12d08491ace7b",
+   "title": "Ab initio calculation of the effective Coulomb interactions in MX2 (M=Ti, V, Cr, Mn, Fe, Co, Ni; X=S, Se, Te): intrinsic magnetic ordering and Mott insulating phase",
+   "url": "https://arxiv.org/abs/2402.04199",
+   "summary": "Correlated phenomena such as magnetism and Mott phase are a very controversial issue in two-dimensional transition metal dichalcogenides (TMDCs). With the aim of finding the value of correlation strength and understanding the origin of ferromagnetic order in TMDCs, we first identify relevant low-energy degrees of freedom on both octahedral T and trigonal prismatic H lattices in MX2 (M=Ti, V, Cr, Mn, Fe, Co, Ni; X=S, Se, Te) and then determine the strength of the effective Coulomb interactions between localized d…",
+   "authors": [
+    "Afsaneh Karbalaee",
+    "Somayeh Belbasi",
+    "Hanif Hadipour"
+   ],
+   "date": "2024-02-06T17:53:11Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +0.5"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "Phys. Rev. B 105 (2022) 115115",
+   "cited_by": 0,
+   "doi": "10.1103/physrevb.105.115115",
+   "arxiv": "2402.04199",
+   "categories": [
+    "cond-mat.mtrl-sci"
+   ],
+   "key": "arxiv:2402.04199",
+   "cross_list": false
+  },
+  {
+   "id": "7a58b3ee4d4e2a5c",
+   "title": "Large Volume Scenario from Schoen Manifold with de Sitter under Swampland Conjecture",
+   "url": "https://arxiv.org/abs/2402.04089",
+   "summary": "To naturally allow for string compactification with duality manifested, here we investigate in the self-mirror large volume scenarios from Schoen Calabi-Yau manifold. We explicitly study the geometry of Schoen Calabi-Yau threefold and complete its triple intersection from both ambient and non-ambient spaces. Based on these, we study the large volume scenario of self-mirror Calabi-Yau compactification with Schoen type. Moreover, by studying the leading non-perturbative terms of the effective scalar potential, we…",
+   "authors": [
+    "Rui Sun"
+   ],
+   "date": "2024-02-06T15:46:47Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "hep-gravity",
+    "math-general"
+   ],
+   "score": 4.4,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,hep-gravity,math-general +1.8",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04089",
+   "categories": [
+    "hep-th",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.04089",
+   "cross_list": false
+  },
+  {
+   "id": "fdfc501bbb08602a",
+   "title": "ALE spaces and nodal curves",
+   "url": "https://arxiv.org/abs/2402.04021",
+   "summary": "We consider the twistor theory approach to Kronheimer's ALE metrics on resolutions of the quotient of C^2 by a finite subgroup of SU(2). The circle action on the 4-manifold induces a C^* action on a compactification of the twistor space and we identify the orbit of a generic twistor line as a nodal rational curve in a particular cohomology class of a projective rational surface. Using the results of N.Honda et al we identify this surface with the minitwistor space for the Einstein-Weyl structure on the…",
+   "authors": [
+    "Nigel Hitchin"
+   ],
+   "date": "2024-02-06T14:11:18Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 2.65,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +0.65"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.04021",
+   "categories": [
+    "math.DG"
+   ],
+   "key": "arxiv:2402.04021",
+   "cross_list": false
+  },
+  {
+   "id": "f48fbaa9f6b0b8ac",
+   "title": "An average version of Cilleruelo's conjecture for families of $S_n$-polynomials over a number field",
+   "url": "https://arxiv.org/abs/2402.03999",
+   "summary": "For $ f\\in\\mathbb{Z}[X] $ an irreducible polynomial of degree $ n $, the Cilleruelo's conjecture states that$$\\log(\\mbox{lcm}(f(1),\\dots,f(M)))\\sim(n-1)M\\log M$$as $ M\\rightarrow+\\infty $, where $ \\mbox{lcm}(f(1),\\dots,f(M)) $ is the least common multiple of $f(1),\\dots,f(M)$. It's well-known for $ n=1 $ as a consequence of Dirichlet's Theorem for primes in arithmetic progression, and it was proved by Cilleruelo for quadratic polynomials. Recently the conjecture was shown by Rudnick and Zehavi for a large family…",
+   "authors": [
+    "Ilaria Viglino"
+   ],
+   "date": "2024-02-06T13:52:46Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.9,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.3",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-primes"
+   ],
+   "source_names": [
+    "arXiv: primes"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03999",
+   "categories": [
+    "math.NT"
+   ],
+   "key": "arxiv:2402.03999",
+   "cross_list": false
+  },
+  {
+   "id": "d0d6581f33d42a8a",
+   "title": "ku-theoretic spectral decompositions for spheres and projective spaces",
+   "url": "https://arxiv.org/abs/2402.03995",
+   "summary": "Ben-Zvi--Sakellaridis--Venkatesh described a conjectural extension of the geometric Satake equivalence to spherical varieties, whose spectral decomposition is described by Hamiltonian varieties. The goal of this article is to study their conjecture, especially in the case of spherical varieties of relative rank 1, using tools from homotopy theory. Our discussion relates their conjecture to classical topics in homotopy theory such as the EHP sequence and Hopf fibrations, as well as more modern topics such as…",
+   "authors": [
+    "Sanath K. Devalapurkar"
+   ],
+   "date": "2024-02-06T13:50:06Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "math-general"
+   ],
+   "score": 3.25,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,math-general +0.65",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03995",
+   "categories": [
+    "math.AT",
+    "math.KT",
+    "math.RT"
+   ],
+   "key": "arxiv:2402.03995",
+   "cross_list": false
+  },
+  {
+   "id": "eb08e24733d0b361",
+   "title": "CosmoFlow: Python Package for Cosmological Correlators",
+   "url": "https://arxiv.org/abs/2402.03693",
+   "summary": "Cosmological correlators hold the key to high-energy physics as they probe the earliest moments of our Universe, and conceal hidden mathematical structures. However, even at tree-level, perturbative calculations are limited by technical difficulties absent in flatspace Feynman diagrammatics. In this paper, we introduce CosmoFlow: a new accurate open source Python code that computes tree-level cosmological correlators by tracing their time flow. This code is specifically designed to offer a simple, intuitive and…",
+   "authors": [
+    "Denis Werth",
+    "Lucas Pinol",
+    "Sébastien Renaux-Petel"
+   ],
+   "date": "2024-02-06T04:28:21Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-cosmo-corr"
+   ],
+   "source_names": [
+    "arXiv: cosmo corr"
+   ],
+   "venue": "Class. Quantum Grav. 41 175015 (2024)",
+   "cited_by": 0,
+   "doi": "10.1088/1361-6382/ad6740",
+   "arxiv": "2402.03693",
+   "categories": [
+    "astro-ph.CO",
+    "gr-qc",
+    "hep-ph",
+    "hep-th",
+    "physics.comp-ph"
+   ],
+   "key": "arxiv:2402.03693",
+   "cross_list": false
+  },
+  {
+   "id": "2c3c98ef4dcddce8",
+   "title": "Lowest $K$-types in the local Langlands correspondence",
+   "url": "https://arxiv.org/abs/2402.03552",
+   "summary": "Consider the irreducible representations of a real reductive group $G(\\mathbb{R})$, and their parametrization by the local Langlands correspondence. We ask: does the parametrization give easily accessible information on the restriction of representations to a maximal compact subgroup $K(\\mathbb{R})$ of $G(\\mathbb{R})$? We find a natural connection between the set of lowest $K$-types of a representation and its Langlands parameters. For our results, it is crucial to use the refined version of the local Langlands…",
+   "authors": [
+    "Jeffrey Adams",
+    "Alexandre Afgoustidis"
+   ],
+   "date": "2024-02-05T22:12:14Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +1"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03552",
+   "categories": [
+    "math.RT"
+   ],
+   "key": "arxiv:2402.03552",
+   "cross_list": false
+  },
+  {
+   "id": "8df8931437ba4aaa",
+   "title": "Kontsevich's Formula for Rational Curves from Classical and Quantum Perspectives",
+   "url": "https://arxiv.org/abs/2403.19663",
+   "summary": "Kontsevich's formula for rational plane curves is a recursive relation for the number $N_d$ of degree $d$ rational curves in $\\mathbb{P}^2$ passing through $3d-1$ general points. We provide two proofs of this recursion: the first more direct and combinatoric, the second more abstract. In order to achieve this, we introduce several moduli spaces, such as the Deligne-Mumford-Knudsen spaces and the Kontsevich spaces, and exploit their properties. In particular, the boundary structure of these spaces gives rise to…",
+   "authors": [
+    "Greg Weiler"
+   ],
+   "date": "2024-02-05T20:19:08Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "physics-general"
+   ],
+   "score": 2.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics physics-general +0.3"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2403.19663",
+   "categories": [
+    "math.AG"
+   ],
+   "key": "arxiv:2403.19663",
+   "cross_list": false
+  },
+  {
+   "id": "b133a4638bcf08e0",
+   "title": "Discrete Global Symmetries: Gauging and Twisted Compactification",
+   "url": "https://arxiv.org/abs/2402.03424",
+   "summary": "Discrete global symmetries of 4d $\\mathcal{N}=2$ SCFTs are studied via two operations: gauging and twisted compactification. We consider gauging of discrete symmetries in several well-known 4d $\\mathcal{N}=2$ SCFTs, including $\\mathrm{SU}(n)$ SQCD with $2n$ flavors, theories of class $\\mathcal{S}$ of type $A_{2n-1}$, and Argyres--Douglas theories of type $(A_N, A_N)$, as well as propose new 4d SCFTs as a result. The wreathing technique, which involves gauging a subgroup of the automorphism group of the quiver…",
+   "authors": [
+    "Simone Giacomelli",
+    "William Harding",
+    "Noppadol Mekareeya",
+    "Alessandro Mininno"
+   ],
+   "date": "2024-02-05T19:00:00Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-gen-sym"
+   ],
+   "source_names": [
+    "arXiv: gen sym"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03424",
+   "categories": [
+    "hep-th"
+   ],
+   "key": "arxiv:2402.03424",
+   "cross_list": false
+  },
+  {
+   "id": "8954d55ded74a924",
+   "title": "Examples of relative quantum cohomology",
+   "url": "https://arxiv.org/abs/2402.03209",
+   "summary": "We compute the quantum cohomology relative to a Lagrangian submanifold in some complete intersections. For quadric hypersurfaces, we also give a full computation of the genus zero open Gromov-Witten invariants.",
+   "authors": [
+    "Kai Hugtenburg",
+    "Sara B. Tukachinsky"
+   ],
+   "date": "2024-02-05T17:21:19Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "geometry-topology",
+    "physics-general"
+   ],
+   "score": 2.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics geometry-topology,physics-general +0.8"
+   ],
+   "sources": [
+    "arxiv-q-floer"
+   ],
+   "source_names": [
+    "arXiv: floer"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03209",
+   "categories": [
+    "math.SG",
+    "math.AG"
+   ],
+   "key": "arxiv:2402.03209",
+   "cross_list": false
+  },
+  {
+   "id": "0571dc6b043b0e71",
+   "title": "A flow approach to the generalized KPZ equation",
+   "url": "https://arxiv.org/abs/2402.03101",
+   "summary": "We show that the flow approach of Duch [Duc21] can be adapted to prove local well-posedness for the generalized Kardar-Parisi-Zhang equation. The key step is to extend the flow approach so that it can accommodate semi-linear equations involving smooth, non-polynomial, functions of the solution - this is accomplished by introducing coordinates for the flow built out of elementary differentials.",
+   "authors": [
+    "Ajay Chandra",
+    "Léonard Ferdinand"
+   ],
+   "date": "2024-02-05T15:29:28Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.03101",
+   "categories": [
+    "math.PR",
+    "math.AP"
+   ],
+   "key": "arxiv:2402.03101",
+   "cross_list": false
+  },
+  {
+   "id": "6e781d82d303cdf7",
+   "title": "Boundary Toda Conformal Field Theory from the path integral",
+   "url": "https://arxiv.org/abs/2402.02888",
+   "summary": "Toda Conformal Field Theories (CFTs hereafter) are generalizations of Liouville CFT where the underlying field is no longer scalar but takes values in a finite-dimensional vector space induced by a complex simple Lie algebra. The goal of this document is to provide a probabilistic construction of such models on all compact hyperbolic Riemann surfaces with or without boundary. To do so, we rely on a probabilistic framework based on Gaussian Free Fields and Gaussian Multiplicative Chaos. In the presence of a…",
+   "authors": [
+    "Baptiste Cerclé",
+    "Nathan Huguenin"
+   ],
+   "date": "2024-02-05T10:56:05Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-physics,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-sle"
+   ],
+   "source_names": [
+    "arXiv: sle"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.02888",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.02888",
+   "cross_list": false
+  },
+  {
+   "id": "cb83137cfaa1a504",
+   "title": "Strong disorder and very strong disorder are equivalent for directed polymers",
+   "url": "https://arxiv.org/abs/2402.02562",
+   "summary": "We show that if the normalized partition function $W^β_n$ of the directed polymer model on $\\mathbb Z^d$ converges to zero, then it does so exponentially fast. This implies that there exists a critical value $β_c$ for the inverse temperature such that the normalized partition function has a non-degenerate limit for all $β\\in [0,β_c]$ -- weak disorder holds -- while for $β\\in (β_c,\\infty)$ it converges exponentially fast to zero -- very strong disorder holds. This solves a twenty-years-old conjecture formulated by…",
+   "authors": [
+    "Stefan Junk",
+    "Hubert Lacoin"
+   ],
+   "date": "2024-02-04T16:39:59Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.75,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15",
+    "signal 'conjecture' +0.6"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.02562",
+   "categories": [
+    "math.PR",
+    "math-ph"
+   ],
+   "key": "arxiv:2402.02562",
+   "cross_list": false
+  },
+  {
+   "id": "e77139375cf1d2f8",
+   "title": "Borel-type subalgebras of the lattice vertex operator algebra",
+   "url": "https://arxiv.org/abs/2402.02278",
+   "summary": "In this paper, we introduce and study new classes of sub-vertex operator algebras of the lattice vertex operator algebras (VOAs), which we call the conic, Borel, and parabolic-type subVOAs. These CFT-type VOAs, which are not necessarily strongly finitely generated, satisfy properties similar to the usual Borel and parabolic subalgebras of a Lie algebra. For the lowest-rank nontrivial example of Borel-type subVOA $V_{B}$ of $V_{\\Z\\al}$, we explicitly determine its Zhu's algebra $A(V_B)$ in terms of generators and…",
+   "authors": [
+    "Jianqi Liu"
+   ],
+   "date": "2024-02-03T22:18:50Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-physics",
+    "math-general"
+   ],
+   "score": 3.3,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-physics,math-general +1.3"
+   ],
+   "sources": [
+    "arxiv-q-tqft"
+   ],
+   "source_names": [
+    "arXiv: tqft"
+   ],
+   "venue": "J. Pure Appl. Alg. (2025)",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.02278",
+   "categories": [
+    "math.QA",
+    "math.RT"
+   ],
+   "key": "arxiv:2402.02278",
+   "cross_list": false
+  },
+  {
+   "id": "015a3b55b5dbb39f",
+   "title": "Prismatic crystals for smooth schemes in characteristic $p$ with Frobenius lifting mod $p^2$",
+   "url": "https://arxiv.org/abs/2402.02109",
+   "summary": "Let $(A,(p))$ be a crystalline prism with $A_n = A/p^{n+1}A$ for all $n\\geq 0$. Let $\\frakX_0$ be a smooth scheme over $A_0$. Suppose that $\\frakX_0$ admits a lifting $\\frakX_n$ over $A_n$ and the absolute Frobenius $\\rF_{\\frakX_0}:\\frakX_0\\to \\frakX_0$ admits a lifting over $A_1$. Then we show that there is an equivalence between the category of the prismatic crystals of truncation $n$ on $(\\frakX_0/A)_{\\Prism}$ and the category of $p$-connections over $\\frakX_n$, which is compatible with cohomologies. This…",
+   "authors": [
+    "Yupeng Wang"
+   ],
+   "date": "2024-02-03T10:21:31Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 3.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +1"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "manuscripta math. 176, 77 (2025)",
+   "cited_by": 0,
+   "doi": "10.1007/s00229-025-01682-3",
+   "arxiv": "2402.02109",
+   "categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "key": "arxiv:2402.02109",
+   "cross_list": false
+  },
+  {
+   "id": "012530089304815d",
+   "title": "Simple groups and complements of smooth surfaces in simply connected $4$-manifolds",
+   "url": "https://arxiv.org/abs/2402.01921",
+   "summary": "For each integer $n$ we construct an oriented closed simply connected $4$-manifold $X$ admitting a smoothly embedded closed connected surface $Σ$ of self-intersection number $n$ such that the complement of the surface has non-trivial fundamental group. This answers a question of Kronheimer in Kirby's 1997 problem list. The proof combines a topological construction with homological properties of simple groups such as Thompson's group $V$ and certain sporadic finite simple groups.",
+   "authors": [
+    "Sam Hughes",
+    "Daniel Ruberman"
+   ],
+   "date": "2024-02-02T21:48:06Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-low-dim"
+   ],
+   "source_names": [
+    "arXiv: low dim"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.01921",
+   "categories": [
+    "math.GT"
+   ],
+   "key": "arxiv:2402.01921",
+   "cross_list": false
+  },
+  {
+   "id": "497cfe8b66e60d78",
+   "title": "Swamplandish Unification of the Dark Sector",
+   "url": "https://arxiv.org/abs/2402.00981",
+   "summary": "We provide a short overview of recent progress made in our understanding of the dark sector based on the Swampland program which in turn is rooted in lessons from string theory. We explain how the existence of one extra mesoscopic dimension (the ``dark dimension\") in the micron range emerges and how this can lead to a unification of the dark energy and dark matter. In particular the smallness of the dark energy leads to the prediction of the existence of a tower of weakly interacting light particles which can…",
+   "authors": [
+    "Cumrun Vafa"
+   ],
+   "date": "2024-02-01T19:54:09Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "hep-gravity",
+    "physics-general"
+   ],
+   "score": 5.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics hep-gravity,physics-general +0.65",
+    "watched author Cumrun Vafa +2.5"
+   ],
+   "sources": [
+    "arxiv-q-swampland"
+   ],
+   "source_names": [
+    "arXiv: swampland"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.00981",
+   "categories": [
+    "hep-ph",
+    "gr-qc",
+    "hep-th"
+   ],
+   "key": "arxiv:2402.00981",
+   "cross_list": false
+  },
+  {
+   "id": "cc9caa4951d6d8cb",
+   "title": "Constant Degree Direct Product Testers with Small Soundness",
+   "url": "https://arxiv.org/abs/2402.00850",
+   "summary": "Let $X$ be a $d$-dimensional simplicial complex. A function $F\\colon X(k)\\to \\{0,1\\}^k$ is said to be a direct product function if there exists a function $f\\colon X(1)\\to \\{0,1\\}$ such that $F(σ) = (f(σ_1), \\ldots, f(σ_k))$ for each $k$-face $σ$. In an effort to simplify components of the PCP theorem, Goldreich and Safra introduced the problem of direct product testing, which asks whether one can test if $F\\colon X(k)\\to \\{0,1\\}^k$ is correlated with a direct product function by querying $F$ on only $2$ inputs…",
+   "authors": [
+    "Mitali Bafna",
+    "Noam Lifshitz",
+    "Dor Minzer"
+   ],
+   "date": "2024-02-01T18:40:08Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "math-general"
+   ],
+   "score": 2.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics math-general +0.15"
+   ],
+   "sources": [
+    "arxiv-q-complexity"
+   ],
+   "source_names": [
+    "arXiv: complexity"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.00850",
+   "categories": [
+    "cs.CC",
+    "math.CO"
+   ],
+   "key": "arxiv:2402.00850",
+   "cross_list": false
+  },
+  {
+   "id": "dd37e851b99de784",
+   "title": "The relative Hodge-Tate spectral sequence for rigid analytic spaces",
+   "url": "https://arxiv.org/abs/2402.00842",
+   "summary": "We construct a relative Hodge-Tate spectral sequence for any smooth proper morphism of rigid analytic spaces over a perfectoid field extension of $\\mathbb Q_p$. To this end, we generalise Scholze's strategy in the absolute case by using smoothoid adic spaces. As our main additional ingredient, we prove a perfectoid version of Grothendieck's \"cohomology and base-change\". We also use this to prove local constancy of Hodge numbers in the rigid analytic setting, and deduce that the relative Hodge-Tate spectral…",
+   "authors": [
+    "Ben Heuer"
+   ],
+   "date": "2024-02-01T18:33:16Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.5,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory +0.5"
+   ],
+   "sources": [
+    "arxiv-q-perfectoid"
+   ],
+   "source_names": [
+    "arXiv: perfectoid"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": null,
+   "arxiv": "2402.00842",
+   "categories": [
+    "math.AG"
+   ],
+   "key": "arxiv:2402.00842",
+   "cross_list": false
+  },
+  {
+   "id": "b367d9dbeba3ff21",
+   "title": "Small gaps between almost-twin primes",
+   "url": "https://arxiv.org/abs/2402.00748",
+   "summary": "Let $m \\in \\mathbb{N}$ be large. We show that there exist infinitely many primes $q_{1}< \\cdot\\cdot\\cdot < q_{m+1}$ such that \\[ q_{m+1}-q_{1}=O(e^{7.63m}) \\] and $q_{j}+2$ has at most \\[ \\frac{7.36m}{\\log 2} + \\frac{4\\log m}{\\log 2} + 21 \\] prime factors for each $1 \\leq j \\leq m+1$. This improves the previous result of Li and Pan, replacing $m^{4}e^{8m}$ by $e^{7.63m}$ and $\\frac{16m}{\\log 2} + \\frac{5\\log m}{\\log 2} + 37$ by $\\frac{7.36m}{\\log 2} + \\frac{4\\log m}{\\log 2} + 21$. The main inputs are the…",
+   "authors": [
+    "Bin Chen"
+   ],
+   "date": "2024-02-01T16:42:10Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory"
+   ],
+   "score": 2.0,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2"
+   ],
+   "sources": [
+    "arxiv-q-primes"
+   ],
+   "source_names": [
+    "arXiv: primes"
+   ],
+   "venue": "",
+   "cited_by": 0,
+   "doi": "10.1515/forum-2024-0036",
+   "arxiv": "2402.00748",
+   "categories": [
+    "math.NT"
+   ],
+   "key": "arxiv:2402.00748",
+   "cross_list": false
+  },
+  {
+   "id": "4b720b0f8909ee7b",
+   "title": "Quantum Analytic Langlands Correspondence",
+   "url": "https://arxiv.org/abs/2402.00494",
+   "summary": "The analytic Langlands correspondence describes the solution to the spectral problem for the quantised Hitchin Hamiltonians. It is related to the S-duality of $\\cal{N}=4$ super Yang-Mills theory. We propose a one-parameter deformation of the Analytic Langlands Correspondence, and discuss its relations to quantum field theory. The partition functions of the $H_3^+$ WZNW model are interpreted as the wave-functions of a spherical vector in the quantisation of complex Chern-Simons theory. Verlinde line operators…",
+   "authors": [
+    "Davide Gaiotto",
+    "Jörg Teschner"
+   ],
+   "date": "2024-02-01T11:05:06Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "number-theory",
+    "hep-gravity",
+    "math-physics",
+    "physics-general"
+   ],
+   "score": 6.8,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics number-theory,hep-gravity,math-physics,physics-general +2.3",
+    "watched author Davide Gaiotto +2.5"
+   ],
+   "sources": [
+    "arxiv-q-langlands"
+   ],
+   "source_names": [
+    "arXiv: langlands"
+   ],
+   "venue": "SciPost Phys. 18, 144 (2025)",
+   "cited_by": 0,
+   "doi": "10.21468/scipostphys.18.4.144",
+   "arxiv": "2402.00494",
+   "categories": [
+    "hep-th",
+    "math-ph",
+    "math.AG",
+    "nlin.SI"
+   ],
+   "key": "arxiv:2402.00494",
+   "cross_list": false
+  },
+  {
+   "id": "d1160282ffe5ecab",
+   "title": "Limits of Random Motzkin paths with KPZ related asymptotics",
+   "url": "https://arxiv.org/abs/2402.00265",
+   "summary": "We study Motzkin paths of length $L$ with general weights on the edges and end points. We investigate the limit behavior of the initial and final segments of the random Motzkin path viewed as a pair of processes starting from each of the two end points as $L$ becomes large. We then study macroscopic limits of the resulting processes, where in two different regimes we obtain Markov processes that appeared in the description of the stationary measure for the KPZ equation on the half line and of conjectural…",
+   "authors": [
+    "Wlodzimierz Bryc",
+    "Alexey Kuznetsov",
+    "Jacek Wesolowski"
+   ],
+   "date": "2024-02-01T01:32:13Z",
+   "first_seen": "2026-11-19T08:14:16Z",
+   "topics": [
+    "analysis-probability",
+    "math-general"
+   ],
+   "score": 3.15,
+   "tier": 2,
+   "why": [
+    "tier 2 source +2",
+    "topics analysis-probability,math-general +1.15"
+   ],
+   "sources": [
+    "arxiv-q-kpz-prob"
+   ],
+   "source_names": [
+    "arXiv: kpz prob"
+   ],
+   "venue": "International Mathematics Research Notices, Volume 2025, Issue 5, rnaf022",
+   "cited_by": 0,
+   "doi": "10.1093/imrn/rnaf022",
+   "arxiv": "2402.00265",
+   "categories": [
+    "math.PR"
+   ],
+   "key": "arxiv:2402.00265",
+   "cross_list": false
+  }
+ ]
+}

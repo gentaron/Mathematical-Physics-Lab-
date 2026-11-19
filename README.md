@@ -82,13 +82,17 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
 `docs/radar/`（公開先 `https://cosmolab.qd.je/radar/`）に、数学・数学のためのAI・基礎物理学の
 **最先端だけ**を集めて順位づけする検索ページとRSSを置いています。GitHub Actions が6時間ごとに更新します。
 
-- **情報源（27）**: Physical Review Letters / PRX / Nature / Nature Physics / Science / Inventiones /
-  Publ. IHÉS / CMP、arXiv（数論・幾何・解析・組合せ・数理物理・重力・数学×AI）、Quanta、
-  Terence Tao・Gil Kalai・Kevin Buzzard（Lean）・n-Category Café などのブログ、CERN、
-  DeepMind、フィールズ賞・アーベル賞・ブレイクスルー賞・ショウ賞・ノーベル物理学賞などの受賞報道。
-  一覧は [`research/radar/sources.json`](research/radar/sources.json) と `docs/radar/sources.opml`。
+- **情報源（87）**: arXiv の**数学全32分野**と hep-th / hep-ph / hep-ex / hep-lat / gr-qc / astro-ph.CO / math-ph の
+  毎日の全新着、**40本の arXiv キーワード検索**（ラングランズ、ナビエ–ストークス、掛谷、球充填、Lean・自動形式化、
+  振幅・正値幾何、AdS/CFT、ブラックホール情報、暗黒物質、重力波…を数年分さかのぼって取得）、
+  PRL / PRX / RMP / PRD / Nature / Nature Physics / Nature Astronomy / Science / Science Advances / PNAS / JAMS / Bull. AMS、
+  Quanta・Tao・Kalai・Buzzard（Lean）・n-Category Café・Woit・Symmetry・IAS・Simons・DeepMind・ScienceDaily、
+  フィールズ賞・アーベル賞・ブレイクスルー賞などの受賞報道（英語・日本語）。
+  一覧は [`research/radar/sources.json`](research/radar/sources.json)。
+- **規模**: 1回の取得で数千〜数万件。全件を `docs/radar/archive/YYYY-MM.json` に月別で保存（最長3年）し、
+  ページは上位3,000件を即表示、「全期間のアーカイブも検索」で全件を検索できます。
 - **順位**: 情報源の格 + 分野の一致 + 重要語（「〜の証明」「反例」「長年の未解決問題」など） +
-  注目研究者 + 複数媒体での報道を、半減期10日で新しさに応じて減衰。各項目の理由は `why` に残ります。
+  注目研究者 + 被引用数 + 複数の発行元での報道を、半減期14日で新しさに応じて減衰。各項目の理由は `why` に残ります。
   arXiv の改訂版や訂正記事は落とし、分野に当たらない投稿は載せません。
 - **検索**: `langlands`、`"quantum gravity"`、`au:tao`、`topic:math-ai`、`tier:1`、`since:7d`、`-survey`。
 - **購読**: `docs/radar/feed.xml`（全体）と `feed-<分野>.xml`（8分野）。
@@ -96,6 +100,7 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
 ```bash
 python -m research radar validate                       # 情報源の設定を検査
 python -m research radar fetch --out docs/radar --site  # 取得・順位づけ・書き出し
+python -m research radar fetch --out docs/radar --site --deep 3  # 過去分を3倍のページ数でさかのぼる
 python -m research radar search "langlands since:30d" --data docs/radar/radar.json
 python -m research radar rebuild --out docs/radar --site  # 設定変更後の再採点（通信なし）
 ```

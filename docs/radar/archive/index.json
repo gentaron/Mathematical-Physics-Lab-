@@ -1,0 +1,194 @@
+{
+ "schema": "deeptech.radar.archive/1",
+ "radar": "math-physics-radar",
+ "generated_at": "2026-11-19T08:31:03Z",
+ "total": 17044,
+ "trust": "untrusted-external-text",
+ "months": [
+  {
+   "month": "2026-11",
+   "count": 2310,
+   "file": "2026-11.json"
+  },
+  {
+   "month": "2026-10",
+   "count": 2353,
+   "file": "2026-10.json"
+  },
+  {
+   "month": "2026-09",
+   "count": 1544,
+   "file": "2026-09.json"
+  },
+  {
+   "month": "2026-08",
+   "count": 1138,
+   "file": "2026-08.json"
+  },
+  {
+   "month": "2026-07",
+   "count": 956,
+   "file": "2026-07.json"
+  },
+  {
+   "month": "2026-06",
+   "count": 980,
+   "file": "2026-06.json"
+  },
+  {
+   "month": "2026-05",
+   "count": 838,
+   "file": "2026-05.json"
+  },
+  {
+   "month": "2026-04",
+   "count": 570,
+   "file": "2026-04.json"
+  },
+  {
+   "month": "2026-03",
+   "count": 571,
+   "file": "2026-03.json"
+  },
+  {
+   "month": "2026-02",
+   "count": 412,
+   "file": "2026-02.json"
+  },
+  {
+   "month": "2026-01",
+   "count": 360,
+   "file": "2026-01.json"
+  },
+  {
+   "month": "2025-12",
+   "count": 399,
+   "file": "2025-12.json"
+  },
+  {
+   "month": "2025-11",
+   "count": 290,
+   "file": "2025-11.json"
+  },
+  {
+   "month": "2025-10",
+   "count": 316,
+   "file": "2025-10.json"
+  },
+  {
+   "month": "2025-09",
+   "count": 271,
+   "file": "2025-09.json"
+  },
+  {
+   "month": "2025-08",
+   "count": 211,
+   "file": "2025-08.json"
+  },
+  {
+   "month": "2025-07",
+   "count": 242,
+   "file": "2025-07.json"
+  },
+  {
+   "month": "2025-06",
+   "count": 201,
+   "file": "2025-06.json"
+  },
+  {
+   "month": "2025-05",
+   "count": 219,
+   "file": "2025-05.json"
+  },
+  {
+   "month": "2025-04",
+   "count": 181,
+   "file": "2025-04.json"
+  },
+  {
+   "month": "2025-03",
+   "count": 178,
+   "file": "2025-03.json"
+  },
+  {
+   "month": "2025-02",
+   "count": 169,
+   "file": "2025-02.json"
+  },
+  {
+   "month": "2025-01",
+   "count": 162,
+   "file": "2025-01.json"
+  },
+  {
+   "month": "2024-12",
+   "count": 220,
+   "file": "2024-12.json"
+  },
+  {
+   "month": "2024-11",
+   "count": 198,
+   "file": "2024-11.json"
+  },
+  {
+   "month": "2024-10",
+   "count": 189,
+   "file": "2024-10.json"
+  },
+  {
+   "month": "2024-09",
+   "count": 185,
+   "file": "2024-09.json"
+  },
+  {
+   "month": "2024-08",
+   "count": 156,
+   "file": "2024-08.json"
+  },
+  {
+   "month": "2024-07",
+   "count": 142,
+   "file": "2024-07.json"
+  },
+  {
+   "month": "2024-06",
+   "count": 159,
+   "file": "2024-06.json"
+  },
+  {
+   "month": "2024-05",
+   "count": 158,
+   "file": "2024-05.json"
+  },
+  {
+   "month": "2024-04",
+   "count": 148,
+   "file": "2024-04.json"
+  },
+  {
+   "month": "2024-03",
+   "count": 145,
+   "file": "2024-03.json"
+  },
+  {
+   "month": "2024-02",
+   "count": 127,
+   "file": "2024-02.json"
+  },
+  {
+   "month": "2024-01",
+   "count": 121,
+   "file": "2024-01.json"
+  },
+  {
+   "month": "2023-12",
+   "count": 167,
+   "file": "2023-12.json"
+  },
+  {
+   "month": "2023-11",
+   "count": 58,
+   "file": "2023-11.json"
+  }
+ ]
+}

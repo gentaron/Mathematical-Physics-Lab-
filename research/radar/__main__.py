@@ -33,7 +33,9 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument("--out", type=Path, required=True)
         command.add_argument("--site", action="store_true", help="Also write the static index.html")
         if name == "fetch":
-            command.add_argument("--fixtures", type=Path, help="Read <source-id>.xml files instead of the network")
+            command.add_argument("--fixtures", type=Path, help="Read <source-id>.xml|json files instead of the network")
+            command.add_argument("--deep", type=int, default=1, choices=range(1, 11),
+                                 help="Follow N times more pages per paged source (backfill)")
     find = commands.add_parser("search", help="Search the archive")
     find.add_argument("query", nargs="?", default="")
     find.add_argument("--data", type=Path, required=True)
@@ -51,9 +53,9 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command in ("fetch", "rebuild"):
             radar = engine.run(args.config, args.out, fixtures=getattr(args, "fixtures", None),
-                               site=args.site, offline=args.command == "rebuild")
+                               site=args.site, offline=args.command == "rebuild", deep=getattr(args, "deep", 1))
             health = radar["health"]
-            print(f"{radar['radar']}: {len(radar['items'])} items, sources {health['ok']}/{health['sources']} ok "
+            print(f"{radar['radar']}: {len(radar['items']):,} items, sources {health['ok']}/{health['sources']} ok "
                   f"-> {args.out}")
             if args.command == "fetch" and health["sources"] and health["ok"] == 0:
                 print("no source was reachable; the previous archive was kept", file=sys.stderr)
@@ -62,7 +64,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "search":
             if not 1 <= args.limit <= 500:
                 raise engine.RadarError("--limit must be in 1..500")
-            radar = engine.load_archive_full(args.data)
+            radar = engine.load_search(args.data)
             found = engine.search(radar, args.query, args.limit, sort=args.sort)
             if args.json:
                 print(json.dumps({"query": args.query, "trust": engine.TRUST_LABEL, "items": found},
