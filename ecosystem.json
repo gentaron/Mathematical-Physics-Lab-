@@ -30,6 +30,13 @@
         "research"
       ],
       "url": "https://github.com/gentaron/VAIZ"
+    },
+    {
+      "repo": "QAIZ",
+      "flows": [
+        "research"
+      ],
+      "url": "https://github.com/gentaron/QAIZ"
     }
   ],
   "siblings": [
