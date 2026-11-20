@@ -260,6 +260,20 @@ def test_outputs_are_well_formed_and_escaped(tmp_path):
     assert data["schema"] == engine.SCHEMA and all(i["url"].startswith("https://") for i in data["items"])
 
 
+def test_digest_for_qaiz_is_small_integer_only_and_hash_verifies(tmp_path):
+    radar, out = run_small(tmp_path)
+    digest = json.loads((out / "digest.json").read_text(encoding="utf-8"))
+    assert digest["schema"] == engine.DIGEST_SCHEMA and digest["radar"] == radar["radar"]
+    assert digest["generated_at"] == radar["generated_at"]
+    assert 0 < len(digest["items"]) <= engine.DIGEST_ITEMS
+    assert engine.hashlib.sha256(engine.canonical_json(digest["items"])).hexdigest() == digest["items_sha256"]
+    for item in digest["items"]:
+        assert item["url"].startswith("https://") and len(item["summary"]) <= engine.DIGEST_SUMMARY_MAX
+        assert not any(isinstance(v, float) for v in item.values()), "floats break cross-language hashing"
+    tampered = [dict(digest["items"][0], title="changed")] + digest["items"][1:]
+    assert engine.hashlib.sha256(engine.canonical_json(tampered)).hexdigest() != digest["items_sha256"]
+
+
 def test_page_escapes_hostile_titles():
     config = small_config()
     radar = {"title": "T", "description": "D", "generated_at": "2026-11-19T00:00:00Z", "health": {"ok": 1, "sources": 1},

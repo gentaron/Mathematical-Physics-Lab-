@@ -79,6 +79,8 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
 
 ## 最先端レーダー（数学・数学×AI・基礎物理の検索型RSS）
 
+`docs/radar/digest.json`（`gentaron.radar-digest/1`）は QAIZ 連携用の小さな出力です。上位30件・整数のみ・`items_sha256` 付きで、QAIZ は固定URLから取得してハッシュを再計算し、一致したものだけを統合観測に表示します（株式スコアには入れません）。
+
 `docs/radar/`（公開先 `https://cosmolab.qd.je/radar/`）に、数学・数学のためのAI・基礎物理学の
 **最先端だけ**を集めて順位づけする検索ページとRSSを置いています。GitHub Actions が6時間ごとに更新します。
 

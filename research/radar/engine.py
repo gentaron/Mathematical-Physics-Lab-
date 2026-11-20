@@ -66,6 +66,13 @@ TIER_WEIGHT = {1: 3.0, 2: 2.0, 3: 1.0}
 TRACKING_PARAMS = re.compile(r"^(utm_|fbclid$|gclid$|mc_|ref$|src$|rss$|cmpid$)", re.I)
 TRUST_LABEL = "untrusted-external-text"
 
+# A small, integrity-checked export for downstream readers (QAIZ). Integers only,
+# so every language serialises the hashed payload byte-for-byte the same way.
+DIGEST_SCHEMA = "gentaron.radar-digest/1"
+DIGEST_ITEMS = 30
+DIGEST_SUMMARY_MAX = 280
+DIGEST_TITLE_MAX = 300
+
 
 class RadarError(ValueError):
     """Invalid configuration, refused URL or refused feed."""
@@ -882,11 +889,49 @@ def _opml(config: dict) -> bytes:
     return b'<?xml version="1.0" encoding="utf-8"?>\n' + ET.tostring(opml, encoding="utf-8") + b"\n"
 
 
+def canonical_json(value: object) -> bytes:
+    """Sorted keys, no whitespace, raw UTF-8: identical to JSON.stringify over sorted keys."""
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"),
+                      allow_nan=False).encode("utf-8")
+
+
+def build_digest(config: dict, radar: dict) -> dict:
+    """Top-ranked items only, trimmed and hashed. Never carries scores as floats."""
+    min_score = limit(config, "min_score")
+    chosen = [i for i in radar["items"] if i["score"] >= min_score][:DIGEST_ITEMS]
+    items = [{
+        "id": i["id"],
+        "title": i["title"][:DIGEST_TITLE_MAX],
+        "url": i["url"],
+        "summary": i["summary"][:DIGEST_SUMMARY_MAX],
+        "date": i["date"],
+        "first_seen": i.get("first_seen") or i["date"],
+        "topics": list(i["topics"])[:8],
+        "tier": int(i["tier"]),
+        "rank_milli": int(round(float(i["rank"]) * 1000)),
+        "source_names": list(i.get("source_names") or [])[:3],
+    } for i in chosen]
+    return {
+        "schema": DIGEST_SCHEMA,
+        "radar": radar["radar"],
+        "title": radar["title"],
+        "generated_at": radar["generated_at"],
+        "engine": radar["engine"],
+        "trust": TRUST_LABEL,
+        "trust_note": radar["trust_note"],
+        "health": radar["health"],
+        "topics": [{"id": t["id"], "label": t["label"], "count": int(t["count"])} for t in radar["topics"]],
+        "items": items,
+        "items_sha256": hashlib.sha256(canonical_json(items)).hexdigest(),
+    }
+
+
 def write_outputs(config: dict, radar: dict, out: Path, site: bool = False) -> list[Path]:
     min_score = limit(config, "min_score")
     eligible = [i for i in radar["items"] if i["score"] >= min_score]
     written = []
     files = {"radar.json": dump_json(radar),
+             "digest.json": dump_json(build_digest(config, radar)),
              "feed.xml": _rss(config, radar, eligible[: limit(config, "feed_max")], config["title"], "feed.xml"),
              "sources.opml": _opml(config)}
     for topic in radar["topics"]:
