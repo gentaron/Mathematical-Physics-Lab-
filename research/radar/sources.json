@@ -2,7 +2,7 @@
  "schema": "deeptech.radar.config/1",
  "id": "math-physics-radar",
  "title": "Mathematical Physics Lab — Frontier Radar",
- "description": "数学・数学のためのAI・基礎物理学の最先端だけを、最上位の学術誌・arXiv・一流研究者のブログ・主要な賞の報道から集めて順位づけする検索型RSSリーダー。",
+ "description": "数学・数学のためのAI・形式検証・基礎物理学の最先端だけを、最上位の学術誌・arXiv・一流研究者のブログ・主要な賞の報道から集めて順位づけする検索型RSSリーダー。",
  "kicker": "Mathematics · AI for Math · Fundamental Physics",
  "lang": "ja",
  "site_url": "https://cosmolab.qd.je",
@@ -174,19 +174,9 @@
    "label": "数学 × AI",
    "label_en": "AI for mathematics",
    "keywords": [
-    "Lean 4",
-    "Lean theorem prover",
-    "mathlib",
-    "formalization",
-    "formalized",
-    "formalised",
     "autoformalization",
     "theorem proving",
     "automated theorem",
-    "interactive theorem",
-    "formal proof",
-    "formal verification of mathematics",
-    "proof assistant",
     "AlphaProof",
     "AlphaGeometry",
     "AlphaEvolve",
@@ -196,12 +186,52 @@
     "FrontierMath",
     "mathematical reasoning",
     "mathematical discovery",
-    "Isabelle",
-    "Coq",
-    "Rocq",
     "AI mathematician",
     "machine-assisted proof",
     "Erdős problems"
+   ]
+  },
+  "formal-verification": {
+   "label": "形式検証・機械化された証明",
+   "label_en": "Formal verification & mechanized proof",
+   "keywords": [
+    "Lean 4",
+    "Lean theorem prover",
+    "Lean prover",
+    "Lean FRO",
+    "mathlib",
+    "formalization",
+    "formalisation",
+    "formalized",
+    "formalised",
+    "autoformalization",
+    "autoformalisation",
+    "formal proof",
+    "formally verified",
+    "formal verification",
+    "machine-checked",
+    "machine-verified",
+    "proof assistant",
+    "interactive theorem",
+    "proof checker",
+    "Isabelle",
+    "Isabelle/HOL",
+    "Coq",
+    "Rocq",
+    "Agda",
+    "HOL Light",
+    "Metamath",
+    "AlphaProof",
+    "DeepSeek-Prover",
+    "Goedel-Prover",
+    "Kimina-Prover",
+    "Seed-Prover",
+    "LeanDojo",
+    "miniF2F",
+    "PutnamBench",
+    "ProofNet",
+    "Equational Theories Project",
+    "verified in Lean"
    ]
   },
   "hep-gravity": {
@@ -301,7 +331,12 @@
   "five-sigma": 1.5,
   "5 sigma": 1.5,
   "new particle": 1.5,
-  "solved": 0.8
+  "solved": 0.8,
+  "formally verified": 1.5,
+  "machine-checked": 1.2,
+  "verified in Lean": 1.5,
+  "fully formalized": 1.5,
+  "fully formalised": 1.5
  },
  "demote": {
   "erratum": -4,
@@ -371,7 +406,14 @@
   "Davide Gaiotto",
   "Kevin Costello",
   "Tadashi Takayanagi",
-  "Thomas Hales"
+  "Thomas Hales",
+  "Leonardo de Moura",
+  "Patrick Massot",
+  "Heather Macbeth",
+  "Johan Commelin",
+  "Jeremy Avigad",
+  "Floris van Doorn",
+  "Kaiyu Yang"
  ],
  "allow_hosts": [
   "deepmind.google",
@@ -547,11 +589,12 @@
   },
   {
    "id": "arxiv-ai-math",
-   "name": "arXiv cs.AI / cs.LG / cs.LO (AI for math)",
+   "name": "arXiv cs.AI / cs.LG / cs.LO (AI for math, formal proof)",
    "url": "https://rss.arxiv.org/rss/cs.AI+cs.LG+cs.LO",
    "tier": 2,
    "topics": [
-    "math-ai"
+    "math-ai",
+    "formal-verification"
    ],
    "require_topic": true
   },
@@ -571,7 +614,8 @@
    "topics": [
     "analysis-probability",
     "combinatorics",
-    "math-ai"
+    "math-ai",
+    "formal-verification"
    ],
    "require_topic": false
   },
@@ -591,7 +635,8 @@
    "url": "https://xenaproject.wordpress.com/feed/",
    "tier": 2,
    "topics": [
-    "math-ai"
+    "math-ai",
+    "formal-verification"
    ],
    "require_topic": false
   },
@@ -651,6 +696,16 @@
    "url": "https://news.google.com/rss/search?q=%28mathematician+OR+mathematicians%29+%28proof+OR+conjecture+OR+theorem%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
    "tier": 3,
    "topics": [],
+   "require_topic": true
+  },
+  {
+   "id": "news-formal",
+   "name": "News: formal verification of proofs",
+   "url": "https://news.google.com/rss/search?q=%28%22Lean+4%22+OR+mathlib+OR+%22proof+assistant%22+OR+%22formally+verified%22+OR+autoformalization+OR+%22machine-checked%22%29+%28mathematics+OR+theorem+OR+proof+OR+AI%29+when%3A14d&hl=en-US&gl=US&ceid=US:en",
+   "tier": 3,
+   "topics": [
+    "formal-verification"
+   ],
    "require_topic": true
   },
   {

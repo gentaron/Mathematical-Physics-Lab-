@@ -77,22 +77,24 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
 | 11 | 8 | 14,065,744 | 103,048 |
 | 12 | 9 | 210,682,080 | 518,858 |
 
-## 最先端レーダー（数学・数学×AI・基礎物理の検索型RSS）
+## 最先端レーダー（数学・数学×AI・形式検証・基礎物理の検索型RSS）
 
 `docs/radar/digest.json`（`gentaron.radar-digest/1`）は QAIZ 連携用の小さな出力です。上位30件・整数のみ・`items_sha256` 付きで、QAIZ は固定URLから取得してハッシュを再計算し、一致したものだけを統合観測に表示します（株式スコアには入れません）。
 
-`docs/radar/`（公開先 `https://cosmolab.qd.je/radar/`）に、数学・数学のためのAI・基礎物理学の
+`docs/radar/`（公開先 `https://cosmolab.qd.je/radar/`）に、数学・数学のためのAI・形式検証・基礎物理学の
 **最先端だけ**を集めて順位づけする検索ページとRSSを置いています。GitHub Actions が6時間ごとに更新します。
 
-- **情報源（27）**: Physical Review Letters / PRX / Nature / Nature Physics / Science / Inventiones /
+- **情報源（28）**: Physical Review Letters / PRX / Nature / Nature Physics / Science / Inventiones /
   Publ. IHÉS / CMP、arXiv（数論・幾何・解析・組合せ・数理物理・重力・数学×AI）、Quanta、
   Terence Tao・Gil Kalai・Kevin Buzzard（Lean）・n-Category Café などのブログ、CERN、
-  DeepMind、フィールズ賞・アーベル賞・ブレイクスルー賞・ショウ賞・ノーベル物理学賞などの受賞報道。
+  DeepMind、形式検証（Lean / Mathlib / Rocq / Isabelle、AI 証明の機械検証）の報道、フィールズ賞・アーベル賞・ブレイクスルー賞・ショウ賞・ノーベル物理学賞などの受賞報道。
+  
+  形式検証は `formal-verification` として `math-ai` と別の項目にしています（AI が出した解を機械で確かめた話を埋もれさせないため）。
   一覧は [`research/radar/sources.json`](research/radar/sources.json) と `docs/radar/sources.opml`。
 - **順位**: 情報源の格 + 分野の一致 + 重要語（「〜の証明」「反例」「長年の未解決問題」など） +
   注目研究者 + 複数媒体での報道を、半減期10日で新しさに応じて減衰。各項目の理由は `why` に残ります。
   arXiv の改訂版や訂正記事は落とし、分野に当たらない投稿は載せません。
-- **検索**: `langlands`、`"quantum gravity"`、`au:tao`、`topic:math-ai`、`tier:1`、`since:7d`、`-survey`。
+- **検索**: `langlands`、`"quantum gravity"`、`au:tao`、`topic:math-ai`、`topic:formal-verification`、`tier:1`、`since:7d`、`-survey`。
 - **購読**: `docs/radar/feed.xml`（全体）と `feed-<分野>.xml`（8分野）。
 
 ```bash

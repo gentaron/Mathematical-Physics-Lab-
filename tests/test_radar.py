@@ -289,8 +289,30 @@ def test_page_escapes_hostile_titles():
 def test_shipped_config_is_valid_and_https_only():
     config = engine.load_config(CONFIG_PATH)
     assert all(s["url"].startswith("https://") for s in config["sources"])
-    assert {"prizes", "math-ai", "number-theory", "hep-gravity"} <= set(config["topics"])
+    assert {"prizes", "math-ai", "formal-verification", "number-theory", "hep-gravity"} <= set(config["topics"])
     assert radar_main(["validate", "--config", str(CONFIG_PATH)]) == 0
+
+
+def test_formal_verification_is_its_own_topic():
+    """AI が出した証明を機械で検証した話は math-ai に埋もれさせず、独立した項目にする。"""
+    config = engine.load_config(CONFIG_PATH)
+    scorer = engine.Scorer(config)
+    src = next(s for s in config["sources"] if s["id"] == "news-formal")
+    assert src["require_topic"] and src["url"].startswith("https://news.google.com/")
+
+    def topics(title, summary=""):
+        item = engine.normalise({"title": title, "summary": summary, "link": "https://example.org/a"}, src, NOW)
+        scored = scorer.score(item)
+        return scored["topics"] if scored else []
+
+    assert "formal-verification" in topics("AI-assisted proof fully formalized in Lean 4 and Mathlib")
+    assert "formal-verification" in topics("A machine-checked proof in the Rocq prover")
+    assert "formal-verification" in topics("Autoformalization benchmark", "We evaluate provers on miniF2F.")
+    # 形式検証の語が無い AI 数学の話は math-ai のまま
+    ai = topics("AlphaEvolve finds new constructions", "mathematical discovery with FunSearch")
+    assert "math-ai" in ai and "formal-verification" not in ai
+    # 一般語の誤検知を避ける (lean manufacturing, blueprint)
+    assert topics("A lean blueprint for manufacturing") == []
 
 
 def test_radar_static_page_keeps_lab_pwa_icons(tmp_path):
