@@ -88,7 +88,6 @@ python -m research coordinates --output research/results/cosmohedron-5-coordinat
   Publ. IHÉS / CMP、arXiv（数論・幾何・解析・組合せ・数理物理・重力・数学×AI）、Quanta、
   Terence Tao・Gil Kalai・Kevin Buzzard（Lean）・n-Category Café などのブログ、CERN、
   DeepMind、形式検証（Lean / Mathlib / Rocq / Isabelle、AI 証明の機械検証）の報道、フィールズ賞・アーベル賞・ブレイクスルー賞・ショウ賞・ノーベル物理学賞などの受賞報道。
-  
   形式検証は `formal-verification` として `math-ai` と別の項目にしています（AI が出した解を機械で確かめた話を埋もれさせないため）。
   一覧は [`research/radar/sources.json`](research/radar/sources.json) と `docs/radar/sources.opml`。
 - **順位**: 情報源の格 + 分野の一致 + 重要語（「〜の証明」「反例」「長年の未解決問題」など） +
